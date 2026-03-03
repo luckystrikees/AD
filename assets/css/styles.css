@@ -1,150 +1,37 @@
-/* Core Institutional Canvas */
+:root {
+  --bg-ivory: #f7f5f2; /* Soft Ivory to reduce glare */
+  --ink-black: #1c1c1c;
+  --institutional-navy: #0f2742;
+  --border-neutral: #e6e2dc;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #f7f5f2; /* Soft Paper Background */
-    font-family: "Georgia", serif;
-    color: #1c1c1c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    background-color: var(--bg-ivory);
+    font-family: "Georgia", "Times New Roman", serif; /* Serif for body/wordmark */
+    font-size: 18px; /* 1rem = 18px Minimum */
+    line-height: 1.75;
+    color: var(--ink-black);
+    -webkit-font-smoothing: antialiased;
 }
 
-.main-wrapper {
-    max-width: 1000px;
-    width: 92%;
-    background: #ffffff;
-    padding: 60px 70px 80px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-    border-top: 4px solid #1f2f44;
-    box-sizing: border-box;
-}
-
-/* Top Navigation: Understated Small Caps */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 90px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-}
-
-.masthead { display: flex; align-items: center; gap: 15px; }
-.masthead img { height: 42px; }
-.masthead-title { 
-    font-weight: bold; 
-    font-family: 'Libre Baskerville', serif; 
-    color: #0f2742; 
-    font-size: 1.1rem; 
-}
-
-.nav-links { 
-    list-style: none; 
-    display: flex; 
-    gap: 30px; 
-    padding: 0; 
-    margin: 0; 
-}
-
-.nav-links a { 
-    text-decoration: none; 
-    color: #555; 
-    font-size: 0.8rem; 
-    font-family: 'Source Sans 3', sans-serif; 
-    font-variant: small-caps; /* Academic Understatement */
-    letter-spacing: 0.08em;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover { color: #0f2742; }
-
-/* Hero Branding */
-.hero-header { text-align: center; }
-
+/* 4. Typographic Scale */
 h1 {
-    font-family: 'Libre Baskerville', serif;
-    color: #0f2742;
-    font-size: 2.8rem;
-    line-height: 1.2;
-    margin: 15px 0;
-    font-weight: 600;
+    font-size: 3.2rem; /* Desktop Hero Weight */
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
 
-.inst-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #999;
-    font-family: 'Source Sans 3', sans-serif;
+p {
+    font-size: 1rem; /* 18px */
+    line-height: 1.8;
 }
 
-.tagline {
-    font-style: italic;
-    font-family: 'Libre Baskerville', serif;
-    color: #666;
-    font-size: 1.1rem;
+/* 10. Visual Language Rules: No shadows, no rounds, no gradients */
+* {
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
-
-/* Navigation Pillar Grid */
-.pillar-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    margin-top: 80px;
-}
-
-.pillar {
-    border: 1px solid #e6e2dc;
-    padding: 45px 30px;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.pillar h3 {
-    font-family: 'Libre Baskerville', serif;
-    color: #0f2742;
-    font-size: 1.15rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.pillar p {
-    font-family: 'Source Sans 3', sans-serif;
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.pillar-link {
-    font-size: 0.75rem;
-    font-family: 'Source Sans 3', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #0f2742;
-    font-weight: 600;
-}
-
-.pillar:hover {
-    background: #f1eee8;
-    border-color: #0f2742;
-}
-
-/* Footer */
-footer {
-    margin-top: 100px;
-    text-align: center;
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-    font-size: 0.8rem;
-    color: #aaa;
-}
-
-.footer-links a { color: #999; text-decoration: none; margin: 0 12px; }
-.footer-links a:hover { color: #0f2742; }
