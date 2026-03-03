@@ -1,37 +1,184 @@
+/* 7. Background Strategy & 10. Visual Language Rules */
 :root {
-  --bg-ivory: #f7f5f2; /* Soft Ivory to reduce glare */
-  --ink-black: #1c1c1c;
-  --institutional-navy: #0f2742;
-  --border-neutral: #e6e2dc;
+    --bg-ivory: #f7f5f2;
+    --ink-black: #1c1c1c;
+    --inst-navy: #0f2742;
+    --border-neutral: #e6e2dc;
+    --text-muted: #666;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-ivory);
-    font-family: "Georgia", "Times New Roman", serif; /* Serif for body/wordmark */
-    font-size: 18px; /* 1rem = 18px Minimum */
-    line-height: 1.75;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 18px; /* 4. Global Scale */
     color: var(--ink-black);
+    line-height: 1.8; /* 4. Typographic Discipline */
     -webkit-font-smoothing: antialiased;
 }
 
-/* 4. Typographic Scale */
-h1 {
-    font-size: 3.2rem; /* Desktop Hero Weight */
-    line-height: 1.15;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin: 0;
-}
-
-p {
-    font-size: 1rem; /* 18px */
-    line-height: 1.8;
-}
-
-/* 10. Visual Language Rules: No shadows, no rounds, no gradients */
+/* 10. Absolutely Avoid Drop Shadows, Gradients, Rounded Corners */
 * {
     border-radius: 0 !important;
     box-shadow: none !important;
+}
+
+/* 3. Header Styling */
+.masthead-container {
+    text-align: center;
+    padding: 80px 20px 20px;
+}
+
+.wordmark {
+    font-size: 1.9rem; /* 4. Wordmark Scale */
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--inst-navy);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* 5. Navigation Styling: Small Caps Understatement */
+.institutional-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.institutional-nav a {
+    text-decoration: none;
+    color: var(--ink-black);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.institutional-nav a:hover {
+    border-bottom: 1px solid var(--inst-navy);
+}
+
+.nav-separator {
+    border: 0;
+    border-top: 1px solid var(--border-neutral);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 6. Hero Section Styling */
+.hero-portal {
+    text-align: center;
+    padding: 100px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.inst-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.2rem; /* 6. Headline Scale */
+    line-height: 1.15;
+    font-weight: 500;
+    margin: 0 0 30px;
+}
+
+.hero-subheading {
+    font-size: 1.15rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* 9. Institutional Pillars: Architectural Grid */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 60px auto 100px;
+    gap: 0;
+    border: 1px solid var(--border-neutral);
+}
+
+.pillar {
+    padding: 60px 45px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    border-right: 1px solid var(--border-neutral);
+    transition: background 0.2s ease;
+}
+
+.pillar:last-child {
+    border-right: none;
+}
+
+.pillar:hover {
+    background: #f1eee8;
+}
+
+.pillar h3 {
+    font-size: 1.3rem;
+    color: var(--inst-navy);
+    margin-top: 0;
+}
+
+.pillar p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.text-link {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--inst-navy);
+}
+
+/* 8. Minimal Footer */
+footer {
+    border-top: 1px solid var(--border-neutral);
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.footer-nav a:hover {
+    color: var(--inst-navy);
 }
