@@ -1,36 +1,9 @@
-/* 2. Base Scale & 3. Color System */
-html {
-  font-size: 18px;
-  background-color: #f7f5f2;
-}
+/* --- TIGHTENED SPACING UPDATES --- */
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'EB Garamond', serif;
-  font-size: 1rem; /* 18px */
-  line-height: 1.75;
-  color: #1c1c1c;
-  background-color: #f7f5f2;
-  text-align: left;
-}
-
-/* 12. Banned Elements: No Shadows, Rounded Corners, or CTA Buttons */
-* {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 9. Content Width Control for Text */
-.content-inner {
-  max-width: 740px;
-  margin: 0 auto;
-}
-
-/* 4. Masthead (Top Center) */
+/* 4. Masthead - Reduced top padding from 120px to 60px */
 .site-header {
   text-align: center;
-  padding: 120px 0 0;
+  padding: 60px 0 0; 
 }
 
 .site-title {
@@ -40,7 +13,7 @@ body {
   font-size: 2rem;
   letter-spacing: 0.04em;
   color: #1f2f44;
-  margin-bottom: 25px;
+  margin-bottom: 15px; /* Reduced from 25px */
 }
 
 /* 5. Navigation Row */
@@ -49,60 +22,29 @@ body {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px; /* Reduced from 25px */
 }
 
-.site-nav a {
-  text-decoration: none;
-  color: #1c1c1c;
-  padding: 0 10px; /* Approx 20px item spacing */
-}
-
-.nav-divider { color: #444; }
-
-.site-nav a:hover {
-  border-bottom: 1px solid #1f2f44;
-}
-
-.nav-rule {
-  border: 0;
-  border-top: 1px solid #e6e2dc;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* 6. Hero Headline */
+/* 6. Hero Headline - Reduced padding from 120px/80px to 60px/40px */
 .hero {
   text-align: center;
-  padding: 120px 0 80px;
+  padding: 60px 0 40px;
 }
 
 .hero h1 {
   font-family: 'EB Garamond', serif;
-  font-size: 3.4rem;
+  font-size: 3rem; /* Slightly smaller to feel more contained */
   font-weight: 500;
   line-height: 1.12;
   color: #1c1c1c;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced from 30px */
 }
 
-.tagline {
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-/* 9. Institutional Pillars (Horizontal Grid Restoration) */
+/* 9. Institutional Pillars - Reduced internal padding and bottom margin */
 .pillar-container {
     max-width: 1100px;
-    margin: 0 auto 120px;
+    margin: 0 auto 60px; /* Reduced bottom margin from 120px to 60px */
     padding: 0 40px;
-}
-
-.pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Forces horizontal pillars */
-    gap: 30px; /* Essential architectural spacing */
 }
 
 .pillar {
@@ -111,67 +53,29 @@ body {
     justify-content: space-between;
     text-decoration: none;
     color: inherit;
-    padding: 50px 35px;
+    padding: 30px 25px; /* Reduced from 50px 35px */
     border: 1px solid #e6e2dc;
     background: #ffffff;
     transition: background 0.2s ease;
     text-align: center;
 }
 
-.pillar:hover { background: #f1eee8; }
-
-.pillar h3 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #1f2f44;
-}
-
-.pillar p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 25px;
-}
-
-.pillar-link {
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #1f2f44;
-}
-
-/* 10. Footer Colophon with Seal Control */
+/* 10. Footer Colophon - Tightened significantly */
 .site-footer {
   text-align: center;
-  padding: 120px 0;
+  padding: 60px 0; /* Cut in half from 120px */
   border-top: 1px solid #e6e2dc;
   background: #f7f5f2;
 }
 
 .footer-seal {
-  max-width: 100px; /* 10. Seal max 90-100px */
-  margin-bottom: 40px;
+  max-width: 80px; /* Slightly smaller seal */
+  margin-bottom: 20px; /* Cut in half from 40px */
   filter: grayscale(100%);
-}
-
-.footer-name {
-  font-variant-caps: small-caps;
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  color: #1f2f44;
 }
 
 .footer-descriptor {
   font-size: 0.9rem;
-  margin: 6px 0 10px;
+  margin: 4px 0 8px; /* Tightened margins */
   color: #333;
-}
-
-.footer-copyright {
-  font-size: 0.8rem;
-  color: #555;
 }
