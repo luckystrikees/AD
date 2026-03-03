@@ -1,129 +1,171 @@
-:root {
-    --bg-ivory: #f7f5f2;
-    --ink-black: #1c1c1c;
-    --inst-navy: #0f2742;
-    --border-neutral: #e6e2dc;
+/* 2. Base Scale & 3. Color System */
+html {
+  font-size: 18px;
+  background-color: #f7f5f2;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-ivory);
-    font-family: "Georgia", serif;
-    font-size: 18px; /* 18px Base Scale */
-    line-height: 1.8;
-    color: var(--ink-black);
-    display: flex;
-    justify-content: center;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem; /* 18px */
+  line-height: 1.75;
+  color: #1c1c1c;
+  background-color: #f7f5f2;
+  text-align: left; /* 8. Never justify text */
 }
 
-* { border-radius: 0 !important; box-shadow: none !important; }
-
-.main-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    background: #ffffff;
-    min-height: 100vh;
-    padding: 0 80px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+/* 12. Things That Are Banned */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
-/* 3. Centered Masthead Model */
-.masthead-container { text-align: center; padding: 60px 0 0; }
-.wordmark { 
-    font-size: 1.9rem; 
-    letter-spacing: 0.14em; 
-    text-transform: uppercase; 
-    color: var(--inst-navy); 
-    margin-bottom: 25px; 
+/* 9. Content Width Control */
+.content-inner {
+  max-width: 740px;
+  margin: 0 auto;
 }
 
-.institutional-nav ul { 
-    list-style: none; 
-    display: flex; 
-    justify-content: center; 
-    gap: 45px; 
-    padding: 0; 
-    margin-bottom: 25px; 
-}
-.institutional-nav a { 
-    text-decoration: none; 
-    color: var(--ink-black); 
-    font-size: 0.95rem; 
-    font-family: 'Source Sans 3', sans-serif; 
-    letter-spacing: 0.1em; 
+/* 4. Masthead (Top Center) */
+.site-header {
+  text-align: center;
+  padding: 120px 0 60px; /* 11. Spacing System */
 }
 
-.nav-separator { border: 0; border-top: 1px solid var(--border-neutral); margin: 0 auto; }
-
-/* 6. Hero Section */
-.hero-portal { text-align: center; padding: 80px 0 40px; max-width: 900px; margin: 0 auto; }
-.inst-label { 
-    font-family: 'Source Sans 3', sans-serif; 
-    font-size: 0.75rem; 
-    letter-spacing: 0.15em; 
-    text-transform: uppercase; 
-    color: #888; 
-    display: block; 
-    margin-bottom: 20px; 
-}
-h1 { 
-    font-family: 'Libre Baskerville', serif; 
-    font-size: 3.2rem; 
-    line-height: 1.15; 
-    margin: 0 0 25px; 
-    color: var(--inst-navy); 
-}
-.tagline { font-style: italic; color: #666; font-size: 1.1rem; }
-
-/* 9. Institutional Pillars with 30px Spacing */
-.pillar-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Restored Spacing */
-    margin-bottom: 100px; 
-}
-.pillar { 
-    padding: 50px 35px; 
-    text-align: center; 
-    text-decoration: none; 
-    color: inherit; 
-    background: #faf9f7; /* Subtle Contrast */
-    border: 1px solid var(--border-neutral); 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    transition: background 0.2s; 
-}
-.pillar:hover { background: #f1eee8; }
-.pillar h3 { font-family: 'Libre Baskerville', serif; font-size: 1.3rem; color: var(--inst-navy); margin-bottom: 15px; }
-.pillar p { font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: #555; }
-.pillar-link { 
-    font-family: 'Source Sans 3', sans-serif; 
-    font-weight: 600; 
-    font-size: 0.85rem; 
-    text-transform: uppercase; 
-    color: var(--inst-navy); 
-    margin-top: 25px; 
+.site-title {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-variant-caps: small-caps;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: #1f2f44;
+  margin-bottom: 20px;
 }
 
-/* 8. Proportional Footer with 120px Emblem */
-footer { 
-    margin-top: auto; 
-    border-top: 1px solid var(--border-neutral); 
-    padding: 40px 0; /* Tightened Padding */
-    background: #fff; 
+/* 5. Navigation */
+.site-nav {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
-.footer-emblem-container { text-align: center; margin-bottom: 30px; }
-.footer-emblem { height: 120px; opacity: 0.85; } /* Reverted Size */
-.footer-content { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    font-size: 0.85rem; 
-    color: #888; 
+
+.site-nav a {
+  text-decoration: none;
+  color: #1c1c1c;
+  padding: 0 10px;
 }
-.footer-nav a { color: #888; text-decoration: none; margin-left: 25px; }
+
+.nav-divider {
+  color: #444; /* Secondary Text */
+}
+
+.site-nav a:hover {
+  border-bottom: 1px solid #1f2f44;
+}
+
+/* 6. Hero Headline */
+.hero {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.hero h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 3.4rem;
+  font-weight: 500;
+  line-height: 1.12;
+  color: #1c1c1c;
+  margin: 0 auto 30px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* 7. Section Headings */
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 4rem; /* 11. Spacing System */
+  color: #1f2f44;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  color: #1f2f44;
+}
+
+/* 8. Body Copy */
+p {
+  margin-bottom: 1.3em;
+}
+
+/* 9. Pillar Navigation (Gateway Content) */
+.pillar-nav {
+  margin-top: 80px;
+  border-top: 1px solid #e6e2dc;
+}
+
+.pillar {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e2dc;
+}
+
+.pillar:hover {
+  background-color: #f1eee8;
+}
+
+.pillar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.pillar p {
+  margin-bottom: 0;
+  color: #444;
+}
+
+/* 10. Footer Colophon */
+.site-footer {
+  text-align: center;
+  padding: 120px 0;
+  border-top: 1px solid #e6e2dc;
+  background: #f7f5f2;
+}
+
+.footer-seal {
+  width: 95px; /* 10. Seal width 90-100px max */
+  height: auto;
+  margin-bottom: 30px;
+  filter: grayscale(100%);
+}
+
+.footer-name {
+  font-variant-caps: small-caps;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: #1f2f44;
+}
+
+.footer-descriptor {
+  font-size: 0.9rem;
+  margin: 6px 0 10px;
+  color: #333;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: #555;
+}
