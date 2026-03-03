@@ -171,13 +171,13 @@ h1 {
 footer {
     margin-top: auto; /* Pushes footer to bottom */
     border-top: 1px solid var(--border-neutral);
-    padding: 80px 0 60px;
+    padding: 60px 0 60px;
     background: #fff;
 }
 
 .footer-emblem-container {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .footer-emblem {
