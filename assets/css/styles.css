@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f7f5f2; /* Soft Paper */
+    background-color: #f7f5f2; /* Soft Paper Background */
     font-family: "Georgia", serif;
     color: #1c1c1c;
     display: flex;
@@ -13,29 +13,70 @@ body {
 
 .main-wrapper {
     max-width: 1000px;
-    width: 90%;
+    width: 92%;
     background: #ffffff;
-    padding: 80px 70px;
+    padding: 60px 70px 80px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
     border-top: 4px solid #1f2f44;
     box-sizing: border-box;
 }
 
-/* Typography */
+/* Top Navigation: Understated Small Caps */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.masthead { display: flex; align-items: center; gap: 15px; }
+.masthead img { height: 42px; }
+.masthead-title { 
+    font-weight: bold; 
+    font-family: 'Libre Baskerville', serif; 
+    color: #0f2742; 
+    font-size: 1.1rem; 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 30px; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #555; 
+    font-size: 0.8rem; 
+    font-family: 'Source Sans 3', sans-serif; 
+    font-variant: small-caps; /* Academic Understatement */
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: #0f2742; }
+
+/* Hero Branding */
+.hero-header { text-align: center; }
+
 h1 {
     font-family: 'Libre Baskerville', serif;
     color: #0f2742;
     font-size: 2.8rem;
     line-height: 1.2;
-    margin: 20px 0;
+    margin: 15px 0;
     font-weight: 600;
 }
 
 .inst-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #888;
+    color: #999;
     font-family: 'Source Sans 3', sans-serif;
 }
 
@@ -44,45 +85,31 @@ h1 {
     font-family: 'Libre Baskerville', serif;
     color: #666;
     font-size: 1.1rem;
-    margin-top: 10px;
 }
 
-/* Institutional Navigation Masthead */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 100px;
-}
-
-.masthead { display: flex; align-items: center; gap: 15px; }
-.masthead img { height: 50px; }
-.masthead-title { font-weight: bold; font-family: 'Libre Baskerville', serif; color: #0f2742; font-size: 1.2rem; }
-
-nav ul { list-style: none; display: flex; gap: 25px; padding: 0; }
-nav a { text-decoration: none; color: #1f2f44; font-size: 0.9rem; font-family: 'Source Sans 3', sans-serif; font-weight: 500; }
-
-/* The Pillar Navigation Grid */
+/* Navigation Pillar Grid */
 .pillar-nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 35px;
     margin-top: 80px;
 }
 
 .pillar {
     border: 1px solid #e6e2dc;
-    padding: 40px 30px;
+    padding: 45px 30px;
     text-align: center;
-    text-decoration: none; /* Removes link underline */
-    transition: all 0.2s ease;
-    display: block;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pillar h3 {
     font-family: 'Libre Baskerville', serif;
     color: #0f2742;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-top: 0;
     margin-bottom: 15px;
 }
@@ -90,9 +117,18 @@ nav a { text-decoration: none; color: #1f2f44; font-size: 0.9rem; font-family: '
 .pillar p {
     font-family: 'Source Sans 3', sans-serif;
     color: #666;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.pillar-link {
+    font-size: 0.75rem;
+    font-family: 'Source Sans 3', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #0f2742;
+    font-weight: 600;
 }
 
 .pillar:hover {
@@ -106,9 +142,9 @@ footer {
     text-align: center;
     border-top: 1px solid #eee;
     padding-top: 40px;
-    font-size: 0.85rem;
-    color: #999;
+    font-size: 0.8rem;
+    color: #aaa;
 }
 
-.footer-links a { color: #888; text-decoration: none; margin: 0 10px; }
-.footer-links a:hover { text-decoration: underline; }
+.footer-links a { color: #999; text-decoration: none; margin: 0 12px; }
+.footer-links a:hover { color: #0f2742; }
