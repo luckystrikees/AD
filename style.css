@@ -1,0 +1,97 @@
+/* Step 1: Soft Paper Background */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f2;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1c1c1c;
+}
+
+/* Step 3 & 5: The Journal Card */
+.main-wrapper {
+    max-width: 960px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 80px 70px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid #1f2f44;
+    box-sizing: border-box;
+}
+
+/* Step 4: Typography */
+h1, h2, h3 {
+    letter-spacing: 0.02em;
+    color: #0f2742;
+    font-family: 'Libre Baskerville', serif;
+}
+
+h1 { font-size: 2.6rem; line-height: 1.2; margin-bottom: 15px; }
+h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 50px; }
+
+p {
+    line-height: 1.75;
+    font-size: 1.05rem;
+    color: #1c1c1c;
+    margin-bottom: 1.5em;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.masthead { display: flex; align-items: center; gap: 15px; }
+.masthead img { height: 45px; }
+.masthead-title { font-weight: bold; font-size: 1.2rem; color: #0f2742; }
+
+nav ul { list-style: none; display: flex; gap: 25px; padding: 0; }
+nav a { text-decoration: none; color: #1f2f44; font-size: 0.9rem; font-family: 'Source Sans 3', sans-serif; }
+nav a:hover { text-decoration: underline; }
+
+/* Header Elements */
+.hero-header { text-align: center; margin-bottom: 80px; }
+.inst-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; display: block; margin-bottom: 10px; }
+.tagline { font-style: italic; color: #666; margin-top: 20px; }
+
+/* Layout Grid */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.resource-card {
+    padding: 25px;
+    background: #fafafa;
+    border: 1px solid #efefef;
+}
+
+.paper {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.status {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    font-weight: bold;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+footer a { color: #999; text-decoration: none; margin: 0 10px; }
