@@ -1,0 +1,114 @@
+/* Step 1: Institutional Foundation */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f2; /* Soft Paper to reduce glare */
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1c1c1c;
+    line-height: 1.75;
+}
+
+/* Step 2: The Printed Folio Wrapper */
+.main-wrapper {
+    max-width: 960px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 80px 70px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid #1f2f44; /* Institutional Navy */
+    box-sizing: border-box;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', serif;
+    color: #0f2742;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+}
+
+h1 { font-size: 2.6rem; margin-top: 0; margin-bottom: 20px; line-height: 1.2; }
+h2 { border-bottom: 1px solid #eee; padding-bottom: 12px; margin-top: 60px; }
+h3 { font-size: 1.2rem; margin-top: 0; }
+
+p { font-size: 1.05rem; margin-bottom: 1.5em; color: #222; }
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.masthead { display: flex; align-items: center; gap: 15px; }
+.masthead img { height: 48px; }
+.masthead-title { font-weight: bold; font-size: 1.2rem; color: #0f2742; font-family: 'Libre Baskerville', serif; }
+
+nav ul { list-style: none; display: flex; gap: 25px; padding: 0; margin: 0; }
+nav a { text-decoration: none; color: #1f2f44; font-size: 0.9rem; font-family: 'Source Sans 3', sans-serif; font-weight: 500; }
+nav a:hover { text-decoration: underline; }
+
+/* Hero Branding */
+.hero-header { text-align: center; margin-bottom: 80px; }
+.inst-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #888; display: block; margin-bottom: 15px; }
+.tagline { font-style: italic; color: #666; font-family: 'Libre Baskerville', serif; margin-top: 25px; }
+.subtitle { font-size: 1.2rem; color: #444; max-width: 700px; margin: 0 auto; }
+
+/* Grid & Content Cards */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.paper {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.status {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    font-weight: bold;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Expanded Resource Block */
+.citation-block {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: calc(100% + 140px); /* Extends across the folio padding */
+    margin-left: -70px;
+    padding: 70px 0;
+}
+
+.citation-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.resource-card {
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 50px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+footer a { color: #888; text-decoration: none; margin: 0 10px; }
