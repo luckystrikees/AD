@@ -1,20 +1,19 @@
-/* 7. Background Strategy & 10. Visual Language Rules */
+/* 7. Background Strategy & 10. Visual Rules */
 :root {
     --bg-ivory: #f7f5f2;
     --ink-black: #1c1c1c;
     --inst-navy: #0f2742;
     --border-neutral: #e6e2dc;
-    --text-muted: #666;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-ivory);
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: 18px; /* 4. Global Scale */
+    font-family: "Georgia", serif;
+    font-size: 18px; /* 4. Minimum 18px Global Scale */
+    line-height: 1.8;
     color: var(--ink-black);
-    line-height: 1.8; /* 4. Typographic Discipline */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -24,10 +23,10 @@ body {
     box-shadow: none !important;
 }
 
-/* 3. Header Styling */
+/* 3. Centered Masthead Model */
 .masthead-container {
     text-align: center;
-    padding: 80px 20px 20px;
+    padding: 80px 20px 0;
 }
 
 .wordmark {
@@ -36,23 +35,23 @@ body {
     text-transform: uppercase;
     color: var(--inst-navy);
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-/* 5. Navigation Styling: Small Caps Understatement */
+/* 5. Navigation Styling */
 .institutional-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 45px;
     padding: 0;
-    margin-bottom: 25px;
+    margin: 0 0 25px 0;
 }
 
 .institutional-nav a {
     text-decoration: none;
     color: var(--ink-black);
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* 5. Medium Weight Nav */
     font-weight: 500;
     letter-spacing: 0.1em;
     font-family: 'Source Sans 3', sans-serif;
@@ -64,15 +63,15 @@ body {
 
 .nav-separator {
     border: 0;
-    border-top: 1px solid var(--border-neutral);
+    border-top: 1px solid var(--border-neutral); /* 7. Thin 1px Rule */
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* 6. Hero Section Styling */
+/* 6. Hero Section */
 .hero-portal {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 100px 20px 40px;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -82,32 +81,27 @@ body {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: #888;
     display: block;
     margin-bottom: 20px;
 }
 
 h1 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 3.2rem; /* 6. Headline Scale */
+    font-size: 3.2rem; /* 6. Large Headline */
     line-height: 1.15;
     font-weight: 500;
-    margin: 0 0 30px;
-}
-
-.hero-subheading {
-    font-size: 1.15rem;
-    color: #444;
-    max-width: 700px;
-    margin: 0 auto 20px;
+    margin: 0 0 25px;
+    color: var(--inst-navy);
 }
 
 .tagline {
     font-style: italic;
-    color: var(--text-muted);
+    color: #666;
+    font-size: 1.1rem;
 }
 
-/* 9. Institutional Pillars: Architectural Grid */
+/* 9. Institutional Pillars (Architectural Blocks) */
 .pillar-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -124,6 +118,9 @@ h1 {
     color: inherit;
     border-right: 1px solid var(--border-neutral);
     transition: background 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pillar:last-child {
@@ -131,13 +128,14 @@ h1 {
 }
 
 .pillar:hover {
-    background: #f1eee8;
+    background: #f1eee8; /* Subtle background contrast */
 }
 
 .pillar h3 {
+    font-family: 'Libre Baskerville', serif;
     font-size: 1.3rem;
     color: var(--inst-navy);
-    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .pillar p {
@@ -145,9 +143,10 @@ h1 {
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 30px;
+    line-height: 1.6;
 }
 
-.text-link {
+.pillar-link {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
     font-size: 0.85rem;
@@ -159,7 +158,7 @@ h1 {
 /* 8. Minimal Footer */
 footer {
     border-top: 1px solid var(--border-neutral);
-    padding: 60px 20px;
+    padding: 80px 20px;
     background: #fff;
 }
 
@@ -170,15 +169,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: #888;
 }
 
 .footer-nav a {
-    color: var(--text-muted);
+    color: #888;
     text-decoration: none;
     margin-left: 25px;
-}
-
-.footer-nav a:hover {
-    color: var(--inst-navy);
 }
