@@ -103,3 +103,55 @@
 .footer-copyright {
   font-size: 0.75rem;
 }
+/* =========================================
+   11. LONG-FORM ARTICLE LAYOUT (Framework)
+========================================= */
+
+/* Slightly tighter top padding for internal pages compared to the homepage */
+.framework-hero {
+  padding: 80px 0 20px; 
+}
+
+/* Ensures the text column sits in the middle of the screen */
+.article-content {
+  max-width: 740px;
+  margin: 0 auto 100px;
+  padding: 0 25px;
+}
+
+/* Standard paragraph styling for deep reading */
+.article-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2b2b2b;
+  margin-bottom: 1.8em;
+}
+
+/* Styling the Roman Numeral Headers */
+.article-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1f2f44;
+  margin-top: 3em;      /* Heavy space above to separate sections */
+  margin-bottom: 0.8em; /* Tight space below to connect to text */
+  font-variant-caps: small-caps; /* Gives it that academic prestige */
+  letter-spacing: 0.03em;
+}
+
+/* The opening abstract/summary */
+.abstract-text {
+  font-size: 1.2rem !important;
+  font-style: italic;
+  line-height: 1.7 !important;
+  color: #444 !important;
+  text-align: center;
+  margin-bottom: 2em !important;
+}
+
+/* A subtle horizontal line to separate the abstract from the body */
+.article-divider {
+  border: 0;
+  border-top: 1px solid #d1cdc7;
+  width: 60px;
+  margin: 40px auto;
+}
