@@ -276,41 +276,41 @@ header nav a + a:before {
   margin: 50px auto;
 }
 
-
-/* -------------------------------------------------
-   10. FOOTER
-------------------------------------------------- */
+/* =========================================
+   FOOTER
+========================================= */
 
 .site-footer {
   text-align: center;
-  padding: 45px 0 60px;
+  padding-top: 10px !important;
+  padding-bottom: 30px;
   border-top: 1px solid #e6e2dc;
+  background: #f7f5f2;
 }
 
 .footer-seal {
-  max-width: 72px;
-  margin-bottom: 12px;
+  max-width: 70px;
+  margin: 6px 0 6px 0;   /* equal top and bottom spacing */
   filter: grayscale(100%);
 }
 
 .footer-name {
   font-variant-caps: small-caps;
   font-size: 1rem;
-  letter-spacing: .04em;
+  margin: 0;            /* removes extra spacing */
+  line-height: 1.2;     /* prevents vertical expansion */
 }
 
 .footer-descriptor {
-  font-size: .86rem;
-  margin: 4px 0 6px;
+  font-size: 0.85rem;
+  margin: 2px 0 5px;
 }
 
 .footer-copyright {
-  font-size: .75rem;
-  color: #444;
+  font-size: 0.75rem;
 }
 
-
-/* -------------------------------------------------
+/* ------------------------------------------------- 
    11. MOBILE
 ------------------------------------------------- */
 
