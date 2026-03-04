@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In | Autistic Scholars</title>
+    
+    <!-- Load EB Garamond Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Link to your main style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* --- Custom Styles for Login Page Structure --- */
+
+        /* Center the entire form container on the page */
+        .login-container {
+            max-width: 400px;
+            margin: 150px auto 100px auto; /* Pushes content down from the header */
+            padding: 50px 30px;
+            background-color: #ffffff; /* White card background for focus */
+            border: 1px solid #e6e2dc; /* Matches pillar border */
+        }
+
+        /* Title mimics the site title style */
+        .login-title {
+            font-family: 'EB Garamond', serif;
+            font-weight: 500;
+            font-variant-caps: small-caps;
+            font-size: 1.6rem;
+            letter-spacing: 0.04em;
+            color: #1f2f44;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Form element styling using site colors and no-radius rule */
+        .login-form label {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #444;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            font-family: 'EB Garamond', serif;
+            font-size: 1rem;
+            color: #1c1c1c;
+            border: 1px solid #d1cdc7; /* Subtle border */
+            background-color: #fcfcfc; /* Off-white input background */
+            /* Inherits no border-radius/box-shadow from global * selector */
+        }
+        
+        /* The "CTA Button" Replacement: A strong, bordered link */
+        .login-submit {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px 0;
+            
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff; /* White text */
+            background-color: #1f2f44; /* Dark blue background */
+            border: 1px solid #1f2f44; /* Solid border */
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .login-submit:hover {
+            background-color: #f7f5f2; /* Invert colors on hover */
+            color: #1f2f44;
+            border-color: #1f2f44;
+        }
+
+        /* Small utility links at the bottom */
+        .login-utility {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        .login-utility a {
+            color: #444;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .login-utility span {
+            margin: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Replicating the site header structure -->
+    <header class="site-header">
+        <div class="site-title">Autistic Scholars</div>
+        
+        <nav class="site-nav">
+            <!-- Navigation adjusted for login context -->
+            <a href="index.html">Home</a>
+            <span class="nav-divider">·</span>
+            <a href="framework.html">Framework</a>
+            <span class="nav-divider">·</span>
+            <a href="research.html">Research</a>
+        </nav>
+        <hr class="nav-rule">
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2 class="login-title">Log In to Secure Portal</h2>
+
+            <form class="login-form" action="/login" method="POST">
+                
+                <label for="username">Username / ID</label>
+                <input type="text" id="username" name="username" placeholder="Enter Scholar ID" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                
+                <button type="submit" class="login-submit">Access Portal</button>
+            </form>
+
+            <div class="login-utility">
+                <a href="#">Forgot ID?</a> 
+                <span>|</span> 
+                <a href="#">Request Access</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer to maintain visual consistency -->
+    <footer class="site-footer">
+        <div class="footer-seal-wrap">
+            <img src="assets/images/emblem.png" alt="Institutional Seal" class="footer-seal">
+        </div>
+        <div class="footer-name">Autistic Scholars</div>
+        <div class="footer-descriptor">An Independent Research Initiative</div>
+        <div class="footer-copyright">© 2026</div>
+    </footer>
+
+</body>
+</html>
