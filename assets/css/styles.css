@@ -1,7 +1,34 @@
-/* 4. Masthead - Restored top space (100px) */
+/* =========================================
+   1. BASE SETUP & BANNED ELEMENTS (Applied Everywhere)
+========================================= */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  background-color: #f7f5f2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem; /* 18px */
+  line-height: 1.75;
+  color: #1c1c1c;
+  background-color: #f7f5f2;
+  text-align: left;
+}
+
+/* =========================================
+   2. MASTHEAD & NAVIGATION STYLING (Applied to BOTH Pages)
+========================================= */
 .site-header {
   text-align: center;
-  padding: 100px 0 0; 
+  padding: 100px 0 0; /* Restored top space */
 }
 
 .site-title {
@@ -14,7 +41,7 @@
   margin-bottom: 20px;
 }
 
-/* 5. Navigation Row */
+/* Styles for the Home Page Nav (.site-nav) */
 .site-nav {
   font-family: 'EB Garamond', serif;
   font-size: 0.95rem;
@@ -23,18 +50,60 @@
   margin-bottom: 25px;
 }
 
-/* 6. Hero Headline - Balanced Spacing */
-.hero {
-  text-align: center;
-  padding: 80px 0 60px; /* Increased top padding to push content down */
+.site-nav a {
+  text-decoration: none;
+  color: #1c1c1c;
+  padding: 0 10px;
 }
 
-.hero h1 {
-  font-size: 3.2rem;
-  font-weight: 500;
-  line-height: 1.1;
-  margin-bottom: 25px;
+.nav-divider { color: #444; }
+
+.site-nav a:hover {
+  opacity: 0.7; /* Cleaner hover effect */
 }
+
+.nav-rule {
+  border: 0;
+  border-top: 1px solid #e6e2dc;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* UNIVERSAL NAV FIX: Apply styles to any simple <nav> as well (for Framework page) */
+header nav {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #1c1c1c;
+    padding: 0 10px;
+}
+
+header nav a:hover {
+    opacity: 0.7;
+}
+
+/* Injects the dot divider into the generic nav structure */
+header nav a + a:before {
+    content: "·";
+    color: #444;
+    padding: 0 10px;
+}
+
+/* =========================================
+   3. HOME PAGE CONTENT (Pillars)
+========================================= */
+.hero {
+  text-align: center;
+  padding: 80px 0 60px;
+}
+/* ... (Rest of Pillar/Footer styles as before) ... */
+/* IMPORTANT: You must include ALL the rest of the code from the previous comprehensive update here */
 
 /* 9. Institutional Pillars - Forced Horizontal Grid */
 .pillar-container {
@@ -45,37 +114,15 @@
 
 .pillar-grid {
     display: grid;
-    /* This forces the 3-column layout back */
     grid-template-columns: repeat(3, 1fr); 
     gap: 25px; 
 }
 
-.pillar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically in the box */
-    text-decoration: none;
-    color: inherit;
-    padding: 40px 25px;
-    border: 1px solid #e6e2dc;
-    background: #ffffff;
-    text-align: center;
-    min-height: 250px; /* Ensures all boxes are the same height */
-}
+/* ... (Rest of Pillar styles) ... */
 
-.pillar h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    color: #1f2f44;
-}
-
-.pillar p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* 10. Footer - Minimized Spacing */
+/* =========================================
+   10. FOOTER (Minimized Spacing - Applied Everywhere)
+========================================= */
 .site-footer {
   text-align: center;
   padding-top: 20px !important; 
@@ -84,7 +131,7 @@
 }
 
 .footer-seal {
-  max-width: 70px; /* Slightly smaller for tighter look */
+  max-width: 70px;
   margin-bottom: 8px !important; 
   filter: grayscale(100%);
 }
@@ -97,29 +144,26 @@
 
 .footer-descriptor {
   font-size: 0.85rem;
-  margin: 2px 0 5px; /* Tightened text spacing */
+  margin: 2px 0 5px;
 }
 
 .footer-copyright {
   font-size: 0.75rem;
 }
+
 /* =========================================
    11. LONG-FORM ARTICLE LAYOUT (Framework)
 ========================================= */
-
-/* Slightly tighter top padding for internal pages compared to the homepage */
 .framework-hero {
   padding: 80px 0 20px; 
 }
 
-/* Ensures the text column sits in the middle of the screen */
 .article-content {
   max-width: 740px;
   margin: 0 auto 100px;
   padding: 0 25px;
 }
 
-/* Standard paragraph styling for deep reading */
 .article-content p {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -127,38 +171,28 @@
   margin-bottom: 1.8em;
 }
 
-/* Styling the Roman Numeral Headers */
 .article-content h3 {
   font-size: 1.25rem;
   font-weight: 500;
   color: #1f2f44;
-  margin-top: 3em;      /* Heavy space above to separate sections */
-  margin-bottom: 0.8em; /* Tight space below to connect to text */
-  font-variant-caps: small-caps; /* Gives it that academic prestige */
+  margin-top: 3em;
+  margin-bottom: 0.8em;
+  font-variant-caps: small-caps;
   letter-spacing: 0.03em;
 }
 
-/* The opening abstract/summary */
 .abstract-text {
-  /* 1. Box Control: Center the container */
-  max-width: 600px;      /* Keeps the abstract narrower than the main text */
+  max-width: 600px;
   margin: 0 auto 3em auto;
-  
-  /* 2. Text Formatting */
-  text-align: justify;   /* Forced justification */
-  text-indent: 2em;      /* Traditional first-line paragraph indent */
-  
-  /* 3. Typography refinements for readability */
+  text-align: justify;
+  text-indent: 2em;
   font-style: italic;
   font-size: 1.05rem;
   line-height: 1.7;
   color: #444;
-  
-  /* 4. Pro-tip for clean justification */
-  hyphens: auto;         /* Prevents large 'rivers' of whitespace between words */
+  hyphens: auto;
 }
 
-/* A subtle horizontal line to separate the abstract from the body */
 .article-divider {
   border: 0;
   border-top: 1px solid #d1cdc7;
