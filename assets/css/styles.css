@@ -78,14 +78,14 @@
 /* 10. Footer - Minimized Spacing */
 .site-footer {
   text-align: center;
-  padding: 40px 0 30px; /* Drastically reduced from 120px */
+  padding-top: 20px !important; 
   border-top: 1px solid #e6e2dc;
   background: #f7f5f2;
 }
 
 .footer-seal {
   max-width: 70px; /* Slightly smaller for tighter look */
-  margin-bottom: 15px; /* Reduced gap */
+  margin-bottom: 8px !important; 
   filter: grayscale(100%);
 }
 
