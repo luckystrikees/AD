@@ -1,11 +1,12 @@
 /* =================================================
-   FINAL UNABRIDGED STYLESHEET
-   Contains all styles for Home (Pillars) and Framework (Article) pages.
+   AUTISTIC SCHOLARS — MASTER STYLESHEET
 ================================================= */
 
+
 /* -------------------------------------------------
-   1. BASE SETUP & BANNED ELEMENTS (Applied Everywhere)
+   1. BASE SETUP
 ------------------------------------------------- */
+
 * {
   box-sizing: border-box;
   border-radius: 0 !important;
@@ -24,95 +25,98 @@ body {
   line-height: 1.75;
   color: #1c1c1c;
   background-color: #f7f5f2;
-  text-align: left;
 }
 
-/* General Link Styling (Removes default browser blue/purple) */
+/* Links */
+
 a {
   color: #1c1c1c;
   text-decoration: none;
 }
 
-/* =================================================
-   2. MASTHEAD & NAVIGATION STYLING (For Both Pages)
-================================================= */
+a:hover {
+  opacity: .75;
+}
+
+
+/* -------------------------------------------------
+   2. GLOBAL CONTAINERS
+------------------------------------------------- */
+
+.content {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.wide-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+
+/* -------------------------------------------------
+   3. HEADER / MASTHEAD
+------------------------------------------------- */
+
 .site-header {
   text-align: center;
-  padding: 100px 0 0; 
+  padding: 100px 0 0;
 }
 
 .site-title {
-  font-family: 'EB Garamond', serif;
   font-weight: 500;
   font-variant-caps: small-caps;
   font-size: 2rem;
-  letter-spacing: 0.04em;
+  letter-spacing: .05em;
   color: #1f2f44;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* Home Page Nav Styling (.site-nav) */
-.site-nav {
-  font-family: 'EB Garamond', serif;
-  font-size: 0.95rem;
+
+/* -------------------------------------------------
+   4. NAVIGATION
+------------------------------------------------- */
+
+.site-nav,
+header nav {
+  font-size: .95rem;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin-bottom: 25px;
+  letter-spacing: .12em;
+  margin-bottom: 28px;
 }
 
-.site-nav a {
-  padding: 0 10px;
+.site-nav a,
+header nav a {
+  padding: 0 12px;
 }
 
-.nav-divider { 
-    color: #444; 
-}
-
-.site-nav a:hover {
-  opacity: 0.7;
+header nav a + a:before {
+  content: "·";
+  color: #444;
+  padding-right: 12px;
 }
 
 .nav-rule {
   border: 0;
   border-top: 1px solid #e6e2dc;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* Universal Nav Fix: Apply styles to any simple <nav> (for Framework page) */
-header nav {
-    font-family: 'EB Garamond', serif;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    margin-bottom: 25px;
-}
 
-header nav a {
-    padding: 0 10px;
-}
+/* -------------------------------------------------
+   5. HERO SECTION
+------------------------------------------------- */
 
-header nav a:hover {
-    opacity: 0.7;
-}
-
-/* Injects the dot divider manually between links in the generic nav */
-header nav a + a:before {
-    content: "·";
-    color: #444;
-    padding: 0 10px;
-}
-
-/* =========================================
-   3. HOME PAGE HERO & PILLARS
-========================================= */
 .hero {
   text-align: center;
-  padding: 80px 0 60px;
+  padding: 90px 0 70px;
 }
 
 .hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.3rem;
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 25px;
@@ -120,127 +124,147 @@ header nav a + a:before {
 
 .tagline {
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #444;
 }
 
-/* 9. Institutional Pillars - Forced Horizontal Grid */
+
+/* -------------------------------------------------
+   6. INSTITUTIONAL PILLARS
+------------------------------------------------- */
+
 .pillar-container {
-    max-width: 1100px;
-    margin: 0 auto 80px;
-    padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto 90px;
+  padding: 0 20px;
 }
 
 .pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .pillar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    padding: 40px 25px;
-    border: 1px solid #e6e2dc;
-    background: #ffffff;
-    text-align: center;
-    min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 28px;
+  border: 1px solid #e6e2dc;
+  background: #ffffff;
+  text-align: center;
+  min-height: 260px;
 }
 
-.pillar:hover { background: #f1eee8; }
+.pillar:hover {
+  background: #f1eee8;
+}
 
 .pillar h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    color: #1f2f44;
+  font-size: 1.28rem;
+  margin-bottom: 16px;
+  color: #1f2f44;
 }
 
 .pillar p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+  font-size: .97rem;
+  line-height: 1.55;
+  margin-bottom: 20px;
 }
 
 .pillar-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #1f2f44;
+  font-size: .82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #1f2f44;
 }
 
-/* =========================================
-   4. FOOTER STYLING (Applied Everywhere)
-========================================= */
-.site-footer {
+
+/* -------------------------------------------------
+   7. CARD COMPONENT
+------------------------------------------------- */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e6e2dc;
+  padding: 45px 35px;
+}
+
+
+/* -------------------------------------------------
+   8. PRIMARY BUTTON
+------------------------------------------------- */
+
+.button-primary {
+  display: block;
+  width: 100%;
   text-align: center;
-  padding-top: 20px !important; 
-  border-top: 1px solid #e6e2dc;
-  background: #f7f5f2;
+  margin-top: 30px;
+  padding: 15px 0;
+
+  font-size: .9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+
+  color: #ffffff;
+  background-color: #1f2f44;
+  border: 1px solid #1f2f44;
+
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
 }
 
-.footer-seal {
-  max-width: 70px; 
-  margin-bottom: 8px !important; 
-  filter: grayscale(100%);
+.button-primary:hover {
+  background-color: #f7f5f2;
+  color: #1f2f44;
 }
 
-.footer-name {
-  font-variant-caps: small-caps;
-  font-size: 1rem;
-  margin-bottom: 0;
-}
 
-.footer-descriptor {
-  font-size: 0.85rem;
-  margin: 2px 0 5px;
-}
+/* -------------------------------------------------
+   9. ARTICLE / FRAMEWORK PAGE
+------------------------------------------------- */
 
-.footer-copyright {
-  font-size: 0.75rem;
-}
-
-/* =========================================
-   5. LONG-FORM ARTICLE LAYOUT (Framework Page)
-========================================= */
 .framework-hero {
-  padding: 80px 0 20px; 
+  padding: 85px 0 25px;
 }
 
 .article-content {
   max-width: 740px;
-  margin: 0 auto 100px;
+  margin: 0 auto 110px;
   padding: 0 25px;
 }
 
 .article-content p {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.07rem;
+  line-height: 1.82;
   color: #2b2b2b;
-  margin-bottom: 1.8em;
+  margin-bottom: 1.9em;
 }
 
 .article-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 500;
   color: #1f2f44;
-  margin-top: 3em;
-  margin-bottom: 0.8em;
+
+  margin-top: 3.2em;
+  margin-bottom: .8em;
+
   font-variant-caps: small-caps;
-  letter-spacing: 0.03em;
+  letter-spacing: .04em;
 }
 
 .abstract-text {
   max-width: 600px;
-  margin: 0 auto 3em auto;
+  margin: 0 auto 3em;
   text-align: justify;
   text-indent: 2em;
+
   font-style: italic;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.75;
+
   color: #444;
   hyphens: auto;
 }
@@ -248,11 +272,65 @@ header nav a + a:before {
 .article-divider {
   border: 0;
   border-top: 1px solid #d1cdc7;
-  width: 60px;
-  margin: 40px auto;
+  width: 70px;
+  margin: 50px auto;
 }
 
-.login-container {
-    max-width: 400px;
-    margin: 110px auto 100px auto;
+
+/* -------------------------------------------------
+   10. FOOTER
+------------------------------------------------- */
+
+.site-footer {
+  text-align: center;
+  padding: 45px 0 60px;
+  border-top: 1px solid #e6e2dc;
+}
+
+.footer-seal {
+  max-width: 72px;
+  margin-bottom: 12px;
+  filter: grayscale(100%);
+}
+
+.footer-name {
+  font-variant-caps: small-caps;
+  font-size: 1rem;
+  letter-spacing: .04em;
+}
+
+.footer-descriptor {
+  font-size: .86rem;
+  margin: 4px 0 6px;
+}
+
+.footer-copyright {
+  font-size: .75rem;
+  color: #444;
+}
+
+
+/* -------------------------------------------------
+   11. MOBILE
+------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .pillar-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .site-header {
+    padding-top: 70px;
+  }
+
+  .card {
+    padding: 40px 25px;
+  }
+
 }
