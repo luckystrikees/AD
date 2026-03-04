@@ -1,9 +1,7 @@
-/* --- TIGHTENED SPACING UPDATES --- */
-
-/* 4. Masthead - Reduced top padding from 120px to 60px */
+/* 4. Masthead - Restored top space (100px) */
 .site-header {
   text-align: center;
-  padding: 60px 0 0; 
+  padding: 100px 0 0; 
 }
 
 .site-title {
@@ -13,7 +11,7 @@
   font-size: 2rem;
   letter-spacing: 0.04em;
   color: #1f2f44;
-  margin-bottom: 15px; /* Reduced from 25px */
+  margin-bottom: 20px;
 }
 
 /* 5. Navigation Row */
@@ -22,60 +20,86 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin-bottom: 20px; /* Reduced from 25px */
+  margin-bottom: 25px;
 }
 
-/* 6. Hero Headline - Reduced padding from 120px/80px to 60px/40px */
+/* 6. Hero Headline - Balanced Spacing */
 .hero {
   text-align: center;
-  padding: 60px 0 40px;
+  padding: 80px 0 60px; /* Increased top padding to push content down */
 }
 
 .hero h1 {
-  font-family: 'EB Garamond', serif;
-  font-size: 3rem; /* Slightly smaller to feel more contained */
+  font-size: 3.2rem;
   font-weight: 500;
-  line-height: 1.12;
-  color: #1c1c1c;
-  margin-bottom: 20px; /* Reduced from 30px */
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 
-/* 9. Institutional Pillars - Reduced internal padding and bottom margin */
+/* 9. Institutional Pillars - Forced Horizontal Grid */
 .pillar-container {
     max-width: 1100px;
-    margin: 0 auto 60px; /* Reduced bottom margin from 120px to 60px */
-    padding: 0 40px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.pillar-grid {
+    display: grid;
+    /* This forces the 3-column layout back */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
 }
 
 .pillar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; /* Centers content vertically in the box */
     text-decoration: none;
     color: inherit;
-    padding: 30px 25px; /* Reduced from 50px 35px */
+    padding: 40px 25px;
     border: 1px solid #e6e2dc;
     background: #ffffff;
-    transition: background 0.2s ease;
     text-align: center;
+    min-height: 250px; /* Ensures all boxes are the same height */
 }
 
-/* 10. Footer Colophon - Tightened significantly */
+.pillar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #1f2f44;
+}
+
+.pillar p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* 10. Footer - Minimized Spacing */
 .site-footer {
   text-align: center;
-  padding: 60px 0; /* Cut in half from 120px */
+  padding: 40px 0 30px; /* Drastically reduced from 120px */
   border-top: 1px solid #e6e2dc;
   background: #f7f5f2;
 }
 
 .footer-seal {
-  max-width: 80px; /* Slightly smaller seal */
-  margin-bottom: 20px; /* Cut in half from 40px */
+  max-width: 70px; /* Slightly smaller for tighter look */
+  margin-bottom: 15px; /* Reduced gap */
   filter: grayscale(100%);
 }
 
+.footer-name {
+  font-variant-caps: small-caps;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
 .footer-descriptor {
-  font-size: 0.9rem;
-  margin: 4px 0 8px; /* Tightened margins */
-  color: #333;
+  font-size: 0.85rem;
+  margin: 2px 0 5px; /* Tightened text spacing */
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
 }
