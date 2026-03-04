@@ -1,10 +1,15 @@
-/* =========================================
+/* =================================================
+   FINAL UNABRIDGED STYLESHEET
+   Contains all styles for Home (Pillars) and Framework (Article) pages.
+================================================= */
+
+/* -------------------------------------------------
    1. BASE SETUP & BANNED ELEMENTS (Applied Everywhere)
-========================================= */
+------------------------------------------------- */
 * {
+  box-sizing: border-box;
   border-radius: 0 !important;
   box-shadow: none !important;
-  box-sizing: border-box;
 }
 
 html {
@@ -16,19 +21,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'EB Garamond', serif;
-  font-size: 1rem; /* 18px */
   line-height: 1.75;
   color: #1c1c1c;
   background-color: #f7f5f2;
   text-align: left;
 }
 
-/* =========================================
-   2. MASTHEAD & NAVIGATION STYLING (Applied to BOTH Pages)
-========================================= */
+/* General Link Styling (Removes default browser blue/purple) */
+a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+/* =================================================
+   2. MASTHEAD & NAVIGATION STYLING (For Both Pages)
+================================================= */
 .site-header {
   text-align: center;
-  padding: 100px 0 0; /* Restored top space */
+  padding: 100px 0 0; 
 }
 
 .site-title {
@@ -41,7 +51,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Styles for the Home Page Nav (.site-nav) */
+/* Home Page Nav Styling (.site-nav) */
 .site-nav {
   font-family: 'EB Garamond', serif;
   font-size: 0.95rem;
@@ -51,15 +61,15 @@ body {
 }
 
 .site-nav a {
-  text-decoration: none;
-  color: #1c1c1c;
   padding: 0 10px;
 }
 
-.nav-divider { color: #444; }
+.nav-divider { 
+    color: #444; 
+}
 
 .site-nav a:hover {
-  opacity: 0.7; /* Cleaner hover effect */
+  opacity: 0.7;
 }
 
 .nav-rule {
@@ -69,7 +79,7 @@ body {
   margin: 0 auto;
 }
 
-/* UNIVERSAL NAV FIX: Apply styles to any simple <nav> as well (for Framework page) */
+/* Universal Nav Fix: Apply styles to any simple <nav> (for Framework page) */
 header nav {
     font-family: 'EB Garamond', serif;
     font-size: 0.95rem;
@@ -79,8 +89,6 @@ header nav {
 }
 
 header nav a {
-    text-decoration: none;
-    color: #1c1c1c;
     padding: 0 10px;
 }
 
@@ -88,7 +96,7 @@ header nav a:hover {
     opacity: 0.7;
 }
 
-/* Injects the dot divider into the generic nav structure */
+/* Injects the dot divider manually between links in the generic nav */
 header nav a + a:before {
     content: "·";
     color: #444;
@@ -96,14 +104,25 @@ header nav a + a:before {
 }
 
 /* =========================================
-   3. HOME PAGE CONTENT (Pillars)
+   3. HOME PAGE HERO & PILLARS
 ========================================= */
 .hero {
   text-align: center;
   padding: 80px 0 60px;
 }
-/* ... (Rest of Pillar/Footer styles as before) ... */
-/* IMPORTANT: You must include ALL the rest of the code from the previous comprehensive update here */
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+}
 
 /* 9. Institutional Pillars - Forced Horizontal Grid */
 .pillar-container {
@@ -118,10 +137,43 @@ header nav a + a:before {
     gap: 25px; 
 }
 
-/* ... (Rest of Pillar styles) ... */
+.pillar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 40px 25px;
+    border: 1px solid #e6e2dc;
+    background: #ffffff;
+    text-align: center;
+    min-height: 250px;
+}
+
+.pillar:hover { background: #f1eee8; }
+
+.pillar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #1f2f44;
+}
+
+.pillar p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.pillar-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2f44;
+}
 
 /* =========================================
-   10. FOOTER (Minimized Spacing - Applied Everywhere)
+   4. FOOTER STYLING (Applied Everywhere)
 ========================================= */
 .site-footer {
   text-align: center;
@@ -131,7 +183,7 @@ header nav a + a:before {
 }
 
 .footer-seal {
-  max-width: 70px;
+  max-width: 70px; 
   margin-bottom: 8px !important; 
   filter: grayscale(100%);
 }
@@ -152,7 +204,7 @@ header nav a + a:before {
 }
 
 /* =========================================
-   11. LONG-FORM ARTICLE LAYOUT (Framework)
+   5. LONG-FORM ARTICLE LAYOUT (Framework Page)
 ========================================= */
 .framework-hero {
   padding: 80px 0 20px; 
