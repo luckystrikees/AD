@@ -301,50 +301,58 @@ a:focus,
 }
 
 /* -------------------------------------------------
-   9. ARTICLE / FRAMEWORK PAGE
+   9. ARTICLE / FRAMEWORK PAGE (UPDATED)
 ------------------------------------------------- */
 .framework-hero {
   padding: 85px 0 55px;
 }
 
 .article-content {
-  max-width: 740px;
-  margin: 0 auto 110px;
-  padding: 0 25px;
+  /* Creating the "Document" look */
+  max-width: 800px;
+  margin: -60px auto 110px auto; /* Pulls the content up to overlap the hero slightly */
+  padding: 80px 70px;            /* Generous padding for a "book-like" feel */
+  background: #ffffff;           /* White background for the article */
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Adds physical depth */
 }
 
 .article-content p {
-  font-size: 1.07rem;
-  line-height: 1.82;
+  font-size: 1.15rem;           /* Slightly larger for comfort */
+  line-height: 1.8;
   color: #2b2b2b;
-  margin-bottom: 1.9em;
+  margin-bottom: 1.6em;
 }
 
 .article-content h3 {
-  font-size: 1.28rem;
+  font-family: 'EB Garamond', serif; /* Explicitly ensure serif */
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--accent);
-  margin-top: 3.2em;
-  margin-bottom: .8em;
-  font-variant-caps: small-caps;
-  letter-spacing: .04em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--border); /* Adds an architectural anchor */
+  padding-bottom: 10px;
 }
 
 .abstract-text {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto 3em;
-  text-align: left; /* Accessibility fix: removed justify */
+  padding: 30px;
+  text-align: left;
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.75;
   color: #444;
+  background: #fdfdfd;          /* Extremely light grey to set it apart */
+  border-left: 3px solid var(--accent); /* Academic quote-style border */
 }
 
 .article-divider {
   border: 0;
   border-top: 1px solid #d1cdc7;
-  width: 70px;
-  margin: 50px auto;
+  width: 150px;                 /* Increased for more presence */
+  margin: 60px auto;
 }
 
 /* -------------------------------------------------
