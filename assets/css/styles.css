@@ -200,11 +200,11 @@ a:focus,
 
 /* Force the divider to center properly */
 .hero-divider {
-  display: block;        /* Ensures it takes up its own line */
-  width: 60px;           /* Width of the line */
-  height: 1px;           /* Subtle thinness */
+  display: block;
+  width: 120px;       /* Increased from 60px to 120px */
+  height: 1.5px;      /* Slightly thicker for better visibility */
   background: var(--hero-text-soft);
-  margin: 20px auto;     /* 'auto' left/right is the key to centering */
+  margin: 25px auto;  /* Added a bit more breathing room around the line */
   border: 0;
 }
 
