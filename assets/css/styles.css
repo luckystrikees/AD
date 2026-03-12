@@ -178,11 +178,20 @@ a:focus,
 /* Style the Kicker to be smaller and more "label-like" */
 .hero-kicker {
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 15px !important;
+  letter-spacing: 0.4em;
+  font-size: 0.9rem;  /* Increased size */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 !important;
+}
+
+.hero h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: #fff;
+  margin: 5px 0 0 0 !important; /* Tightened top margin to keep it close to the line */
 }
 
 /* Style the H1 to be authoritative */
