@@ -179,41 +179,47 @@ a:focus {
 
 .hero-inner {
 
-  position: relative;
-
-  color: #E8E0D4;
-
   max-width: 900px;
   margin: 0 auto;
+
+  color: #E8E0D4;
 
 }
 
 
-/* Research program label */
+/* text plates */
+
+.hero-kicker span,
+.hero h1 span,
+.tagline span {
+
+  background: rgba(32,38,34,.58);
+
+  padding: .35em .6em;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+}
+
+
+/* kicker */
 
 .hero-kicker {
-
-  display: inline-block;
 
   text-transform: uppercase;
   letter-spacing: .22em;
 
   font-size: .78rem;
 
-  padding: .35em .65em;
-
-  margin-bottom: 24px;
-
-  background: rgba(32,38,34,.55);
+  margin-bottom: 26px;
 
 }
 
 
-/* Main title */
+/* title */
 
 .hero h1 {
-
-  display: inline;
 
   font-size: 3.2rem;
   font-weight: 500;
@@ -222,22 +228,17 @@ a:focus {
 
   letter-spacing: .015em;
 
-  background: rgba(32,38,34,.60);
-
-  padding: .45em .7em;
+  margin: 0 0 26px 0;
 
 }
 
 
-/* Tagline */
+/* tagline */
 
 .tagline {
 
-  display: inline-block;
-
-  margin-top: 30px;
-
   font-style: italic;
+
   font-size: 1.12rem;
 
   line-height: 1.6;
@@ -245,10 +246,6 @@ a:focus {
   letter-spacing: .01em;
 
   color: #E6DED1;
-
-  background: rgba(32,38,34,.55);
-
-  padding: .35em .6em;
 
 }
 
