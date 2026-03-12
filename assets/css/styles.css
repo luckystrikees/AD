@@ -153,21 +153,15 @@ a:focus,
   background-repeat: no-repeat;
 }
 
-.hero-overlay {
-  display: none; 
-}
-
 .hero-inner {
   position: relative;
   max-width: 740px; 
   margin: 0 auto;
   padding: 80px 60px;
-  
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center;
-  
   background-color: rgba(24, 30, 28, 0.82) !important;
   border-radius: 20px !important;
   backdrop-filter: blur(15px) !important;
@@ -182,15 +176,15 @@ a:focus,
   font-size: 0.9rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
-  margin: 0 !important;
+  margin: 0 0 25px 0 !important;
 }
 
 .hero-divider {
   display: block;
-  width: 120px;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.4);
-  margin: 25px auto;
+  width: 120px !important; /* Force width */
+  height: 1.5px !important; /* Force height */
+  background: rgba(255, 255, 255, 0.4) !important;
+  margin: 0 auto 30px auto !important; /* Forces centering */
   border: 0;
 }
 
@@ -202,15 +196,6 @@ a:focus,
   margin: 0 !important;
   font-weight: 400;
   letter-spacing: -0.02em;
-}
-
-.tagline {
-  font-style: italic;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 20px !important;
-  max-width: 600px;
 }
 
 /* -------------------------------------------------
