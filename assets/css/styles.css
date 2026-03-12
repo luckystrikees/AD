@@ -1,7 +1,29 @@
-
 /* =================================================
    AUTISTIC SCHOLARS — MASTER STYLESHEET
 ================================================= */
+
+
+/* -------------------------------------------------
+   0. COLOR SYSTEM
+------------------------------------------------- */
+
+:root {
+
+  --paper: #f7f5f2;
+  --text: #1c1c1c;
+
+  --accent: #243833;
+  --accent-soft: #5f746d;
+
+  --parchment: #F2EFE8;
+  --parchment-soft: #E6DED1;
+
+  --border: #e6e2dc;
+
+  --hero-overlay-top: rgba(30, 43, 40, 0.88);
+  --hero-overlay-bottom: rgba(30, 43, 40, 0.75);
+
+}
 
 
 /* -------------------------------------------------
@@ -16,22 +38,27 @@
 
 html {
   font-size: 18px;
-  background-color: #f7f5f2;
+  background-color: var(--paper);
 }
 
 body {
+
   margin: 0;
   padding: 0;
+
   font-family: 'EB Garamond', serif;
   line-height: 1.75;
-  color: #1c1c1c;
-  background-color: #f7f5f2;
+
+  color: var(--text);
+  background-color: var(--paper);
+
 }
+
 
 /* Links */
 
 a {
-  color: #1c1c1c;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -40,7 +67,7 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px solid #1f2f44;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -51,15 +78,19 @@ a:focus {
 
 .content,
 .content-inner {
+
   max-width: 740px;
   margin: 0 auto;
   padding: 0 25px;
+
 }
 
 .wide-container {
+
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 25px;
+
 }
 
 
@@ -68,22 +99,31 @@ a:focus {
 ------------------------------------------------- */
 
 .site-header {
+
   text-align: center;
   padding: 100px 0 0;
+
 }
 
 .nav-inner {
+
   max-width: 900px;
   margin: 0 auto;
+
 }
 
 .site-title {
+
   font-weight: 500;
   font-variant-caps: small-caps;
+
   font-size: 2rem;
   letter-spacing: .05em;
-  color: #1f2f44;
+
+  color: var(--accent);
+
   margin-bottom: 18px;
+
 }
 
 
@@ -92,10 +132,14 @@ a:focus {
 ------------------------------------------------- */
 
 .site-nav {
+
   font-size: .95rem;
+
   text-transform: uppercase;
   letter-spacing: .12em;
+
   margin-bottom: 28px;
+
 }
 
 .site-nav a {
@@ -107,10 +151,13 @@ a:focus {
 }
 
 .nav-rule {
+
   border: 0;
-  border-top: 1px solid #e6e2dc;
+  border-top: 1px solid var(--border);
+
   max-width: 900px;
   margin: 0 auto;
+
 }
 
 
@@ -132,21 +179,41 @@ a:focus {
 
 }
 
+/* Overlay layer */
+
 .hero-overlay {
-  background: none:
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    var(--hero-overlay-top),
+    var(--hero-overlay-bottom)
   );
 
+  z-index: 1;
+
 }
 
+/* Text layer */
+
 .hero-inner {
+
   position: relative;
-  color: #ffffff;
+  z-index: 2;
+
+  color: var(--parchment);
+
 }
+
+
+/* Hero kicker */
 
 .hero-kicker {
 
   text-transform: uppercase;
   letter-spacing: .2em;
+
   font-size: .78rem;
 
   margin-bottom: 16px;
@@ -154,6 +221,9 @@ a:focus {
   opacity: .9;
 
 }
+
+
+/* Main hero title */
 
 .hero h1 {
 
@@ -163,27 +233,34 @@ a:focus {
 
   font-size: 3.2rem;
   font-weight: 500;
+
   line-height: 1.12;
 
 }
+
+
+/* Tagline */
 
 .tagline {
 
   font-style: italic;
   font-size: 1.15rem;
 
-  color: #f1f1f1;
+  color: var(--parchment-soft);
 
   max-width: 620px;
-
   margin: 0 auto 35px;
 
 }
+
+
+/* Hero buttons */
 
 .hero-actions {
 
   display: flex;
   justify-content: center;
+
   gap: 18px;
   flex-wrap: wrap;
 
@@ -200,7 +277,7 @@ a:focus {
   text-transform: uppercase;
   letter-spacing: .09em;
 
-  border: 1px solid #ffffff;
+  border: 1px solid var(--parchment);
 
   transition: background .2s, color .2s;
 
@@ -208,65 +285,70 @@ a:focus {
 
 .hero-button.primary {
 
-  background: #ffffff;
-  color: #1c1c1c;
+  background: var(--parchment);
+  color: var(--text);
 
 }
 
 .hero-button.primary:hover {
 
   background: transparent;
-  color: #ffffff;
+  color: var(--parchment);
 
 }
 
 .hero-button.secondary {
 
-  color: #ffffff;
+  color: var(--parchment);
+
 }
 
 .hero-button.secondary:hover {
 
-  background: #ffffff;
-  color: #1c1c1c;
+  background: var(--parchment);
+  color: var(--text);
 
 }
 
-/* Framework hero — text color */
+
+/* Framework hero text backing */
 
 .framework-hero .hero-kicker,
 .framework-hero h1,
 .framework-hero .tagline {
-    color: #e8e0d4;
-}
 
-/* Framework hero — text backing */
+  background-color: rgba(30, 43, 40, 0.78);
 
-.framework-hero .hero-kicker,
-.framework-hero h1,
-.framework-hero .tagline {
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 0.3em 0.6em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px !important;
+  padding: 0.3em 0.6em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 15px !important;
 
 }
 
 .framework-hero .hero-kicker {
-    display: inline-block;
-    margin-bottom: 20px;
+
+  display: inline-block;
+  margin-bottom: 20px;
+
 }
 
 .framework-hero h1 {
-    padding: 0.4em 0.6em;
-    margin-bottom: 26px;
+
+  padding: 0.4em 0.6em;
+  margin-bottom: 26px;
+
 }
 
 .framework-hero .tagline {
-    padding: 0.3em 0.6em;
-    margin-bottom: 35px;
+
+  padding: 0.3em 0.6em;
+  margin-bottom: 35px;
+
 }
+
 
 /* -------------------------------------------------
    6. INSTITUTIONAL PILLARS
@@ -277,7 +359,6 @@ a:focus {
   max-width: 1100px;
 
   margin: 0 auto 90px;
-
   padding: 0 20px;
 
 }
@@ -295,15 +376,13 @@ a:focus {
 .pillar {
 
   display: flex;
-
   flex-direction: column;
 
   justify-content: center;
 
   padding: 42px 28px;
 
-  border: 1px solid #e6e2dc;
-
+  border: 1px solid var(--border);
   background: #ffffff;
 
   text-align: center;
@@ -324,7 +403,7 @@ a:focus {
 
   margin-bottom: 16px;
 
-  color: #1f2f44;
+  color: var(--accent);
 
 }
 
@@ -345,10 +424,9 @@ a:focus {
   font-weight: 500;
 
   text-transform: uppercase;
-
   letter-spacing: .06em;
 
-  color: #1f2f44;
+  color: var(--accent);
 
 }
 
@@ -361,7 +439,7 @@ a:focus {
 
   background: #ffffff;
 
-  border: 1px solid #e6e2dc;
+  border: 1px solid var(--border);
 
   padding: 45px 35px;
 
@@ -375,7 +453,6 @@ a:focus {
 .button-primary {
 
   display: block;
-
   width: 100%;
 
   text-align: center;
@@ -385,18 +462,15 @@ a:focus {
   padding: 15px 0;
 
   font-size: .9rem;
-
   font-weight: 500;
 
   text-transform: uppercase;
-
   letter-spacing: .09em;
 
   color: #ffffff;
 
-  background-color: #1f2f44;
-
-  border: 1px solid #1f2f44;
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
 
   cursor: pointer;
 
@@ -406,9 +480,8 @@ a:focus {
 
 .button-primary:hover {
 
-  background-color: #f7f5f2;
-
-  color: #1f2f44;
+  background-color: var(--paper);
+  color: var(--accent);
 
 }
 
@@ -446,17 +519,14 @@ a:focus {
 .article-content h3 {
 
   font-size: 1.28rem;
-
   font-weight: 500;
 
-  color: #1f2f44;
+  color: var(--accent);
 
   margin-top: 3.2em;
-
   margin-bottom: .8em;
 
   font-variant-caps: small-caps;
-
   letter-spacing: .04em;
 
 }
@@ -468,13 +538,11 @@ a:focus {
   margin: 0 auto 3em;
 
   text-align: justify;
-
   text-indent: 2em;
 
   font-style: italic;
 
   font-size: 1.05rem;
-
   line-height: 1.75;
 
   color: #444;
@@ -505,18 +573,19 @@ a:focus {
   text-align: center;
 
   padding-top: 10px;
-
   padding-bottom: 30px;
 
-  border-top: 1px solid #e6e2dc;
+  border-top: 1px solid var(--border);
 
-  background: #f7f5f2;
+  background: var(--paper);
 
 }
 
 .footer-inner {
+
   max-width: 740px;
   margin: 0 auto;
+
 }
 
 .footer-seal {
@@ -563,8 +632,10 @@ a:focus {
 @media (max-width: 900px) {
 
   .pillar-grid {
+
     grid-template-columns: 1fr;
     gap: 25px;
+
   }
 
   .hero h1 {
