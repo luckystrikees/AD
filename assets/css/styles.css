@@ -1,3 +1,4 @@
+
 /* =================================================
    AUTISTIC SCHOLARS — MASTER STYLESHEET
 ================================================= */
@@ -38,12 +39,18 @@ a:hover {
   opacity: .75;
 }
 
+a:focus {
+  outline: 2px solid #1f2f44;
+  outline-offset: 2px;
+}
+
 
 /* -------------------------------------------------
    2. GLOBAL CONTAINERS
 ------------------------------------------------- */
 
-.content {
+.content,
+.content-inner {
   max-width: 740px;
   margin: 0 auto;
   padding: 0 25px;
@@ -65,6 +72,11 @@ a:hover {
   padding: 100px 0 0;
 }
 
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .site-title {
   font-weight: 500;
   font-variant-caps: small-caps;
@@ -79,23 +91,19 @@ a:hover {
    4. NAVIGATION
 ------------------------------------------------- */
 
-.site-nav,
-header nav {
+.site-nav {
   font-size: .95rem;
   text-transform: uppercase;
   letter-spacing: .12em;
   margin-bottom: 28px;
 }
 
-.site-nav a,
-header nav a {
+.site-nav a {
   padding: 0 12px;
 }
 
-header nav a + a:before {
-  content: "·";
+.nav-divider {
   color: #444;
-  padding-right: 12px;
 }
 
 .nav-rule {
@@ -111,21 +119,123 @@ header nav a + a:before {
 ------------------------------------------------- */
 
 .hero {
+
+  position: relative;
+
   text-align: center;
-  padding: 90px 0 70px;
+
+  padding: 110px 0 90px;
+
+  background-image: url("../images/library.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+
+.hero-overlay {
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+  );
+
+}
+
+.hero-inner {
+  position: relative;
+  color: #ffffff;
+}
+
+.hero-kicker {
+
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .78rem;
+
+  margin-bottom: 16px;
+
+  opacity: .9;
+
 }
 
 .hero h1 {
-  font-size: 3.3rem;
+
+  max-width: 760px;
+
+  margin: 0 auto 22px;
+
+  font-size: 3.2rem;
   font-weight: 500;
-  line-height: 1.1;
-  margin-bottom: 25px;
+  line-height: 1.12;
+
 }
 
 .tagline {
+
   font-style: italic;
   font-size: 1.15rem;
-  color: #444;
+
+  color: #f1f1f1;
+
+  max-width: 620px;
+
+  margin: 0 auto 35px;
+
+}
+
+.hero-actions {
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+
+}
+
+.hero-button {
+
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  font-size: .85rem;
+
+  text-transform: uppercase;
+  letter-spacing: .09em;
+
+  border: 1px solid #ffffff;
+
+  transition: background .2s, color .2s;
+
+}
+
+.hero-button.primary {
+
+  background: #ffffff;
+  color: #1c1c1c;
+
+}
+
+.hero-button.primary:hover {
+
+  background: transparent;
+  color: #ffffff;
+
+}
+
+.hero-button.secondary {
+
+  color: #ffffff;
+}
+
+.hero-button.secondary:hover {
+
+  background: #ffffff;
+  color: #1c1c1c;
+
 }
 
 
@@ -134,26 +244,45 @@ header nav a + a:before {
 ------------------------------------------------- */
 
 .pillar-container {
+
   max-width: 1100px;
+
   margin: 0 auto 90px;
+
   padding: 0 20px;
+
 }
 
 .pillar-grid {
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 30px;
+
 }
 
 .pillar {
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   padding: 42px 28px;
+
   border: 1px solid #e6e2dc;
+
   background: #ffffff;
+
   text-align: center;
+
   min-height: 260px;
+
+  transition: background .2s;
+
 }
 
 .pillar:hover {
@@ -161,23 +290,37 @@ header nav a + a:before {
 }
 
 .pillar h3 {
+
   font-size: 1.28rem;
+
   margin-bottom: 16px;
+
   color: #1f2f44;
+
 }
 
 .pillar p {
+
   font-size: .97rem;
+
   line-height: 1.55;
+
   margin-bottom: 20px;
+
 }
 
 .pillar-link {
+
   font-size: .82rem;
+
   font-weight: 500;
+
   text-transform: uppercase;
+
   letter-spacing: .06em;
+
   color: #1f2f44;
+
 }
 
 
@@ -186,9 +329,13 @@ header nav a + a:before {
 ------------------------------------------------- */
 
 .card {
+
   background: #ffffff;
+
   border: 1px solid #e6e2dc;
+
   padding: 45px 35px;
+
 }
 
 
@@ -197,28 +344,43 @@ header nav a + a:before {
 ------------------------------------------------- */
 
 .button-primary {
+
   display: block;
+
   width: 100%;
+
   text-align: center;
+
   margin-top: 30px;
+
   padding: 15px 0;
 
   font-size: .9rem;
+
   font-weight: 500;
+
   text-transform: uppercase;
+
   letter-spacing: .09em;
 
   color: #ffffff;
+
   background-color: #1f2f44;
+
   border: 1px solid #1f2f44;
 
   cursor: pointer;
+
   transition: background-color .2s, color .2s;
+
 }
 
 .button-primary:hover {
+
   background-color: #f7f5f2;
+
   color: #1f2f44;
+
 }
 
 
@@ -231,84 +393,139 @@ header nav a + a:before {
 }
 
 .article-content {
+
   max-width: 740px;
+
   margin: 0 auto 110px;
+
   padding: 0 25px;
+
 }
 
 .article-content p {
+
   font-size: 1.07rem;
+
   line-height: 1.82;
+
   color: #2b2b2b;
+
   margin-bottom: 1.9em;
+
 }
 
 .article-content h3 {
+
   font-size: 1.28rem;
+
   font-weight: 500;
+
   color: #1f2f44;
 
   margin-top: 3.2em;
+
   margin-bottom: .8em;
 
   font-variant-caps: small-caps;
+
   letter-spacing: .04em;
+
 }
 
 .abstract-text {
+
   max-width: 600px;
+
   margin: 0 auto 3em;
+
   text-align: justify;
+
   text-indent: 2em;
 
   font-style: italic;
+
   font-size: 1.05rem;
+
   line-height: 1.75;
 
   color: #444;
+
   hyphens: auto;
+
 }
 
 .article-divider {
+
   border: 0;
+
   border-top: 1px solid #d1cdc7;
+
   width: 70px;
+
   margin: 50px auto;
+
 }
 
-/* =========================================
-   FOOTER
-========================================= */
+
+/* -------------------------------------------------
+   10. FOOTER
+------------------------------------------------- */
 
 .site-footer {
+
   text-align: center;
-  padding-top: 10px !important;
+
+  padding-top: 10px;
+
   padding-bottom: 30px;
+
   border-top: 1px solid #e6e2dc;
+
   background: #f7f5f2;
+
+}
+
+.footer-inner {
+  max-width: 740px;
+  margin: 0 auto;
 }
 
 .footer-seal {
+
   max-width: 70px;
-  margin: 6px 0 6px 0;   /* equal top and bottom spacing */
+
+  margin: 6px 0;
+
   filter: grayscale(100%);
+
 }
 
 .footer-name {
+
   font-variant-caps: small-caps;
+
   font-size: 1rem;
-  margin: 0;            /* removes extra spacing */
-  line-height: 1.2;     /* prevents vertical expansion */
+
+  margin: 0;
+
+  line-height: 1.2;
+
 }
 
 .footer-descriptor {
+
   font-size: 0.85rem;
+
   margin: 2px 0 5px;
+
 }
 
 .footer-copyright {
+
   font-size: 0.75rem;
+
 }
+
 
 /* ------------------------------------------------- 
    11. MOBILE
@@ -322,7 +539,7 @@ header nav a + a:before {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .site-header {
