@@ -159,22 +159,39 @@ a:focus,
 
 .hero-inner {
   position: relative;
-  max-width: 860px;
+  max-width: 600px; /* Constrain the text width so it doesn't look 'lost' */
   margin: 0 auto;
   
-  /* The Back Plate Styling */
-  padding: 60px 50px;
-  background-color: rgba(24, 30, 28, 0.85) !important; /* Slightly more transparent to see the blur */
-  border: 1px solid rgba(242, 239, 232, 0.15);
-  
-  /* FORCE rounded corners */
+  padding: 60px 40px;
+  background-color: rgba(24, 30, 28, 0.85) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for elegance */
   border-radius: 20px !important;
   
-  /* FORCE the frosted glass effect */
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   
-  color: var(--hero-text);
+  color: #fff; /* Brighter white for the text */
+  text-align: center;
+}
+
+/* Style the Kicker to be smaller and more "label-like" */
+.hero-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 15px !important;
+}
+
+/* Style the H1 to be authoritative */
+.hero-inner h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 !important;
+  color: #fdfdfd;
   
   /* Ensure the background doesn't bleed outside the rounded corners */
   overflow: hidden; 
