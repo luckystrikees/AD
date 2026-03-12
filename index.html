@@ -1,198 +1,474 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AUTISTIC SCHOLARS | Independent Research Institute</title>
-
-<meta name="description" content="Autistic Scholars is an independent research initiative developing a multi-level account of how different regulatory architectures of cognition interact within shared environments.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/styles.css">
-
-</head>
-
-
-<body>
-
-
-<header class="site-header">
-
-<div class="nav-inner">
-
-<div class="site-title">
-Autistic Scholars
-</div>
-
-<nav class="site-nav" aria-label="Primary Navigation">
-
-<a href="login.html">Research</a>
-
-<span class="nav-divider">·</span>
-
-<a href="login.html">Working Papers</a>
-
-<span class="nav-divider">·</span>
-
-<a href="framework/">Research Program</a>
-
-<span class="nav-divider">·</span>
-
-<a href="/about.html">About</a>
-
-</nav>
-
-</div>
-
-<hr class="nav-rule">
-
-</header>
-
-
-
-<main>
-
-
-<section class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="content-inner hero-inner">
-
-<p class="hero-kicker">
-Independent Research Institute
-</p>
-
-<h1>
-How Different Cognitive Architectures Interact Within Shared Environments
-</h1>
-
-<p class="tagline">
-A multi-level research program examining regulatory architecture, energetic constraint, and the structural limits of social adaptation.
-</p>
-
-<div class="hero-actions">
-
-<a href="login.html" class="hero-button primary">
-Access Research
-</a>
-
-<a href="framework/" class="hero-button secondary">
-Research Program
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="pillar-container">
-
-<div class="content-inner">
-
-<div class="pillar-grid">
-
-
-<a href="login.html" class="pillar">
-
-<h3>Research Portfolio</h3>
-
-<p>
-Cross-scale theoretical frameworks integrating regulatory architecture, predictive processing, neuroenergetics, and social structure.
-</p>
-
-<span class="pillar-link">
-Access Research
-</span>
-
-</a>
-
-
-
-<a href="login.html" class="pillar">
-
-<h3>Working Papers</h3>
-
-<p>
-Citable materials, preprints, and formal references designed for academic engagement.
-</p>
-
-<span class="pillar-link">
-Access Archive
-</span>
-
-</a>
-
-
-
-<a href="framework/" class="pillar">
-
-<h3>Research Program</h3>
-
-<p>
-Five papers across architectural, computational, experiential, mechanistic, and ecological levels of analysis.
-</p>
-
-<span class="pillar-link">
-View Program
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<footer class="site-footer">
-
-<div class="footer-inner">
-
-<div class="footer-seal-wrap">
-
-<img
-src="assets/images/emblem.png"
-alt="Autistic Scholars Institutional Seal"
-class="footer-seal"
-loading="lazy">
-
-</div>
-
-<div class="footer-name">
-Autistic Scholars
-</div>
-
-<div class="footer-descriptor">
-An Independent Research Initiative
-</div>
-
-<div class="footer-copyright">
-© 2026 Autistic Scholars
-</div>
-
-</div>
-
-</footer>
-
-
-
-</body>
-
-</html>
+/* =================================================
+   AUTISTIC SCHOLARS — MASTER STYLESHEET
+================================================= */
+
+/* -------------------------------------------------
+   0. COLOR SYSTEM
+------------------------------------------------- */
+:root {
+  --paper: #f7f5f2;
+  --text: #1c1c1c;
+  --accent: #243833;
+  --parchment: #F2EFE8;
+  --parchment-soft: #E6DED1;
+  --border: #e6e2dc;
+  
+  --hero-plate: rgba(32, 38, 34, .62);
+  --hero-text: #e8e0d4;
+  --hero-text-soft: #ddd5c8;
+}
+
+/* -------------------------------------------------
+   1. BASE SETUP & TYPOGRAPHY
+------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+html {
+  font-size: 18px;
+  background-color: var(--paper);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  line-height: 1.75;
+  color: var(--text);
+  background-color: var(--paper);
+}
+
+/* Apply the modern sans-serif (Inter) to UI elements */
+.site-nav, 
+.hero-kicker, 
+.hero-button, 
+.pillar-link, 
+.button-primary,
+.footer-descriptor,
+.footer-copyright {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: .75;
+}
+
+/* Accessibility: Clear Keyboard Focus States */
+a:focus,
+.hero-button:focus,
+.button-primary:focus,
+.pillar:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* -------------------------------------------------
+   2. GLOBAL CONTAINERS
+------------------------------------------------- */
+.content,
+.content-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.wide-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+/* -------------------------------------------------
+   3. HEADER / MASTHEAD
+------------------------------------------------- */
+.site-header {
+  text-align: center;
+  padding: 40px 0 0; /* Reduced from 100px to fix white space */
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-weight: 500;
+  font-variant-caps: small-caps;
+  font-size: 2.2rem;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 25px;
+}
+
+/* -------------------------------------------------
+   4. NAVIGATION
+------------------------------------------------- */
+.site-nav {
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  margin-bottom: 35px;
+}
+
+.site-nav a {
+  padding: 0 15px;
+  color: #444;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.nav-divider {
+  color: #bbb;
+}
+
+.nav-rule {
+  border: 0;
+  border-top: 1px solid var(--border);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------
+   5. HERO SECTION
+------------------------------------------------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 0 90px; /* Reduced top padding */
+  background-image: url("../images/books.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Updated to a slate-green brand tint instead of pure black */
+  background: linear-gradient(
+    rgba(36, 56, 51, 0.75), 
+    rgba(20, 30, 28, 0.85)
+  );
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 25px;
+  color: var(--hero-text);
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .78rem;
+  margin: 0 0 32px 0;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: .015em;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.6;
+  letter-spacing: .01em;
+  color: var(--hero-text-soft);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Hero text plates */
+.hero-plate {
+  background-color: var(--hero-plate);
+  padding: .3em .55em;
+  border-radius: 3px !important;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  display: inline;
+  line-height: 2.1;
+}
+
+.hero-kicker .hero-plate {
+  padding: .25em .7em;
+}
+
+/* Hero action buttons */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 22px;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border: 1px solid var(--hero-text);
+  transition: background .2s, color .2s;
+}
+
+.hero-button.primary {
+  background: var(--hero-text);
+  color: var(--text);
+}
+
+.hero-button.primary:hover {
+  background: transparent;
+  color: var(--hero-text);
+}
+
+.hero-button.secondary {
+  color: var(--hero-text);
+}
+
+.hero-button.secondary:hover {
+  background: var(--hero-text);
+  color: var(--text);
+}
+
+/* -------------------------------------------------
+   6. INSTITUTIONAL PILLARS
+------------------------------------------------- */
+.pillar-container {
+  margin: 0 auto 90px;
+  padding: 0 20px;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 28px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  text-align: center;
+  min-height: 260px;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Smooth lift effect */
+}
+
+.pillar:hover {
+  opacity: 1;
+  background: var(--paper);
+  border-color: var(--accent);
+  transform: translateY(-5px); /* Lift up on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.04) !important; /* Soft shadow */
+}
+
+.pillar h3 {
+  font-size: 1.28rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-family: 'EB Garamond', serif;
+}
+
+.pillar p {
+  font-size: .97rem;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.pillar-link {
+  font-size: .82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+}
+
+/* Animated Arrow on Hover */
+.pillar-link::after {
+  content: ' \2192'; /* Unicode right arrow */
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.pillar:hover .pillar-link::after {
+  transform: translateX(5px); /* Arrow slides right */
+}
+
+/* -------------------------------------------------
+   7. CARD COMPONENT
+------------------------------------------------- */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 45px 35px;
+}
+
+/* -------------------------------------------------
+   8. PRIMARY BUTTON
+------------------------------------------------- */
+.button-primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px 0;
+  font-size: .9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: #ffffff;
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+.button-primary:hover {
+  background-color: var(--paper);
+  color: var(--accent);
+}
+
+/* -------------------------------------------------
+   9. ARTICLE / FRAMEWORK PAGE
+------------------------------------------------- */
+.framework-hero {
+  padding: 85px 0 55px;
+}
+
+.article-content {
+  max-width: 740px;
+  margin: 0 auto 110px;
+  padding: 0 25px;
+}
+
+.article-content p {
+  font-size: 1.07rem;
+  line-height: 1.82;
+  color: #2b2b2b;
+  margin-bottom: 1.9em;
+}
+
+.article-content h3 {
+  font-size: 1.28rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 3.2em;
+  margin-bottom: .8em;
+  font-variant-caps: small-caps;
+  letter-spacing: .04em;
+}
+
+.abstract-text {
+  max-width: 600px;
+  margin: 0 auto 3em;
+  text-align: left; /* Accessibility fix: removed justify */
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.article-divider {
+  border: 0;
+  border-top: 1px solid #d1cdc7;
+  width: 70px;
+  margin: 50px auto;
+}
+
+/* -------------------------------------------------
+   10. FOOTER
+------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+}
+
+.footer-inner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.footer-seal {
+  max-width: 70px;
+  margin: 6px 0;
+  filter: grayscale(100%);
+}
+
+.footer-name {
+  font-family: 'EB Garamond', serif;
+  font-variant-caps: small-caps;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer-descriptor {
+  font-size: 0.85rem;
+  margin: 4px 0 10px;
+  color: #555;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* -------------------------------------------------
+   11. MOBILE
+------------------------------------------------- */
+@media (max-width: 900px) {
+  .pillar-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  
+  .site-header {
+    padding-top: 30px;
+  }
+  
+  .card {
+    padding: 40px 25px;
+  }
+  
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .nav-divider {
+    display: none; /* Hides the dots on mobile so links wrap cleanly */
+  }
+}
