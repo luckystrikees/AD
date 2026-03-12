@@ -159,19 +159,20 @@ a:focus,
 
 .hero-inner {
   position: relative;
-  max-width: 600px; /* Constrain the text width so it doesn't look 'lost' */
+  max-width: 740px; 
   margin: 0 auto;
+  padding: 80px 60px;
   
-  padding: 60px 40px;
-  background-color: rgba(24, 30, 28, 0.85) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for elegance */
+  /* Flexbox is the most reliable way to center everything */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Forces everything (line, text) to center */
+  justify-content: center;
+  
+  background-color: rgba(24, 30, 28, 0.82) !important;
   border-radius: 20px !important;
-  
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  
-  color: #fff; /* Brighter white for the text */
-  text-align: center;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
 }
 
 /* Style the Kicker to be smaller and more "label-like" */
@@ -195,6 +196,16 @@ a:focus,
   
   /* Ensure the background doesn't bleed outside the rounded corners */
   overflow: hidden; 
+}
+
+/* Force the divider to center properly */
+.hero-divider {
+  display: block;        /* Ensures it takes up its own line */
+  width: 60px;           /* Width of the line */
+  height: 1px;           /* Subtle thinness */
+  background: var(--hero-text-soft);
+  margin: 20px auto;     /* 'auto' left/right is the key to centering */
+  border: 0;
 }
 
 .hero-kicker {
