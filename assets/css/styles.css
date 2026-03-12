@@ -232,6 +232,14 @@ a:focus {
 
 }
 
+/* Framework hero — text color */
+
+.framework-hero .hero-kicker,
+.framework-hero h1,
+.framework-hero .tagline {
+    color: #e8e0d4;
+}
+
 /* Framework hero — text backing */
 
 .framework-hero .hero-kicker,
