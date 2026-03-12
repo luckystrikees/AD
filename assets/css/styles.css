@@ -254,6 +254,9 @@ a:focus {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 
+  display: inline;
+  line-height: 2.1;
+
 }
 
 .hero-kicker .hero-plate {
