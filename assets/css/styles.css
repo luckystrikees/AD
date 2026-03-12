@@ -13,15 +13,13 @@
   --text: #1c1c1c;
 
   --accent: #243833;
-  --accent-soft: #5f746d;
 
   --parchment: #F2EFE8;
   --parchment-soft: #E6DED1;
 
   --border: #e6e2dc;
 
-  --hero-overlay-top: rgba(30, 43, 40, 0.88);
-  --hero-overlay-bottom: rgba(30, 43, 40, 0.75);
+  --hero-panel: rgba(32,38,34,.78);
 
 }
 
@@ -176,32 +174,13 @@ a:focus {
   background-image: url("../images/books.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
 }
-
-/* Overlay layer */
-
-.hero-overlay {
-
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    var(--hero-overlay-top),
-    var(--hero-overlay-bottom)
-  );
-
-  z-index: 1;
-
-}
-
-/* Text layer */
 
 .hero-inner {
 
   position: relative;
-  z-index: 2;
-
   color: var(--parchment);
 
 }
@@ -311,20 +290,22 @@ a:focus {
 }
 
 
-/* Framework hero text backing */
+/* Framework hero text panels */
 
 .framework-hero .hero-kicker,
 .framework-hero h1,
 .framework-hero .tagline {
 
-  background-color: rgba(30, 43, 40, 0.78);
+  background-color: var(--hero-panel);
 
-  padding: 0.3em 0.6em;
+  padding: 0.35em 0.65em;
 
   margin-left: auto;
   margin-right: auto;
 
-  border-radius: 15px !important;
+  border-radius: 14px !important;
+
+  color: #E8E0D4;
 
 }
 
@@ -337,14 +318,14 @@ a:focus {
 
 .framework-hero h1 {
 
-  padding: 0.4em 0.6em;
+  padding: 0.4em 0.7em;
   margin-bottom: 26px;
 
 }
 
 .framework-hero .tagline {
 
-  padding: 0.3em 0.6em;
+  padding: 0.35em 0.65em;
   margin-bottom: 35px;
 
 }
@@ -625,17 +606,15 @@ a:focus {
 }
 
 
-/* ------------------------------------------------- 
+/* -------------------------------------------------
    11. MOBILE
 ------------------------------------------------- */
 
 @media (max-width: 900px) {
 
   .pillar-grid {
-
     grid-template-columns: 1fr;
     gap: 25px;
-
   }
 
   .hero h1 {
