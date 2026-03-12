@@ -27,7 +27,7 @@ const navLinks = [
   { label: "Research", href: "login.html" },
   { label: "Working Papers", href: "login.html" },
   { label: "Framework", href: "framework/" },
-  { label: "About", href: "/about.html" },
+  { label: "About", href: "about.html" },
 ];
 
 export function App() {
