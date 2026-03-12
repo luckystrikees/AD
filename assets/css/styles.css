@@ -146,7 +146,7 @@ a:focus,
 .hero {
   position: relative;
   text-align: center;
-  padding: 80px 0 90px; /* Reduced top padding */
+  padding: 120px 20px 130px; /* Increased top/bottom padding, added side padding for mobile */
   background-image: url("../images/books.png");
   background-size: cover;
   background-position: center;
@@ -154,20 +154,23 @@ a:focus,
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  /* Updated to a slate-green brand tint instead of pure black */
-  background: linear-gradient(
-    rgba(36, 56, 51, 0.75), 
-    rgba(20, 30, 28, 0.85)
-  );
+  display: none; /* Completely removes the dark tint from the background image */
 }
 
 .hero-inner {
   position: relative;
-  max-width: 900px;
+  max-width: 860px; /* Slightly narrower so more books show on the left/right */
   margin: 0 auto;
-  padding: 0 25px;
+  
+  /* The New Back Plate Styling */
+  padding: 60px 50px;
+  background-color: rgba(24, 30, 28, 0.92); /* A very dark, rich tint of your accent color */
+  border: 1px solid rgba(242, 239, 232, 0.15); /* A subtle parchment-colored border */
+  
+  /* Adds a subtle blur to smooth out the books directly behind the text */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  
   color: var(--hero-text);
 }
 
@@ -199,13 +202,9 @@ a:focus,
 
 /* Hero text plates */
 .hero-plate {
-  background-color: var(--hero-plate);
-  padding: .3em .55em;
-  border-radius: 3px !important;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  background-color: transparent; /* Removed the inner background */
+  padding: 0;
   display: inline;
-  line-height: 2.1;
 }
 
 .hero-kicker .hero-plate {
@@ -470,5 +469,12 @@ a:focus,
   
   .nav-divider {
     display: none; /* Hides the dots on mobile so links wrap cleanly */
+  }
+
+@media (max-width: 900px) {
+  /* ... your other mobile styles ... */
+  
+  .hero-inner {
+    padding: 45px 25px; /* Shrinks the plate padding on small screens */
   }
 }
