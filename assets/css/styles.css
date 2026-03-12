@@ -237,11 +237,11 @@ a:focus {
 .framework-hero .hero-kicker,
 .framework-hero h1,
 .framework-hero .tagline {
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.3em 0.6em;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 4px !important;
+    border-radius: 10px !important;
 
 }
 
