@@ -24,13 +24,13 @@
       </div>
       
       <nav class="site-nav" aria-label="Primary Navigation">
-        <a href="login.html">Research</a>
-        <span class="nav-divider">·</span>
-        <a href="login.html">Working Papers</a>
-        <span class="nav-divider">·</span>
-        <a href="framework/">Research Program</a>
-        <span class="nav-divider">·</span>
-        <a href="/about.html">About</a>
+          <a href="/framework/">Research Program</a> <!-- Now the primary link -->
+          <span class="nav-divider">·</span>
+          <a href="/login.html">Research Portfolio</a> <!-- Changed from 'Research' -->
+          <span class="nav-divider">·</span>
+          <a href="/login.html">Working Papers</a>
+          <span class="nav-divider">·</span>
+          <a href="/about.html">About</a>
       </nav>
     </div>
     
@@ -56,12 +56,14 @@
         </p>
         
         <div class="hero-actions">
-          <a href="login.html" class="hero-button primary">
-            Access Research
-          </a>
-          <a href="framework/" class="hero-button secondary">
-            Research Program
-          </a>
+            <!-- Make the Program the focus -->
+            <a href="framework/" class="hero-button primary">
+                Research Program
+            </a>
+            <!-- Make the Papers secondary -->
+            <a href="login.html" class="hero-button secondary">
+                Research Portfolio
+            </a>
         </div>
       </div>
     </section>
@@ -70,7 +72,30 @@
       <!-- Updated: Changed 'content-inner' (740px) to 'wide-container' (1100px) -->
       <div class="wide-container">
         <div class="pillar-grid">
+
           
+<!-- Pillar 1 -->       
+          <a href="framework/" class="pillar">
+            <h3>Research Program</h3>
+            <p>
+              The five-level integrative framework: Architectural, Computational, Experiential, Mechanistic, and Ecological.
+            </p>
+            <span class="pillar-link">
+              View Program
+            </span>
+          </a>
+
+          
+<!-- Pillar 2 -->       
+          <a href="login.html" class="pillar">
+              <h3>Research Portfolio</h3>
+              <p>
+                  Full library of empirical data, analysis, and cross-scale theoretical frameworks.
+              </p>
+              <span class="pillar-link">Access Portfolio</span>
+          </a>
+
+ <!-- Pillar 3 -->     
           <a href="login.html" class="pillar">
             <h3>Research Portfolio</h3>
             <p>
@@ -79,27 +104,7 @@
             <span class="pillar-link">
               Access Research
             </span>
-          </a>
-
-          <a href="login.html" class="pillar">
-            <h3>Working Papers</h3>
-            <p>
-              Citable materials, preprints, and formal references designed for academic engagement.
-            </p>
-            <span class="pillar-link">
-              Access Archive
-            </span>
-          </a>
-
-          <a href="framework/" class="pillar">
-            <h3>Research Program</h3>
-            <p>
-              Five papers across architectural, computational, experiential, mechanistic, and ecological levels of analysis.
-            </p>
-            <span class="pillar-link">
-              View Program
-            </span>
-          </a>
+          </a>         
 
         </div>
       </div>
