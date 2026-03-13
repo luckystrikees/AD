@@ -411,15 +411,15 @@ a:focus,
 
 /* Styling for the Founding Scholar portrait - Scaled to 1/4 size */
 .scholar-portrait {
-    width: 160px;
-    height: 200px;
+    width: 120px;          /* Smaller, signature size */
+    height: 150px;         /* Maintains the 4:5 aspect ratio */
     object-fit: cover;
     object-position: 50% 20%;
-    float: left;           /* Text wraps beside the image */
-    margin: 0 40px 20px 0; /* Huge margin on the right and bottom pushes the text away */
+    float: left;           /* Text wraps beside, then under */
+    margin: 5px 30px 15px 0; /* Tightened gutter (30px) and bottom (15px) */
     border: 1px solid var(--border);
-    border-radius: 12px !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+    border-radius: 8px !important; /* Smaller rounding for smaller scale */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
 }
 
 /* Ensure mobile layout stays clean */
