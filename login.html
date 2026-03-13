@@ -13,17 +13,32 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 
     <style>
+        /* 1. Ensure the background covers the full screen */
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("/assets/images/books.png"); /* Root path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    
+        /* 2. Login Card Styling: Matches your Site's Plate design system */
         .login-container {
+            width: 100%;
             max-width: 420px;
-            margin: 80px auto;
             padding: 60px 50px;
-            background: #ffffff;
+            background: #ffffff !important;
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
             border-radius: 20px !important;
             text-align: center;
         }
     
+        /* 3. Institutional Title */
         .login-title {
             font-family: 'EB Garamond', serif;
             font-size: 1.8rem;
@@ -32,6 +47,7 @@
             letter-spacing: 0.02em;
         }
     
+        /* 4. Form Inputs */
         .login-form input {
             width: 100%;
             padding: 16px 20px;
@@ -40,8 +56,10 @@
             background: #fcfcfc !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
+            outline: none;
         }
     
+        /* 5. Primary Submit Button */
         .login-submit {
             display: block;
             width: 100%;
@@ -61,6 +79,7 @@
             opacity: 0.9;
         }
     
+        /* 6. Utility Links */
         .login-utility {
             margin-top: 30px;
             font-family: 'Inter', sans-serif;
@@ -68,6 +87,11 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #888;
+        }
+    
+        .login-utility a {
+            color: #888;
+            text-decoration: underline;
         }
     </style>
 </head>
