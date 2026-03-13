@@ -1,82 +1,76 @@
-/* -------------------------------------------------
-   9. ARTICLE / FRAMEWORK PAGE
-------------------------------------------------- */
-.framework-hero {
-  padding: 85px 0 55px;
+/* =================================================
+   AUTISTIC SCHOLARS — MASTER STYLESHEET
+================================================= */
+:root {
+  --paper: #f7f5f2; --text: #1c1c1c; --accent: #243833;
+  --parchment: #F2EFE8; --border: #e6e2dc;
+  --hero-text: #e8e0d4; --hero-text-soft: #ddd5c8;
 }
 
-.article-content {
-  max-width: 800px;
-  margin: -60px auto 110px auto;
-  padding: 30px 70px 80px 70px;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+* { box-sizing: border-box; border-radius: 0 !important; box-shadow: none !important; }
+html { font-size: 18px; background-color: var(--paper); }
+body { margin: 0; padding: 0; font-family: 'EB Garamond', serif; line-height: 1.75; color: var(--text); background-color: var(--paper); }
+
+/* UI Elements */
+.site-nav, .hero-kicker, .hero-button, .pillar-link, .button-primary,
+.footer-descriptor, .footer-copyright, .paper-meta-box p, .hero-kicker-large {
+  font-family: 'Inter', sans-serif;
 }
 
-.article-content p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #2b2b2b;
-  margin-bottom: 1.6em;
-}
+a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
+a:hover { opacity: .75; }
 
-.article-content h3 {
-  font-family: 'EB Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-top: 0.75em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 10px;
-}
+/* Containers */
+.content-inner { max-width: 740px; margin: 0 auto; padding: 0 25px; }
+.wide-container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
 
-.abstract-text {
-  max-width: 650px;
-  margin: 0 auto 3em;
-  padding: 30px;
-  text-align: left;
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: #444;
-  background: #fdfdfd;
-  border-left: 3px solid var(--accent);
-}
+/* Header */
+.site-header { text-align: center; padding: 20px 0 0; }
+.site-title { font-weight: 500; font-variant-caps: small-caps; font-size: 2.2rem; color: var(--accent); margin-bottom: 15px; }
+.site-nav { font-size: .85rem; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 20px; }
+.site-nav a { padding: 0 15px; color: #444; }
+.nav-rule { border: 0; border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
 
-/* Updated Divider: Typographic Symbol */
-.article-divider {
-    display: block;
-    text-align: center;
-    font-size: 1.8rem;
-    color: var(--accent);
-    opacity: 0.7;
-    margin: 40px auto !important; /* Tightened margins */
-    letter-spacing: 0.5em;
-    border: none !important;
+/* Hero Section */
+.hero { position: relative; text-align: center; padding: 120px 20px 130px; background-image: url("../images/books.png"); background-size: cover; background-position: center; }
+.hero-inner {
+  position: relative; max-width: 740px; margin: 0 auto; padding: 80px 60px;
+  display: flex; flex-direction: column; align-items: center;
+  background-color: rgba(24, 30, 28, 0.82) !important;
+  border-radius: 20px !important; backdrop-filter: blur(15px) !important; color: #fff;
 }
+.hero-kicker { letter-spacing: 0.4em; font-size: 0.9rem; font-weight: 600; margin: 0 0 25px 0 !important; }
+.hero-kicker-large { letter-spacing: 0.3em; font-size: 1.8rem; font-weight: 600; color: #ffffff; margin: 0 0 10px 0 !important; line-height: 1; }
+.hero h1 { font-family: 'EB Garamond', serif; font-size: 4.2rem; line-height: 1; color: #fff; margin: 0 !important; font-weight: 400; }
+.hero-divider-long { display: block; width: 240px !important; height: 1.5px !important; background: rgba(255, 255, 255, 0.5) !important; margin: 35px auto !important; border: none !important; }
+.hero-actions { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
+.hero-button {
+  padding: 14px 28px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important; color: #ffffff !important; background: transparent !important; transition: all 0.3s ease;
+}
+.hero-button:hover { background: #ffffff !important; color: var(--accent) !important; }
 
-/* Portrait Styling */
-.scholar-portrait {
-    width: 120px;
-    height: 140px;
-    object-fit: cover;
-    object-position: 50% 10%;
-    float: left;
-    margin: 0 30px 5px 0; /* Tight margins for flow */
-    border: 1px solid var(--border);
-    border-radius: 8px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+/* Institutional Pillars (Section 6) */
+.pillar-container { margin: 0 auto 90px; padding: 0 20px; }
+.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.pillar {
+  display: flex; flex-direction: column; justify-content: center; padding: 42px 28px; border: 1px solid var(--border);
+  background: #ffffff; text-align: center; min-height: 260px; text-decoration: none; transition: all 0.3s ease;
 }
+.pillar:hover { background: var(--paper); border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.04) !important; }
+.pillar h3 { font-size: 1.28rem; margin-bottom: 16px; color: var(--accent); font-family: 'EB Garamond', serif; }
+.pillar p { font-size: .97rem; line-height: 1.55; margin-bottom: 20px; color: var(--text); }
+.pillar-link { font-size: .82rem; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
 
-/* Mobile Portrait Adjustment */
-@media (max-width: 768px) {
-    .scholar-portrait {
-        float: none;
-        display: block;
-        margin: 0 auto 20px auto;
-        width: 160px;
-        height: 200px;
-    }
-}
+/* Research/Article Page (Section 9) */
+.framework-hero { padding: 85px 0 55px; }
+.article-content { max-width: 800px; margin: -60px auto 110px auto; padding: 30px 70px 80px 70px; background: #ffffff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.article-content h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-top: 0.75em; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.vertical-timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 40px; margin-top: 40px; }
+.paper-section { position: relative; margin-bottom: 60px; }
+.paper-section::before { content: ''; position: absolute; left: -48px; top: 5px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; }
+.article-divider { display: block; text-align: center; font-size: 1.8rem; color: var(--accent); opacity: 0.7; margin: 40px auto !important; letter-spacing: 0.5em; border: none !important; }
+.scholar-portrait { width: 120px; height: 140px; object-fit: cover; object-position: 50% 10%; float: left; margin: 0 30px 5px 0; border: 1px solid var(--border); border-radius: 8px !important; }
+
+/* Footer */
+.site-footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); background: var(--paper); }
