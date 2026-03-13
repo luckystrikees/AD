@@ -409,6 +409,30 @@ a:focus,
   margin: 60px auto;
 }
 
+/* Styling for the Founding Scholar portrait */
+.scholar-portrait {
+    width: 320px;
+    height: 400px; /* 4:5 aspect ratio */
+    object-fit: cover;
+    object-position: top center; /* Focus on face and eyes */
+    float: left;
+    margin: 5px 40px 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 20px !important; /* Matches your hero plates */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Clear the float on smaller screens */
+@media (max-width: 768px) {
+    .scholar-portrait {
+        float: none;
+        display: block;
+        margin: 0 auto 30px auto;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
 /* -------------------------------------------------
    10. FOOTER
 ------------------------------------------------- */
