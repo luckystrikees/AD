@@ -445,7 +445,7 @@ a:focus,
     font-size: 1.8rem;         /* Size of the dagger */
     color: var(--accent);      /* Institutional Green */
     opacity: 0.7;              /* Subtle, not stark */
-    margin: 80px auto;         /* Generous vertical breathing room */
+    margin: 25px auto !important;
     letter-spacing: 0.5em;     /* Adds premium spacing */
     border: none !important;   /* Kill the old line style */
 }
