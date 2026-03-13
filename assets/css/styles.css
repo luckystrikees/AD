@@ -29,6 +29,28 @@ body { margin: 0; padding: 0; font-family: 'EB Garamond', serif; line-height: 1.
 a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
 a:hover { opacity: .75; }
 
+.paper-artifact {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--parchment);
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+}
+
+.paper-artifact p {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem !important;
+  line-height: 1.5;
+}
+
+.paper-artifact p:last-child {
+  margin-bottom: 0;
+}
+
+.paper-artifact a {
+  color: var(--accent);
+}
+
 /* Containers */
 .content-inner { max-width: 740px; margin: 0 auto; padding: 0 25px; }
 .wide-container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
