@@ -412,11 +412,11 @@ a:focus,
 /* Styling for the Founding Scholar portrait - Scaled to 1/4 size */
 .scholar-portrait {
     width: 120px;          
-    height: 140px;         /* Reduced height to force earlier clearance */
+    height: 130px;         /* Reduced height to force earlier clearance */
     object-fit: cover;
     object-position: 50% 10%; /* Focus higher: cuts out the laptop/hands */
     float: left;           
-    margin: 0 30px 10px 0; /* Tightened margins */
+    margin: 0 30px 5px 0; /* Tightened margins */
     border: 1px solid var(--border);
     border-radius: 8px !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
