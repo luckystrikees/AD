@@ -72,5 +72,49 @@ a:hover { opacity: .75; }
 .article-divider { display: block; text-align: center; font-size: 1.8rem; color: var(--accent); opacity: 0.7; margin: 40px auto !important; letter-spacing: 0.5em; border: none !important; }
 .scholar-portrait { width: 120px; height: 140px; object-fit: cover; object-position: 50% 10%; float: left; margin: 0 30px 5px 0; border: 1px solid var(--border); border-radius: 8px !important; }
 
-/* Footer */
-.site-footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); background: var(--paper); }
+/* -------------------------------------------------
+   10. FOOTER
+------------------------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+}
+
+.footer-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.footer-seal-wrap {
+  margin-bottom: 15px;
+}
+
+.footer-seal {
+  max-width: 70px;
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.footer-name {
+  font-family: 'EB Garamond', serif;
+  font-variant-caps: small-caps;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer-descriptor {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  margin: 4px 0 10px;
+  color: #555;
+}
+
+.footer-copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #888;
+}
