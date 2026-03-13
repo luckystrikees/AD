@@ -181,10 +181,10 @@ a:focus,
 
 .hero-divider {
   display: block;
-  width: 120px !important; /* Force width */
-  height: 1.5px !important; /* Force height */
+  width: 120px !important;
+  height: 1.5px !important;
   background: rgba(255, 255, 255, 0.4) !important;
-  margin: 0 auto 30px auto !important; /* Forces centering */
+  margin: 0 auto 30px auto !important;
   border: 0;
 }
 
@@ -196,6 +196,34 @@ a:focus,
   margin: 0 !important;
   font-weight: 400;
   letter-spacing: -0.02em;
+}
+
+/* HERO GHOST BUTTONS */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #ffffff;
+  color: var(--accent) !important;
+  border-color: #ffffff;
 }
 
 /* -------------------------------------------------
@@ -425,13 +453,10 @@ a:focus,
   }
   
   .nav-divider {
-    display: none; /* Hides the dots on mobile so links wrap cleanly */
+    display: none; 
   }
-
-@media (max-width: 900px) {
-  /* ... your other mobile styles ... */
   
   .hero-inner {
-    padding: 45px 25px; /* Shrinks the plate padding on small screens */
+    padding: 45px 25px !important; 
   }
 }
