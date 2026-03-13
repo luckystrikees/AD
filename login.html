@@ -13,24 +13,11 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 
     <style>
-        /* 1. Ensure the background covers the full screen */
-        .hero {
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url("/assets/images/books.png"); /* Root path */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-    
-        /* 2. Login Card Styling: Matches your Site's Plate design system */
         .login-container {
             width: 100%;
             max-width: 420px;
-            padding: 60px 50px;
+            /* Reduced top/bottom padding from 60px to 40px */
+            padding: 40px 40px; 
             background: #ffffff !important;
             border: 1px solid var(--border);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
@@ -38,32 +25,36 @@
             text-align: center;
         }
     
-        /* 3. Institutional Title */
+        /* Tighten the emblem and title spacing */
+        .login-container img {
+            width: 45px !important; 
+            margin-bottom: 15px !important; /* Reduced margin */
+        }
+    
         .login-title {
             font-family: 'EB Garamond', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--accent);
-            margin: 20px 0 40px 0;
+            margin: 0 0 30px 0 !important; /* Tightened margins */
             letter-spacing: 0.02em;
         }
     
-        /* 4. Form Inputs */
+        /* Compact inputs */
         .login-form input {
             width: 100%;
-            padding: 16px 20px;
-            margin-bottom: 20px;
+            padding: 14px 16px; /* Slightly less vertical padding */
+            margin-bottom: 15px; /* Tightened gap between inputs */
             border: 1px solid var(--border) !important;
             background: #fcfcfc !important;
             font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
+            font-size: 0.9rem;
         }
     
-        /* 5. Primary Submit Button */
         .login-submit {
             display: block;
             width: 100%;
-            padding: 18px 0;
+            padding: 16px 0; /* Compact button height */
+            margin-top: 10px;
             background-color: var(--accent) !important;
             color: #ffffff;
             text-transform: uppercase;
@@ -72,28 +63,18 @@
             font-weight: 600;
             border: none !important;
             cursor: pointer;
-            transition: opacity 0.2s;
         }
     
-        .login-submit:hover {
-            opacity: 0.9;
-        }
-    
-        /* 6. Utility Links */
         .login-utility {
-            margin-top: 30px;
+            margin-top: 25px; /* Tightened margin */
             font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.7rem; /* Slightly smaller for professional minimalism */
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             color: #888;
-        }
-    
-        .login-utility a {
-            color: #888;
-            text-decoration: underline;
         }
     </style>
+    
 </head>
 <body>
 
