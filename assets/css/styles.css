@@ -70,6 +70,16 @@ a:hover { opacity: .75; }
 .pillar h3 { font-size: 1.28rem; margin-bottom: 16px; color: var(--accent); font-family: 'EB Garamond', serif; }
 .pillar p { font-size: .97rem; line-height: 1.55; margin-bottom: 20px; color: var(--text); }
 .pillar-link { font-size: .82rem; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+.pillar {
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.pillar h3 {
+  min-height: 2.6em;
+  display: flex;
+  align-items: flex-end;
+}
 
 /* Research/Article Page (Section 9) */
 .framework-hero { padding: 85px 0 55px; }
