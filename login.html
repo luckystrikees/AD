@@ -110,25 +110,17 @@
     </header>
 
     <main>
-        <!-- We use the 'hero' class to pull in your books background -->
-        <section class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-            
-            <!-- The login-container now acts as your 'hero-inner' plate -->
+        <section class="hero">
             <div class="login-container">
                 <img src="/assets/images/emblem.png" alt="Emblem" style="width: 50px; opacity: 0.7; margin-bottom: 20px;">
-                
                 <h2 class="login-title">Secure Portal</h2>
-    
                 <form class="login-form" action="/login" method="POST">
                     <input type="text" name="username" placeholder="SCHOLAR ID" required>
                     <input type="password" name="password" placeholder="PASSWORD" required>
                     <button type="submit" class="login-submit">Authenticate</button>
                 </form>
-    
                 <div class="login-utility">
-                    <a href="#">Forgot ID?</a> 
-                    <span>&nbsp;•&nbsp;</span> 
-                    <a href="#">Request Access</a>
+                    <a href="#">Forgot ID?</a> <span>•</span> <a href="#">Request Access</a>
                 </div>
             </div>
         </section>
