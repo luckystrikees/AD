@@ -1,391 +1,34 @@
-/* =================================================
-   AUTISTIC SCHOLARS — MASTER STYLESHEET
-================================================= */
-
 /* -------------------------------------------------
-   0. COLOR SYSTEM
-------------------------------------------------- */
-:root {
-  --paper: #f7f5f2;
-  --text: #1c1c1c;
-  --accent: #243833;
-  --parchment: #F2EFE8;
-  --parchment-soft: #E6DED1;
-  --border: #e6e2dc;
-  
-  --hero-plate: rgba(32, 38, 34, .62);
-  --hero-text: #e8e0d4;
-  --hero-text-soft: #ddd5c8;
-}
-
-/* -------------------------------------------------
-   1. BASE SETUP & TYPOGRAPHY
-------------------------------------------------- */
-* {
-  box-sizing: border-box;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-html {
-  font-size: 18px;
-  background-color: var(--paper);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'EB Garamond', serif;
-  line-height: 1.75;
-  color: var(--text);
-  background-color: var(--paper);
-}
-
-/* Apply the modern sans-serif (Inter) to UI elements */
-.site-nav, 
-.hero-kicker, 
-.hero-button, 
-.pillar-link, 
-.button-primary,
-.footer-descriptor,
-.footer-copyright {
-  font-family: 'Inter', sans-serif;
-}
-
-a {
-  color: var(--text);
-  text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: .75;
-}
-
-/* Accessibility: Clear Keyboard Focus States */
-a:focus,
-.hero-button:focus,
-.button-primary:focus,
-.pillar:focus {
-  outline: 3px solid var(--accent);
-  outline-offset: 4px;
-}
-
-/* -------------------------------------------------
-   2. GLOBAL CONTAINERS
-------------------------------------------------- */
-.content,
-.content-inner {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-.wide-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-/* -------------------------------------------------
-   3. HEADER / MASTHEAD
-------------------------------------------------- */
-.site-header {
-  text-align: center;
-  padding: 20px 0 0; /* Reduced from 100px to fix white space */
-}
-
-.nav-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.site-title {
-  font-weight: 500;
-  font-variant-caps: small-caps;
-  font-size: 2.2rem;
-  letter-spacing: .08em;
-  color: var(--accent);
-  margin-bottom: 15px;
-}
-
-/* -------------------------------------------------
-   4. NAVIGATION
-------------------------------------------------- */
-.site-nav {
-  font-size: .85rem;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  margin-bottom: 20px;
-}
-
-.site-nav a {
-  padding: 0 15px;
-  color: #444;
-}
-
-.site-nav a:hover {
-  opacity: 1;
-  color: var(--accent);
-}
-
-.nav- {
-  color: #bbb;
-}
-
-.nav-rule {
-  border: 0;
-  border-top: 1px solid var(--border);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* -------------------------------------------------
-   5. HERO SECTION
-------------------------------------------------- */
-.hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px 130px;
-  background-image: url("../images/books.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero-inner {
-  position: relative;
-  max-width: 740px; 
-  margin: 0 auto;
-  padding: 80px 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  background-color: rgba(24, 30, 28, 0.82) !important;
-  border-radius: 20px !important;
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  color: #fff;
-}
-
-/* Standard Kicker */
-.hero-kicker {
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 25px 0 !important;
-}
-
-/* Large Kicker (Used on About Page) */
-.hero-kicker-large {
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 1.8rem; 
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0 0 10px 0 !important;
-  line-height: 1;
-}
-
-/* Standard Divider */
-.hero-divider {
-  display: block;
-  width: 120px !important;
-  height: 1.5px !important;
-  background: rgba(255, 255, 255, 0.4) !important;
-  margin: 0 auto 30px auto !important;
-  border: 0;
-}
-
-/* Long Divider (Used on About Page) */
-.hero-divider-long {
-  display: block;
-  width: 240px !important;  
-  height: 1.5px !important;
-  background: rgba(255, 255, 255, 0.5) !important;
-  margin: 35px auto !important; 
-  border: none !important;
-}
-
-/* Main Heading */
-.hero h1 {
-  font-family: 'EB Garamond', serif;
-  font-size: 4.2rem;
-  line-height: 1;
-  color: #fff;
-  margin: 0 !important;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-
-/* HIGH-CONTRAST GHOST BUTTONS */
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.hero-button {
-  display: inline-block;
-  padding: 14px 28px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
-  background: transparent !important;
-  transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-  background: #ffffff !important;
-  color: var(--accent) !important;
-  border-color: #ffffff !important;
-}
-
-/* -------------------------------------------------
-   6. INSTITUTIONAL PILLARS
-------------------------------------------------- */
-.pillar-container {
-  margin: 0 auto 90px;
-  padding: 0 20px;
-}
-
-.pillar-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.pillar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 42px 28px;
-  border: 1px solid var(--border);
-  background: #ffffff;
-  text-align: center;
-  min-height: 260px;
-  text-decoration: none;
-  transition: all 0.3s ease; /* Smooth lift effect */
-}
-
-.pillar:hover {
-  opacity: 1;
-  background: var(--paper);
-  border-color: var(--accent);
-  transform: translateY(-5px); /* Lift up on hover */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.04) !important; /* Soft shadow */
-}
-
-.pillar h3 {
-  font-size: 1.28rem;
-  margin-bottom: 16px;
-  color: var(--accent);
-  font-family: 'EB Garamond', serif;
-}
-
-.pillar p {
-  font-size: .97rem;
-  line-height: 1.55;
-  margin-bottom: 20px;
-  color: var(--text);
-}
-
-.pillar-link {
-  font-size: .82rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: var(--accent);
-}
-
-/* Animated Arrow on Hover */
-.pillar-link::after {
-  content: ' \2192'; /* Unicode right arrow */
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.pillar:hover .pillar-link::after {
-  transform: translateX(5px); /* Arrow slides right */
-}
-
-/* -------------------------------------------------
-   7. CARD COMPONENT
-------------------------------------------------- */
-.card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  padding: 45px 35px;
-}
-
-/* -------------------------------------------------
-   8. PRIMARY BUTTON
-------------------------------------------------- */
-.button-primary {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-  padding: 15px 0;
-  font-size: .9rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  color: #ffffff;
-  background-color: var(--accent);
-  border: 1px solid var(--accent);
-  cursor: pointer;
-  transition: background-color .2s, color .2s;
-}
-
-.button-primary:hover {
-  background-color: var(--paper);
-  color: var(--accent);
-}
-
-/* -------------------------------------------------
-   9. ARTICLE / FRAMEWORK PAGE (UPDATED)
+   9. ARTICLE / FRAMEWORK PAGE
 ------------------------------------------------- */
 .framework-hero {
   padding: 85px 0 55px;
 }
 
 .article-content {
-  /* Creating the "Document" look */
   max-width: 800px;
-  margin: -60px auto 110px auto; /* Pulls the content up to overlap the hero slightly */
-  padding: 30px 70px;            /* Generous padding for a "book-like" feel */
-  background: #ffffff;           /* White background for the article */
+  margin: -60px auto 110px auto;
+  padding: 30px 70px 80px 70px;
+  background: #ffffff;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Adds physical depth */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .article-content p {
-  font-size: 1.15rem;           /* Slightly larger for comfort */
+  font-size: 1.15rem;
   line-height: 1.8;
   color: #2b2b2b;
   margin-bottom: 1.6em;
 }
 
 .article-content h3 {
-  font-family: 'EB Garamond', serif; /* Explicitly ensure serif */
+  font-family: 'EB Garamond', serif;
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--accent);
   margin-top: 0.75em;
   margin-bottom: 1em;
-  border-bottom: 1px solid var(--border); /* Adds an architectural anchor */
+  border-bottom: 1px solid var(--border);
   padding-bottom: 10px;
 }
 
@@ -398,34 +41,36 @@ a:focus,
   font-size: 1.15rem;
   line-height: 1.75;
   color: #444;
-  background: #fdfdfd;          /* Extremely light grey to set it apart */
-  border-left: 3px solid var(--accent); /* Academic quote-style border */
+  background: #fdfdfd;
+  border-left: 3px solid var(--accent);
 }
 
+/* Updated Divider: Typographic Symbol */
 .article-divider {
-    border: none;
+    display: block;
     text-align: center;
-    margin: 80px 0; /* Creates a clear, authoritative 'breather' */
     font-size: 1.8rem;
     color: var(--accent);
     opacity: 0.7;
-    letter-spacing: 0.5em; /* Increases the weight of the symbol */
+    margin: 40px auto !important; /* Tightened margins */
+    letter-spacing: 0.5em;
+    border: none !important;
 }
 
-/* Styling for the Founding Scholar portrait - Scaled to 1/4 size */
+/* Portrait Styling */
 .scholar-portrait {
-    width: 120px;          
-    height: 130px;         /* Reduced height to force earlier clearance */
+    width: 120px;
+    height: 140px;
     object-fit: cover;
-    object-position: 50% 10%; /* Focus higher: cuts out the laptop/hands */
-    float: left;           
-    margin: 0 30px 0px 0; /* Tightened margins */
+    object-position: 50% 10%;
+    float: left;
+    margin: 0 30px 5px 0; /* Tight margins for flow */
     border: 1px solid var(--border);
     border-radius: 8px !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
 }
 
-/* Ensure mobile layout stays clean */
+/* Mobile Portrait Adjustment */
 @media (max-width: 768px) {
     .scholar-portrait {
         float: none;
@@ -434,96 +79,4 @@ a:focus,
         width: 160px;
         height: 200px;
     }
-}
-
-/* -------------------------------------------------
-   9b. DIVIDER SYMBOL
-------------------------------------------------- */
-.article-divider {
-    display: block;
-    text-align: center;
-    font-size: 1.8rem;         /* Size of the dagger */
-    color: var(--accent);      /* Institutional Green */
-    opacity: 0.7;              /* Subtle, not stark */
-    margin: 25px auto !important;
-    letter-spacing: 0.5em;     /* Adds premium spacing */
-    border: none !important;   /* Kill the old line style */
-}
-
-/* -------------------------------------------------
-   10. FOOTER
-------------------------------------------------- */
-.site-footer {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  border-top: 1px solid var(--border);
-  background: var(--paper);
-}
-
-.footer-inner {
-  max-width: 740px;
-  margin: 0 auto;
-}
-
-.footer-seal {
-  max-width: 70px;
-  margin: 6px 0;
-  filter: grayscale(100%);
-}
-
-.footer-name {
-  font-family: 'EB Garamond', serif;
-  font-variant-caps: small-caps;
-  font-size: 1.1rem;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.footer-descriptor {
-  font-size: 0.85rem;
-  margin: 4px 0 10px;
-  color: #555;
-}
-
-.footer-copyright {
-  font-size: 0.75rem;
-  color: #888;
-}
-
-/* -------------------------------------------------
-   11. MOBILE
-------------------------------------------------- */
-@media (max-width: 900px) {
-  .pillar-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-  
-  .site-header {
-    padding-top: 30px;
-  }
-  
-  .card {
-    padding: 40px 25px;
-  }
-  
-  .site-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .nav-divider {
-    display: none; 
-  }
-  
-  .hero-inner {
-    padding: 45px 25px !important; 
-  }
 }
