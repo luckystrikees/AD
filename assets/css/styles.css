@@ -383,7 +383,7 @@ a:focus,
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--accent);
-  margin-top: 0.5em;
+  margin-top: 0.75em;
   margin-bottom: 1em;
   border-bottom: 1px solid var(--border); /* Adds an architectural anchor */
   padding-bottom: 10px;
