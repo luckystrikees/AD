@@ -129,7 +129,7 @@ a:focus,
   color: var(--accent);
 }
 
-.nav-divider {
+.nav- {
   color: #bbb;
 }
 
@@ -403,10 +403,13 @@ a:focus,
 }
 
 .article-divider {
-  border: 0;
-  border-top: 1px solid #d1cdc7;
-  width: 150px;                 /* Increased for more presence */
-  margin: 60px auto;
+    border: none;
+    text-align: center;
+    margin: 80px 0; /* Creates a clear, authoritative 'breather' */
+    font-size: 1.8rem;
+    color: var(--accent);
+    opacity: 0.7;
+    letter-spacing: 0.5em; /* Increases the weight of the symbol */
 }
 
 /* Styling for the Founding Scholar portrait - Scaled to 1/4 size */
