@@ -73,7 +73,7 @@ a:hover { opacity: .75; }
 
 /* Research/Article Page (Section 9) */
 .framework-hero { padding: 85px 0 55px; }
-.article-content { max-width: 800px; margin: 5px auto 110px auto; padding: 30px 70px 80px 70px; background: #ffffff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.article-content { max-width: 800px; margin: 0px auto 110px auto; padding: 30px 70px 80px 70px; background: #ffffff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .article-content h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-top: 0.75em; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .vertical-timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 40px; margin-top: 40px; }
 .paper-section { position: relative; margin-bottom: 60px; }
