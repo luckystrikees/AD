@@ -82,6 +82,53 @@ a:hover { opacity: .75; }
 .scholar-portrait { width: 120px; height: 140px; object-fit: cover; object-position: 50% 10%; float: left; margin: 0 30px 5px 0; border: 1px solid var(--border); border-radius: 8px !important; }
 
 /* -------------------------------------------------
+   9b. ABOUT PAGE — SCHOLAR BLOCK
+------------------------------------------------- */
+
+.scholar-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 1.2em;
+}
+
+.scholar-portrait-flex {
+  width: 140px;
+  height: 170px;
+  object-fit: cover;
+  object-position: 50% 15%;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.scholar-text p:first-child {
+  margin-top: 0;
+}
+
+.scholar-contact {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.scholar-contact a {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .scholar-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .scholar-portrait-flex {
+    width: 140px;
+    height: 170px;
+  }
+}
+
+/* -------------------------------------------------
    10. FOOTER (COMPRESSED)
 ------------------------------------------------- */
 .site-footer {
