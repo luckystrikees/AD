@@ -365,7 +365,7 @@ a:focus,
   /* Creating the "Document" look */
   max-width: 800px;
   margin: -60px auto 110px auto; /* Pulls the content up to overlap the hero slightly */
-  padding: 80px 70px;            /* Generous padding for a "book-like" feel */
+  padding: 30px 70px;            /* Generous padding for a "book-like" feel */
   background: #ffffff;           /* White background for the article */
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Adds physical depth */
@@ -383,7 +383,7 @@ a:focus,
   font-size: 1.8rem;
   font-weight: 500;
   color: var(--accent);
-  margin-top: 2.5em;
+  margin-top: 0.5em;
   margin-bottom: 1em;
   border-bottom: 1px solid var(--border); /* Adds an architectural anchor */
   padding-bottom: 10px;
