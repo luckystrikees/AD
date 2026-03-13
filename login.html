@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In | Autistic Scholars</title>
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="/assets/css/styles.css">
 
     <style>
-        /* 1. Ensure the container centers between header/footer */
         main {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 70vh; /* Keeps the card centered on the screen */
+            min-height: 70vh;
         }
 
         .hero {
@@ -32,34 +30,32 @@
             background-repeat: no-repeat;
             padding: 60px 20px;
         }
-    
-        /* 2. THE CARD: Fixed styling for emblem and alignment */
+
         .login-container {
             width: 100%;
             max-width: 400px;
-            padding: 40px 40px; 
+            padding: 40px 40px;
             background: #ffffff !important;
             border: 1px solid var(--border);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
             border-radius: 20px !important;
             text-align: center;
         }
-    
-        /* 3. THE EMBLEM: Centered via CSS, size controlled by class */
+
         .login-emblem {
-            width: 90px !important; 
+            width: 90px !important;
             display: block !important;
-            margin: 0 auto 20px auto !important; 
+            margin: 0 auto 20px auto !important;
             opacity: 0.7;
         }
-    
+
         .login-title {
             font-family: 'EB Garamond', serif;
             font-size: 1.6rem;
             color: var(--accent);
-            margin: 0 0 25px 0 !important; 
+            margin: 0 0 25px 0 !important;
         }
-    
+
         .login-form input {
             width: 100%;
             padding: 14px 16px;
@@ -69,7 +65,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
         }
-    
+
         .login-submit {
             display: block;
             width: 100%;
@@ -84,7 +80,7 @@
             border: none !important;
             cursor: pointer;
         }
-    
+
         .login-utility {
             margin-top: 20px;
             font-family: 'Inter', sans-serif;
@@ -94,36 +90,38 @@
             color: #888;
         }
     </style>
-    
 </head>
 <body>
 
     <header class="site-header">
-        <div class="site-title">Autistic Scholars</div>
-        <nav class="site-nav">
-            <a href="/index.html">Home</a>
-            <span class="nav-divider">·</span>
-            <a href="/framework/index.html">Research Program</a>
-            <span class="nav-divider">·</span>
-            <a href="/login.html">Research</a>
-        </nav>
+        <div class="nav-inner">
+            <div class="site-title">Autistic Scholars</div>
+
+            <nav class="site-nav" aria-label="Primary Navigation">
+                <a href="/index.html">Home</a>
+                <span class="nav-divider">·</span>
+                <a href="/framework/">Research Program</a>
+                <span class="nav-divider">·</span>
+                <a href="/login.html">Research Portfolio</a>
+                <span class="nav-divider">·</span>
+                <a href="/login.html">Working Papers</a>
+                <span class="nav-divider">·</span>
+                <a href="/about.html">About</a>
+            </nav>
+        </div>
         <hr class="nav-rule">
     </header>
 
     <main>
         <section class="hero">
             <div class="login-container">
-                <!-- Emblem now uses the login-emblem class defined in CSS -->
                 <img src="/assets/images/emblem.png" alt="Emblem" class="login-emblem">
-                
                 <h2 class="login-title">Secure Portal</h2>
-                
                 <form class="login-form" action="/login" method="POST">
                     <input type="text" name="username" placeholder="SCHOLAR ID" required>
                     <input type="password" name="password" placeholder="PASSWORD" required>
                     <button type="submit" class="login-submit">Authenticate</button>
                 </form>
-                
                 <div class="login-utility">
                     <a href="#">Forgot ID?</a> <span>•</span> <a href="#">Request Access</a>
                 </div>
@@ -135,7 +133,7 @@
         <div class="footer-inner">
             <div class="footer-name">Autistic Scholars</div>
             <div class="footer-descriptor">An Independent Research Initiative</div>
-            <div class="footer-copyright">© 2026</div>
+            <div class="footer-copyright">© 2026 Autistic Scholars</div>
         </div>
     </footer>
 
