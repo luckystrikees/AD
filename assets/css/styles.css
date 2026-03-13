@@ -73,27 +73,21 @@ a:hover { opacity: .75; }
 .scholar-portrait { width: 120px; height: 140px; object-fit: cover; object-position: 50% 10%; float: left; margin: 0 30px 5px 0; border: 1px solid var(--border); border-radius: 8px !important; }
 
 /* -------------------------------------------------
-   10. FOOTER
+   10. FOOTER (COMPRESSED)
 ------------------------------------------------- */
 .site-footer {
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0; /* Reduced from 40px */
   border-top: 1px solid var(--border);
   background: var(--paper);
 }
 
-.footer-inner {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
 .footer-seal-wrap {
-  margin-bottom: 15px;
+  margin-bottom: 5px; /* Reduced from 15px */
 }
 
 .footer-seal {
-  max-width: 70px;
+  max-width: 45px; /* Slightly smaller emblem for a compact look */
   filter: grayscale(100%);
   opacity: 0.6;
 }
@@ -101,20 +95,21 @@ a:hover { opacity: .75; }
 .footer-name {
   font-family: 'EB Garamond', serif;
   font-variant-caps: small-caps;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1; /* Removed extra line height */
 }
 
 .footer-descriptor {
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  margin: 4px 0 10px;
-  color: #555;
+  font-size: 0.75rem; /* Slightly smaller */
+  margin: 2px 0 5px 0; /* Tightened margins */
+  color: #777;
 }
 
 .footer-copyright {
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  color: #888;
+  font-size: 0.7rem;
+  color: #999;
+  margin: 0;
 }
