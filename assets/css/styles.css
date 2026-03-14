@@ -29,28 +29,6 @@ body { margin: 0; padding: 0; font-family: 'EB Garamond', serif; line-height: 1.
 a { color: var(--text); text-decoration: none; transition: opacity 0.2s ease; }
 a:hover { opacity: .75; }
 
-.paper-artifact {
-  margin-top: 20px;
-  padding: 16px 20px;
-  background: var(--parchment);
-  border-left: 3px solid var(--accent);
-  font-size: 0.95rem;
-}
-
-.paper-artifact p {
-  margin: 0 0 6px 0;
-  font-size: 0.95rem !important;
-  line-height: 1.5;
-}
-
-.paper-artifact p:last-child {
-  margin-bottom: 0;
-}
-
-.paper-artifact a {
-  color: var(--accent);
-}
-
 /* Containers */
 .content-inner { max-width: 740px; margin: 0 auto; padding: 0 25px; }
 .wide-container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
@@ -109,6 +87,45 @@ a:hover { opacity: .75; }
 .paper-section { position: relative; margin-bottom: 60px; }
 .paper-section::before { content: ''; position: absolute; left: -48px; top: 5px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; }
 .article-divider { display: block; text-align: center; font-size: 1.8rem; color: var(--accent); opacity: 0.7; margin: 40px auto !important; letter-spacing: 0.5em; border: none !important; }
+.paper-meta-box { background: var(--paper); border: 1px solid var(--border); padding: 15px 20px; margin-top: 15px; }
+
+/* -------------------------------------------------
+   INLINE LINKS & ARTIFACT BOXES
+------------------------------------------------- */
+.paper-artifact {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--parchment);
+  border-left: 3px solid var(--accent);
+  font-size: 0.95rem;
+}
+.paper-artifact p {
+  margin: 0 0 6px 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+.paper-artifact p:last-child {
+  margin-bottom: 0 !important;
+}
+.paper-artifact strong {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+.text-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 56, 51, 0.4);
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.text-link:hover {
+  color: #000000;
+  text-decoration-color: var(--accent);
+}
 
 /* -------------------------------------------------
    9b. ABOUT PAGE — SCHOLAR BLOCK
@@ -119,7 +136,6 @@ a:hover { opacity: .75; }
   gap: 30px;
   margin-top: 1.2em;
 }
-
 .scholar-portrait-flex {
   width: 140px;
   height: 170px;
@@ -128,60 +144,19 @@ a:hover { opacity: .75; }
   flex-shrink: 0;
   border: 1px solid var(--border);
 }
-
-.scholar-text p:first-child {
-  margin-top: 0;
-}
-
-.scholar-contact {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-}
-
-.scholar-contact a {
-  color: var(--accent);
-}
+.scholar-text p:first-child { margin-top: 0; }
+.scholar-contact { font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 0.02em; }
+.scholar-contact a { color: var(--accent); }
 
 /* -------------------------------------------------
    10. FOOTER
 ------------------------------------------------- */
-.site-footer {
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--border);
-  background: var(--paper);
-}
-
+.site-footer { text-align: center; padding: 20px 0; border-top: 1px solid var(--border); background: var(--paper); }
 .footer-seal-wrap { margin-bottom: 5px; }
-
-.footer-seal {
-  max-width: 45px;
-  filter: grayscale(100%);
-  opacity: 0.6;
-}
-
-.footer-name {
-  font-family: 'EB Garamond', serif;
-  font-variant-caps: small-caps;
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1;
-}
-
-.footer-descriptor {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  margin: 2px 0 5px 0;
-  color: #777;
-}
-
-.footer-copyright {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  color: #999;
-  margin: 0;
-}
+.footer-seal { max-width: 45px; filter: grayscale(100%); opacity: 0.6; }
+.footer-name { font-family: 'EB Garamond', serif; font-variant-caps: small-caps; font-size: 1rem; margin: 0; line-height: 1; }
+.footer-descriptor { font-family: 'Inter', sans-serif; font-size: 0.75rem; margin: 2px 0 5px 0; color: #777; }
+.footer-copyright { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #999; margin: 0; }
 
 /* -------------------------------------------------
    11. MOBILE
@@ -196,31 +171,7 @@ a:hover { opacity: .75; }
 }
 
 @media (max-width: 768px) {
-  .scholar-block {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .scholar-portrait-flex {
-    width: 140px;
-    height: 170px;
-  }
-
-
-   /* Inline text links for academic citations and external URLs */
-   /* Inline text links for academic citations and external URLs */
-   .text-link {
-       color: var(--accent);
-       text-decoration: underline;
-       text-decoration-color: rgba(36, 56, 51, 0.4); /* Faded green underline */
-       text-underline-offset: 3px; /* Pushes the underline down slightly so it doesn't cut through the text */
-       font-weight: 600;
-       transition: all 0.2s ease;
-   }
-   
-   .text-link:hover {
-       color: #000000;
-       text-decoration-color: var(--accent); /* Underline becomes solid on hover */
-   }
+  .scholar-block { flex-direction: column; align-items: center; text-align: center; }
+  .scholar-portrait-flex { width: 140px; height: 170px; }
 }
+/* <-- This is where the missing bracket was! Now everything above it works correctly. */
