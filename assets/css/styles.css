@@ -146,7 +146,8 @@ a:hover { opacity: .75; }
 }
 .scholar-text p:first-child { margin-top: 0; }
 .scholar-contact { font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 0.02em; }
-.scholar-contact a { color: var(--accent); }
+.scholar-contact a { color: inherit; text-decoration: underline;
+}
 
 /* -------------------------------------------------
    10. FOOTER
