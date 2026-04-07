@@ -128,7 +128,7 @@ a:hover { opacity: .75; }
 }
 
 /* -------------------------------------------------
-   9b. ABOUT PAGE — SCHOLAR PORTRAIT (UPDATED)
+   9b. ABOUT PAGE — SCHOLAR PORTRAIT
 ------------------------------------------------- */
 
 /* The floating portrait image */
@@ -194,4 +194,4 @@ a:hover { opacity: .75; }
     display: block !important;
     margin: 0 0 20px 0 !important; /* Keeps it left-aligned, adds space below */
   }
-/* <-- This is where the missing bracket was! Now everything above it works correctly. */
+} /* <--- THIS IS THE CLOSING BRACKET THAT WAS MISSING! */
