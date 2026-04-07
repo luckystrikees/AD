@@ -128,28 +128,42 @@ a:hover { opacity: .75; }
 }
 
 /* -------------------------------------------------
-   9b. ABOUT PAGE — SCHOLAR BLOCK
+   9b. ABOUT PAGE — SCHOLAR PORTRAIT (UPDATED)
 ------------------------------------------------- */
-.scholar-block {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  margin-top: 1.2em;
-}
 
-.scholar-portrait-flex {
-  width: 140px;
-  height: 170px;
-@@ -128,60 +144,19 @@
-  flex-shrink: 0;
+/* The floating portrait image */
+.scholar-portrait {
+  width: 120px !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  object-position: 50% 10% !important; /* Crops to the face */
+  float: left !important;              /* FORCES text to wrap around it */
+  margin: 5px 30px 5px 0 !important;   /* Pushes text 30px away from the right side */
   border: 1px solid var(--border);
+  border-radius: 8px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
 }
 
-.scholar-text p:first-child {
-  margin-top: 0;
+/* Aligns the first paragraph perfectly with the top of the photo */
+.scholar-portrait + p {
+  margin-top: 0 !important;
+  text-align: left !important;
 }
-.scholar-contact { font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 0.02em; }
-.scholar-contact a { color: inherit; text-decoration: underline;
+
+/* Contact text styling */
+.scholar-contact { 
+  font-family: 'Inter', sans-serif; 
+  font-size: 0.85rem; 
+  letter-spacing: 0.02em; 
+  margin-top: 20px;
+}
+
+.scholar-contact a { 
+  color: var(--accent); 
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 56, 51, 0.4);
+  text-underline-offset: 3px;
+  font-weight: 600;
 }
 
 /* -------------------------------------------------
@@ -175,7 +189,9 @@ a:hover { opacity: .75; }
 }
 
 @media (max-width: 768px) {
-  .scholar-block { flex-direction: column; align-items: center; text-align: center; }
-  .scholar-portrait-flex { width: 140px; height: 170px; }
-}
+  .scholar-portrait {
+    float: none !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important; /* Keeps it left-aligned, adds space below */
+  }
 /* <-- This is where the missing bracket was! Now everything above it works correctly. */
