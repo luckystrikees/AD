@@ -136,15 +136,18 @@ a:hover { opacity: .75; }
   gap: 30px;
   margin-top: 1.2em;
 }
+
 .scholar-portrait-flex {
   width: 140px;
   height: 170px;
-  object-fit: cover;
-  object-position: 50% 15%;
+@@ -128,60 +144,19 @@
   flex-shrink: 0;
   border: 1px solid var(--border);
 }
-.scholar-text p:first-child { margin-top: 0; }
+
+.scholar-text p:first-child {
+  margin-top: 0;
+}
 .scholar-contact { font-family: 'Inter', sans-serif; font-size: 0.85rem; letter-spacing: 0.02em; }
 .scholar-contact a { color: inherit; text-decoration: underline;
 }
