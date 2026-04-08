@@ -124,6 +124,7 @@
                 <a href="login.html">Working Papers</a>
                 <span class="nav-divider">·</span>
                 <a href="about.html">About</a>
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">Dark</button>
             </nav>
         </div>
         <hr class="nav-rule">
@@ -155,6 +156,23 @@
             <div class="footer-copyright">© 2026 Autistic Scholars</div>
         </div>
     </footer>
+
+    <script>
+      (function() {
+        var toggle = document.getElementById('darkModeToggle');
+        var isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) document.body.classList.add('dark-mode');
+        if (toggle) {
+          toggle.textContent = isDark ? 'Light' : 'Dark';
+          toggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            var dark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', dark);
+            toggle.textContent = dark ? 'Light' : 'Dark';
+          });
+        }
+      })();
+    </script>
 
 </body>
 </html>

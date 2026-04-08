@@ -4,6 +4,9 @@
 :root {
   --paper: #f7f5f2; --text: #1c1c1c; --accent: #243833;
   --parchment: #F2EFE8; --border: #e6e2dc;
+  --cream: #faf9f6; --warm-white: #f5f4f0;
+  --dark-bg: #121214; --dark-surface: #1c1c1e;
+  --dark-text: #e8e8e8; --dark-text-muted: #9e9ea3;
 }
 
 /* -------------------------------------------------
@@ -101,7 +104,7 @@ a:hover { opacity: .75; }
 .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .pillar {
   display: flex; flex-direction: column; justify-content: flex-start; padding: 50px 28px 42px;
-  border: 1px solid var(--border); background: #ffffff; text-align: center;
+  border: 1px solid var(--border); background: var(--cream); text-align: center;
   min-height: 260px; text-decoration: none; transition: all 0.3s ease;
 }
 .pillar:hover { background: var(--paper); border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
@@ -116,7 +119,7 @@ a:hover { opacity: .75; }
    2. RESEARCH / ARTICLE PAGE
 ------------------------------------------------- */
 .framework-hero { padding: 85px 0 55px; }
-.article-content { max-width: 800px; margin: 0px auto 110px auto; padding: 30px 70px 80px 70px; background: #ffffff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.article-content { max-width: 800px; margin: 0px auto 110px auto; padding: 30px 70px 80px 70px; background: var(--cream); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .article-content h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-top: 0.75em; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .vertical-timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 40px; margin-top: 40px; }
 .paper-section { position: relative; margin-bottom: 60px; }
@@ -228,7 +231,7 @@ a:hover { opacity: .75; }
   .scholar-portrait {
     float: none !important;
     display: block !important;
-    margin: 0 0 20px 0 !important; /* Keeps it left-aligned, adds space below */
+    margin: 0 0 20px 0 !important;
   }
   .login-container { padding: 30px 25px; }
 }
@@ -240,5 +243,66 @@ a:hover { opacity: .75; }
   .article-content { padding: 20px 20px 40px 20px; }
   .login-container { padding: 25px 20px; }
   .site-title { font-size: 1.8rem; }
+}
+
+/* -------------------------------------------------
+   7. DARK MODE
+------------------------------------------------- */
+body.dark-mode {
+  --paper: var(--dark-bg);
+  --text: var(--dark-text);
+  --border: rgba(255, 255, 255, 0.08);
+  --parchment: var(--dark-surface);
+  --cream: var(--dark-surface);
+  --warm-white: var(--dark-surface);
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark-mode .site-title { color: var(--dark-text); }
+body.dark-mode .site-nav a { color: var(--dark-text-muted); }
+body.dark-mode .site-nav a:hover { color: var(--dark-text); }
+body.dark-mode .nav-rule { border-color: var(--border); }
+body.dark-mode .pillar { border-color: var(--border); }
+body.dark-mode .pillar:hover { border-color: var(--accent); }
+body.dark-mode .pillar h3 { color: var(--dark-text); }
+body.dark-mode .pillar p { color: var(--dark-text-muted); }
+body.dark-mode .pillar-link { color: var(--dark-text); }
+body.dark-mode .article-content { border-color: var(--border); }
+body.dark-mode .article-content h3 { color: var(--dark-text); border-color: var(--border); }
+body.dark-mode .article-divider { color: var(--dark-text-muted); }
+body.dark-mode .text-link { color: var(--dark-text); }
+body.dark-mode .text-link:hover { color: #ffffff; }
+body.dark-mode .paper-meta-box { border-color: var(--border); }
+body.dark-mode .scholar-portrait { border-color: var(--border); }
+body.dark-mode .scholar-contact a { color: var(--dark-text); }
+body.dark-mode .site-footer { border-color: var(--border); }
+body.dark-mode .footer-name { color: var(--dark-text); }
+body.dark-mode .footer-descriptor { color: var(--dark-text-muted); }
+body.dark-mode .footer-copyright { color: var(--dark-text-muted); }
+body.dark-mode .footer-seal { filter: grayscale(100%) brightness(1.5); }
+body.dark-mode .login-container { background: var(--dark-surface); border-color: var(--border); }
+body.dark-mode .login-title { color: var(--dark-text); }
+body.dark-mode .login-form input { background: var(--dark-bg); border-color: var(--border); color: var(--dark-text); }
+body.dark-mode .login-utility a { color: var(--dark-text-muted); }
+body.dark-mode .hero-kicker { color: var(--dark-text-muted); }
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+.dark-mode-toggle:hover {
+  border-color: var(--accent);
+  opacity: 1;
 }
 
