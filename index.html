@@ -68,7 +68,9 @@
         <a href="login.html">Working Papers</a>
         <span class="nav-divider">·</span>
         <a href="about.html">About</a>
-        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">Dark</button>
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+          <img src="assets/images/darkmode.png" alt="" aria-hidden="true">
+        </button>
       </nav>
     </div>
     <hr class="nav-rule">
@@ -142,12 +144,10 @@
       var isDark = localStorage.getItem('darkMode') === 'true';
       if (isDark) document.body.classList.add('dark-mode');
       if (toggle) {
-        toggle.textContent = isDark ? 'Light' : 'Dark';
         toggle.addEventListener('click', function() {
           document.body.classList.toggle('dark-mode');
           var dark = document.body.classList.contains('dark-mode');
           localStorage.setItem('darkMode', dark);
-          toggle.textContent = dark ? 'Light' : 'Dark';
         });
       }
     })();

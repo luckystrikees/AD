@@ -296,18 +296,25 @@ body.dark-mode .hero-kicker { color: var(--dark-text-muted); }
   background: none;
   border: 1px solid var(--border);
   color: var(--text);
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  font-family: 'Inter', sans-serif;
+  padding: 4px;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   margin-left: 10px;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
 .dark-mode-toggle:hover {
   border-color: var(--accent);
   opacity: 1;
+}
+.dark-mode-toggle img {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 /* -------------------------------------------------
