@@ -382,6 +382,7 @@
 
         // Move tooltip to body to avoid clipping
         document.body.appendChild(tooltip);
+        tooltip.classList.add('visible');
         activeTooltip = tooltip;
         activeTerm = term;
 
@@ -389,6 +390,9 @@
       }
 
       function closeTooltip() {
+        if (activeTooltip) {
+          activeTooltip.classList.remove('visible');
+        }
         if (activeTerm) {
           activeTerm.setAttribute('aria-expanded', 'false');
         }

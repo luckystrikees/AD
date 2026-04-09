@@ -563,6 +563,9 @@ body.dark-mode .pls-box strong {
   text-transform: none;
   pointer-events: none;
 }
+.glossary-tooltip.visible {
+  display: block;
+}
 .glossary-tooltip::before {
   content: '';
   position: absolute;
@@ -571,9 +574,6 @@ body.dark-mode .pls-box strong {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid var(--accent);
-}
-.glossary-term[aria-expanded="true"] + .glossary-tooltip {
-  display: block;
 }
 
 body.dark-mode .glossary-term {
