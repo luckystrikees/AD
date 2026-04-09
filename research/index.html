@@ -391,12 +391,14 @@
         term.setAttribute('aria-expanded', 'true');
         var tooltip = term.nextElementSibling;
 
-        // Move tooltip to body to avoid any parent clipping/transforms
+        // Move tooltip to body to escape all parent clipping/transforms
         document.body.appendChild(tooltip);
         tooltip.classList.add('visible');
         activeTooltip = tooltip;
         activeTerm = term;
 
+        // Force reflow for accurate dimensions
+        void tooltip.offsetWidth;
         positionTooltip(term, tooltip);
       }
 
@@ -405,7 +407,7 @@
           activeTooltip.classList.remove('visible');
         }
         if (activeTerm && activeTooltip) {
-          // Move tooltip back to original position
+          // Move tooltip back to original DOM position
           activeTerm.parentNode.insertBefore(activeTooltip, activeTerm.nextSibling);
         }
         if (activeTerm) {
