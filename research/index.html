@@ -370,13 +370,40 @@
           // Position the tooltip
           var tooltip = this.nextElementSibling;
           if (tooltip && !expanded) {
-            var rect = this.getBoundingClientRect();
-            var tooltipHeight = tooltip.offsetHeight || 60;
-            tooltip.style.top = (rect.top - tooltipHeight - 12) + 'px';
-            tooltip.style.left = (rect.left + 10) + 'px';
+            positionTooltip(this, tooltip);
           }
         });
       });
+
+      function positionTooltip(term, tooltip) {
+        var rect = term.getBoundingClientRect();
+        var tooltipWidth = 280;
+        var tooltipHeight = tooltip.offsetHeight || 60;
+        var padding = 12;
+
+        // Default: show above, aligned left with term
+        var top = rect.top - tooltipHeight - padding;
+        var left = rect.left;
+
+        // If tooltip would go off top of screen, show below instead
+        if (top < padding) {
+          top = rect.bottom + padding;
+        }
+
+        // If tooltip would go off right edge, shift it left
+        if (left + tooltipWidth > window.innerWidth - padding) {
+          left = window.innerWidth - tooltipWidth - padding;
+        }
+
+        // If tooltip would go off left edge, align to left edge
+        if (left < padding) {
+          left = padding;
+        }
+
+        tooltip.style.top = top + 'px';
+        tooltip.style.left = left + 'px';
+      }
+
       // Close tooltips when clicking elsewhere
       document.addEventListener('click', function() {
         terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
@@ -392,12 +419,7 @@
         terms.forEach(function(t) {
           if (t.getAttribute('aria-expanded') === 'true') {
             var tooltip = t.nextElementSibling;
-            if (tooltip) {
-              var rect = t.getBoundingClientRect();
-              var tooltipHeight = tooltip.offsetHeight || 60;
-              tooltip.style.top = (rect.top - tooltipHeight - 12) + 'px';
-              tooltip.style.left = (rect.left + 10) + 'px';
-            }
+            if (tooltip) positionTooltip(t, tooltip);
           }
         });
       }, { passive: true });
