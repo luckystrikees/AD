@@ -370,6 +370,15 @@
             if (t !== term) t.setAttribute('aria-expanded', 'false');
           });
           this.setAttribute('aria-expanded', String(!expanded));
+
+          // Position the tooltip
+          var tooltip = this.nextElementSibling;
+          if (tooltip && !expanded) {
+            var rect = this.getBoundingClientRect();
+            var tooltipHeight = tooltip.offsetHeight || 60;
+            tooltip.style.top = (rect.top - tooltipHeight - 12) + 'px';
+            tooltip.style.left = (rect.left + 10) + 'px';
+          }
         });
       });
       // Close tooltips when clicking elsewhere
@@ -381,6 +390,23 @@
         if (e.key === 'Escape') {
           terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
         }
+      });
+      // Reposition on scroll/resize
+      window.addEventListener('scroll', function() {
+        terms.forEach(function(t) {
+          if (t.getAttribute('aria-expanded') === 'true') {
+            var tooltip = t.nextElementSibling;
+            if (tooltip) {
+              var rect = t.getBoundingClientRect();
+              var tooltipHeight = tooltip.offsetHeight || 60;
+              tooltip.style.top = (rect.top - tooltipHeight - 12) + 'px';
+              tooltip.style.left = (rect.left + 10) + 'px';
+            }
+          }
+        });
+      }, { passive: true });
+      window.addEventListener('resize', function() {
+        terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
       });
     })();
   </script>

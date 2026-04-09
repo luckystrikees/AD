@@ -404,6 +404,7 @@ body.dark-mode .scroll-progress { background: #a8d5ba; }
 }
 .collapsible-content.expanded {
   max-height: 2000px;
+  overflow: visible;
 }
 
 /* Plain Language Summary toggle */
@@ -545,10 +546,7 @@ body.dark-mode .pls-box strong {
 }
 .glossary-tooltip {
   display: none;
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
   width: 280px;
   max-width: 90vw;
   padding: 12px 16px;
@@ -558,18 +556,18 @@ body.dark-mode .pls-box strong {
   line-height: 1.5;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 50;
+  z-index: 9999;
   text-align: left;
   font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
+  pointer-events: none;
 }
 .glossary-tooltip::after {
   content: '';
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
   border: 6px solid transparent;
   border-top-color: var(--accent);
 }
