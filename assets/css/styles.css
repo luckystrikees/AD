@@ -599,11 +599,21 @@ body.dark-mode .pls-box strong {
 .glossary-tooltip::before {
   content: '';
   position: absolute;
-  top: -6px;
   left: 16px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
+}
+/* Arrow on top (tooltip below term) */
+.glossary-tooltip::before {
+  top: -6px;
   border-bottom: 6px solid var(--accent);
+}
+/* Arrow on bottom (tooltip above term) */
+.glossary-tooltip[data-arrow="top"]::before {
+  top: auto;
+  bottom: -6px;
+  border-bottom: none;
+  border-top: 6px solid var(--accent);
 }
 
 body.dark-mode .glossary-term {
@@ -615,6 +625,9 @@ body.dark-mode .glossary-tooltip {
 }
 body.dark-mode .glossary-tooltip::before {
   border-bottom-color: #2a3a34;
+}
+body.dark-mode .glossary-tooltip[data-arrow="top"]::before {
+  border-top-color: #2a3a34;
 }
 
 @media (max-width: 768px) {

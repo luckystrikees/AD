@@ -404,20 +404,25 @@
         var tooltipHeight = tooltip.offsetHeight || 50;
         var padding = 12;
 
-        // Position below the term
+        // Default: position below the term, centered
         var top = rect.bottom + 8;
-        var left = rect.left + (rect.width / 2) - 16;
+        var left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
 
         // Clamp to viewport right edge
         if (left + tooltipWidth > window.innerWidth - padding) {
           left = window.innerWidth - tooltipWidth - padding;
         }
         // Clamp to viewport left edge
-        if (left < padding) left = padding;
+        if (left < padding) {
+          left = padding;
+        }
 
-        // Flip above if near bottom of viewport
+        // If tooltip would go off bottom of viewport, show above instead
         if (top + tooltipHeight > window.innerHeight - padding) {
           top = rect.top - tooltipHeight - 8;
+          tooltip.setAttribute('data-arrow', 'top');
+        } else {
+          tooltip.setAttribute('data-arrow', 'bottom');
         }
 
         tooltip.style.top = top + 'px';
