@@ -547,15 +547,15 @@ body.dark-mode .pls-box strong {
 .glossary-tooltip {
   display: none;
   position: fixed;
-  width: 280px;
-  max-width: 90vw;
-  padding: 12px 16px;
+  width: 260px;
+  max-width: calc(100vw - 24px);
+  padding: 10px 14px;
   background: var(--accent);
   color: #fff;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.45;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   z-index: 9999;
   text-align: left;
   font-weight: 400;
@@ -563,13 +563,14 @@ body.dark-mode .pls-box strong {
   text-transform: none;
   pointer-events: none;
 }
-.glossary-tooltip::after {
+.glossary-tooltip::before {
   content: '';
   position: absolute;
-  top: 100%;
-  left: 20px;
-  border: 6px solid transparent;
-  border-top-color: var(--accent);
+  top: -6px;
+  left: 16px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--accent);
 }
 .glossary-term[aria-expanded="true"] + .glossary-tooltip {
   display: block;
@@ -582,8 +583,8 @@ body.dark-mode .glossary-tooltip {
   background: #2a3a34;
   color: var(--dark-text);
 }
-body.dark-mode .glossary-tooltip::after {
-  border-top-color: #2a3a34;
+body.dark-mode .glossary-tooltip::before {
+  border-bottom-color: #2a3a34;
 }
 
 @media (max-width: 768px) {

@@ -369,7 +369,7 @@
           });
           this.setAttribute('aria-expanded', String(!expanded));
 
-          // Position the tooltip
+          // Position the tooltip below the term
           var tooltip = this.nextElementSibling;
           if (tooltip && !expanded) {
             positionTooltip(this, tooltip);
@@ -379,27 +379,27 @@
 
       function positionTooltip(term, tooltip) {
         var rect = term.getBoundingClientRect();
-        var tooltipWidth = 280;
-        var tooltipHeight = tooltip.offsetHeight || 60;
+        var tooltipWidth = tooltip.offsetWidth || 260;
+        var tooltipHeight = tooltip.offsetHeight || 50;
         var padding = 12;
+        var arrowOffset = 16;
 
-        // Default: show above, aligned left with term
-        var top = rect.top - tooltipHeight - padding;
-        var left = rect.left;
+        // Position below the term
+        var top = rect.bottom + 8;
+        // Center tooltip on the term
+        var left = rect.left + (rect.width / 2) - arrowOffset;
 
-        // If tooltip would go off top of screen, show below instead
-        if (top < padding) {
-          top = rect.bottom + padding;
-        }
-
-        // If tooltip would go off right edge, shift it left
+        // Clamp to viewport right edge
         if (left + tooltipWidth > window.innerWidth - padding) {
           left = window.innerWidth - tooltipWidth - padding;
         }
-
-        // If tooltip would go off left edge, align to left edge
+        // Clamp to viewport left edge
         if (left < padding) {
           left = padding;
+        }
+        // If tooltip would go off bottom, show above instead
+        if (top + tooltipHeight > window.innerHeight - padding) {
+          top = rect.top - tooltipHeight - 8;
         }
 
         tooltip.style.top = top + 'px';
@@ -416,7 +416,7 @@
           terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
         }
       });
-      // Reposition on scroll/resize
+      // Reposition on scroll
       window.addEventListener('scroll', function() {
         terms.forEach(function(t) {
           if (t.getAttribute('aria-expanded') === 'true') {
@@ -425,6 +425,7 @@
           }
         });
       }, { passive: true });
+      // Close on resize
       window.addEventListener('resize', function() {
         terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
       });
