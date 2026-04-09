@@ -412,6 +412,9 @@ body.dark-mode .scroll-progress { background: #a8d5ba; }
 .vertical-timeline {
   overflow: visible;
 }
+.article-content {
+  overflow: visible;
+}
 
 /* Plain Language Summary toggle */
 .pls-toggle {
