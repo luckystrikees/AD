@@ -110,6 +110,9 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
+
     <header class="site-header">
         <div class="nav-inner">
             <div class="site-title">Autistic Scholars</div>
@@ -157,6 +160,13 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
     <script>
       (function() {
         var toggle = document.getElementById('darkModeToggle');
@@ -169,6 +179,30 @@
             var dark = document.body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', dark);
             toggle.textContent = dark ? 'Light' : 'Dark';
+          });
+        }
+      })();
+
+      (function() {
+        var bar = document.getElementById('scrollProgress');
+        var btn = document.getElementById('backToTop');
+        if (!bar && !btn) return;
+        function onScroll() {
+          var h = document.documentElement;
+          var scrollPx = h.scrollTop || document.body.scrollTop;
+          var maxScroll = h.scrollHeight - h.clientHeight;
+          var pct = maxScroll > 0 ? (scrollPx / maxScroll) * 100 : 0;
+          if (bar) bar.style.width = pct + '%';
+          if (btn) {
+            if (scrollPx > 400) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+          }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        if (btn) {
+          btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           });
         }
       })();

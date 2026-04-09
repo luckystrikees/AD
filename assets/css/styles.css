@@ -310,3 +310,100 @@ body.dark-mode .hero-kicker { color: var(--dark-text-muted); }
   opacity: 1;
 }
 
+/* -------------------------------------------------
+   8. SCROLL PROGRESS BAR
+------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* -------------------------------------------------
+   9. BACK TO TOP BUTTON
+------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* -------------------------------------------------
+   10. COLLAPSIBLE SECTIONS
+------------------------------------------------- */
+.collapsible-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-top: 0.75em;
+}
+.collapsible-header:hover {
+  opacity: 0.85;
+}
+.collapsible-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--accent);
+}
+.collapsible-header[aria-expanded="true"] .collapsible-chevron {
+  transform: rotate(180deg);
+}
+.collapsible-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+.collapsible-content.expanded {
+  max-height: 2000px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsible-content {
+    transition: none;
+  }
+  .back-to-top {
+    transition: none;
+  }
+}
+
