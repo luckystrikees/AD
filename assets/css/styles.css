@@ -488,6 +488,116 @@ body.dark-mode .pls-box strong {
   }
 }
 
+/* -------------------------------------------------
+   11. SCROLL-TRIGGERED FADE-INS
+------------------------------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for grouped items */
+.fade-in[data-delay="1"] { transition-delay: 0.1s; }
+.fade-in[data-delay="2"] { transition-delay: 0.2s; }
+.fade-in[data-delay="3"] { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* -------------------------------------------------
+   12. HOVER MICRO-INTERACTIONS
+------------------------------------------------- */
+
+/* Animated link underlines */
+.text-link {
+  position: relative;
+}
+.text-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.text-link:hover::after {
+  width: 100%;
+}
+
+/* Pillar card hover enhancement */
+.pillar {
+  position: relative;
+  overflow: hidden;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.pillar:hover::before {
+  transform: scaleX(1);
+}
+
+/* Button press effect */
+.hero-button:active,
+.login-submit:active,
+.pls-toggle:active,
+.collapsible-header:active {
+  transform: scale(0.98);
+}
+
+/* Nav link hover underline */
+.site-nav a {
+  position: relative;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.2s ease, left 0.2s ease;
+}
+.site-nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link::after,
+  .pillar::before,
+  .site-nav a::after {
+    transition: none;
+  }
+  .hero-button:active,
+  .login-submit:active,
+  .pls-toggle:active,
+  .collapsible-header:active {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .collapsible-content {
     transition: none;

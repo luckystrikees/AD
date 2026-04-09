@@ -75,7 +75,7 @@
 
       <div class="vertical-timeline">
 
-        <div class="paper-section">
+        <div class="paper-section fade-in">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-architectural">
             <span>I. Architectural</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -104,7 +104,7 @@
           </div>
         </div>
 
-        <div class="paper-section">
+        <div class="paper-section fade-in" data-delay="1">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-computational">
             <span>II. Computational</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <div class="paper-section">
+        <div class="paper-section fade-in" data-delay="2">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-experiential">
             <span>III. Experiential</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -162,7 +162,7 @@
           </div>
         </div>
 
-        <div class="paper-section">
+        <div class="paper-section fade-in" data-delay="3">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-mechanistic">
             <span>IV. Mechanistic</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -191,7 +191,7 @@
           </div>
         </div>
 
-        <div class="paper-section">
+        <div class="paper-section fade-in">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-ecological">
             <span>V. Ecological</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -220,7 +220,7 @@
           </div>
         </div>
 
-        <div class="paper-section">
+        <div class="paper-section fade-in">
           <button class="collapsible-header" aria-expanded="false" aria-controls="section-cultural">
             <span>Cultural / Representational Extension<br>(Cross-Level)</span>
             <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -340,6 +340,22 @@
           if (content) content.classList.toggle('expanded');
         });
       });
+    })();
+
+    // Scroll-triggered fade-ins
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 

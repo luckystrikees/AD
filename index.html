@@ -96,19 +96,19 @@
       <div class="wide-container">
         <div class="pillar-grid">
 
-          <a href="research/index.html" class="pillar">
+          <a href="research/index.html" class="pillar fade-in" data-delay="1">
             <h3>Research Program</h3>
             <p>Five lines of enquiry across architectural, computational, experiential, mechanistic, and ecological levels of analysis.</p>
             <span class="pillar-link">View Program</span>
           </a>
 
-          <a href="login.html" class="pillar">
+          <a href="login.html" class="pillar fade-in" data-delay="2">
             <h3>Research Portfolio</h3>
             <p>Cross-scale theoretical frameworks integrating regulatory architecture, predictive processing, neuroenergetics, and social structure.</p>
             <span class="pillar-link">Access Portfolio</span>
           </a>
 
-          <a href="login.html" class="pillar">
+          <a href="login.html" class="pillar fade-in" data-delay="3">
             <h3>Working Papers</h3>
             <p>Citable materials, preprints, and formal references designed for academic engagement.</p>
             <span class="pillar-link">Access Archive</span>
@@ -179,6 +179,22 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
+    })();
+
+    // Scroll-triggered fade-ins
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 
