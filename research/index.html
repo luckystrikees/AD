@@ -68,7 +68,7 @@
     <article class="content-inner article-content">
 
       <p class="abstract-text">
-            This research program develops an integrated account of cognitive regulatory architecture, spanning phenomenological identification, computational formalization, metabolic mechanism, and ecological dynamics. The work operates across five interdependent levels of analysis, tracing the consequences of architectural mismatch within environments calibrated to a single norm. It also examines how these asymmetries are reproduced and stabilised within cultural and representational systems.
+            This research program develops an integrated account of <button class="glossary-term" aria-expanded="false" aria-controls="gloss-reg-arch">regulatory architecture</button><span class="glossary-tooltip" id="gloss-reg-arch">How the brain organizes and manages cognitive processes — the underlying "operating system" that determines how we process social information, make predictions, and allocate mental energy.</span>, spanning <button class="glossary-term" aria-expanded="false" aria-controls="gloss-phenom">phenomenological</button><span class="glossary-tooltip" id="gloss-phenom">Based on direct, first-person lived experience rather than external observation. In this research, autistic perspectives are treated as valid sources of knowledge about how different cognitive systems actually work.</span> identification, computational formalization, metabolic mechanism, and ecological dynamics. The work operates across five interdependent levels of analysis, tracing the consequences of architectural mismatch within environments calibrated to a single norm. It also examines how these asymmetries are reproduced and stabilised within cultural and representational systems.
       </p>
 
       <div class="article-divider">⁂</div>
@@ -112,7 +112,7 @@
             </svg>
           </button>
           <div class="collapsible-content" id="section-computational">
-            <p>Formalizes the architectural distinction within predictive processing and active inference frameworks. Introduces precision weighting as metabolically constrained and develops the concept of dyadic energetic asymmetry.</p>
+            <p>Formalizes the architectural distinction within <button class="glossary-term" aria-expanded="false" aria-controls="gloss-pp">predictive processing</button><span class="glossary-tooltip" id="gloss-pp">A theory that the brain is constantly generating predictions about what will happen next, then updating those predictions based on sensory input. It's how we navigate the world without being overwhelmed by raw data.</span> and <button class="glossary-term" aria-expanded="false" aria-controls="gloss-ai">active inference</button><span class="glossary-tooltip" id="gloss-ai">The idea that we don't just passively predict the world — we act on it to make our predictions come true. When predictions and reality don't match, we either update our predictions or change the world to fit them.</span> frameworks. Introduces <button class="glossary-term" aria-expanded="false" aria-controls="gloss-pw">precision weighting</button><span class="glossary-tooltip" id="gloss-pw">How the brain decides which predictions to trust more. Some sensory signals get "turned up" (high precision) while others get "turned down." This process is metabolically expensive and differs between cognitive architectures.</span> as metabolically constrained and develops the concept of <button class="glossary-term" aria-expanded="false" aria-controls="gloss-dea">dyadic energetic asymmetry</button><span class="glossary-tooltip" id="gloss-dea">When two people with different cognitive architectures interact, one person usually does more of the adjusting work. This creates an energy imbalance — one person's brain works harder to maintain the interaction.</span>.</p>
             <div class="paper-meta-box">
               <p><strong>Question:</strong> How do energetic constraints shape the dynamics of social inference?</p>
             </div>
@@ -141,7 +141,7 @@
             </svg>
           </button>
           <div class="collapsible-content" id="section-experiential">
-            <p>Examines the lived experience of sustained regulatory load. Links energetic cost to intersectional identity, examining how chronic compensatory regulation compounds across racialized, gendered, and neurological axes of normative categorization.</p>
+            <p>Examines the lived experience of sustained regulatory load. Links energetic cost to <button class="glossary-term" aria-expanded="false" aria-controls="gloss-inter">intersectional</button><span class="glossary-tooltip" id="gloss-inter">How different aspects of identity — like being autistic, Black, queer, or disabled — combine to create unique experiences. The cost of navigating a non-autistic world is higher when you're also dealing with racism, sexism, or other forms of discrimination.</span> identity, examining how chronic <button class="glossary-term" aria-expanded="false" aria-controls="gloss-cr">compensatory regulation</button><span class="glossary-tooltip" id="gloss-cr">The extra mental and physical effort required to function in environments not designed for your brain. This includes masking (hiding autistic traits), forcing eye contact, suppressing stims, and constantly translating social cues that aren't intuitive.</span> compounds across racialized, gendered, and neurological axes of normative categorization.</p>
             <div class="paper-meta-box">
               <p><strong>Question:</strong> What does this cost the body?</p>
             </div>
@@ -170,7 +170,7 @@
             </svg>
           </button>
           <div class="collapsible-content" id="section-mechanistic">
-            <p>Proposes a specific neuro-immunometabolic pathway linking chronic compensatory regulation to mitochondrial dysfunction. Provides falsifiable biomarker predictions and a proposed study design.</p>
+            <p>Proposes a specific <button class="glossary-term" aria-expanded="false" aria-controls="gloss-nim">neuro-immunometabolic</button><span class="glossary-tooltip" id="gloss-nim">The connection between the brain, immune system, and metabolism. Chronic stress from compensatory regulation doesn't just affect the mind — it triggers immune responses and disrupts how cells produce energy.</span> pathway linking chronic compensatory regulation to <button class="glossary-term" aria-expanded="false" aria-controls="gloss-md">mitochondrial dysfunction</button><span class="glossary-tooltip" id="gloss-md">Mitochondria are the "power plants" inside your cells that produce energy. When they don't work properly, you experience profound fatigue, brain fog, and physical exhaustion — symptoms commonly reported in autistic burnout.</span>. Provides falsifiable biomarker predictions and a proposed study design.</p>
             <div class="paper-meta-box">
               <p><strong>Question:</strong> What is the specific molecular pathway?</p>
             </div>
@@ -356,6 +356,32 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       els.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // Glossary tooltips
+    (function() {
+      var terms = document.querySelectorAll('.glossary-term');
+      terms.forEach(function(term) {
+        term.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          // Close all other tooltips first
+          terms.forEach(function(t) {
+            if (t !== term) t.setAttribute('aria-expanded', 'false');
+          });
+          this.setAttribute('aria-expanded', String(!expanded));
+        });
+      });
+      // Close tooltips when clicking elsewhere
+      document.addEventListener('click', function() {
+        terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
+      });
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          terms.forEach(function(t) { t.setAttribute('aria-expanded', 'false'); });
+        }
+      });
     })();
   </script>
 

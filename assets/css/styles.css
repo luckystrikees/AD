@@ -515,6 +515,80 @@ body.dark-mode .pls-box strong {
 }
 
 /* -------------------------------------------------
+   13. GLOSSARY TOOLTIPS
+------------------------------------------------- */
+.glossary-term {
+  position: relative;
+  display: inline;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed var(--accent);
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  line-height: inherit;
+}
+.glossary-term:hover {
+  opacity: 0.8;
+}
+.glossary-term[aria-expanded="true"] {
+  border-bottom-style: solid;
+}
+.glossary-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  max-width: 90vw;
+  padding: 12px 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.glossary-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--accent);
+}
+.glossary-term[aria-expanded="true"] + .glossary-tooltip {
+  display: block;
+}
+
+body.dark-mode .glossary-term {
+  border-bottom-color: #5a9a7a;
+}
+body.dark-mode .glossary-tooltip {
+  background: #2a3a34;
+  color: var(--dark-text);
+}
+body.dark-mode .glossary-tooltip::after {
+  border-top-color: #2a3a34;
+}
+
+@media (max-width: 768px) {
+  .glossary-tooltip {
+    width: 240px;
+    font-size: 0.8rem;
+  }
+}
+
+/* -------------------------------------------------
    12. HOVER MICRO-INTERACTIONS
 ------------------------------------------------- */
 
