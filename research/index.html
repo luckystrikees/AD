@@ -375,40 +375,10 @@
           this.setAttribute('aria-expanded', String(!expanded));
           var tooltip = this.nextElementSibling;
           if (tooltip) {
-            if (!expanded) {
-              tooltip.classList.add('visible');
-              positionTooltip(this, tooltip);
-            } else {
-              tooltip.classList.remove('visible');
-            }
+            tooltip.classList.toggle('visible', !expanded);
           }
         });
       });
-
-      function positionTooltip(term, tooltip) {
-        var rect = term.getBoundingClientRect();
-        var tooltipWidth = tooltip.offsetWidth || 260;
-        var tooltipHeight = tooltip.offsetHeight || 50;
-        var padding = 12;
-
-        // Position below the term (viewport-relative)
-        var top = rect.bottom + 8;
-        var left = rect.left + (rect.width / 2) - 16;
-
-        // Clamp to viewport
-        if (left + tooltipWidth > window.innerWidth - padding) {
-          left = window.innerWidth - tooltipWidth - padding;
-        }
-        if (left < padding) left = padding;
-
-        // Flip above if near bottom of viewport
-        if (top + tooltipHeight > window.innerHeight - padding) {
-          top = rect.top - tooltipHeight - 8;
-        }
-
-        tooltip.style.top = top + 'px';
-        tooltip.style.left = left + 'px';
-      }
 
       // Close on outside click
       document.addEventListener('click', function() {
@@ -427,23 +397,6 @@
             if (tip) tip.classList.remove('visible');
           });
         }
-      });
-      // Reposition on scroll
-      window.addEventListener('scroll', function() {
-        terms.forEach(function(t) {
-          if (t.getAttribute('aria-expanded') === 'true') {
-            var tip = t.nextElementSibling;
-            if (tip) positionTooltip(t, tip);
-          }
-        });
-      }, { passive: true });
-      // Close on resize
-      window.addEventListener('resize', function() {
-        terms.forEach(function(t) {
-          t.setAttribute('aria-expanded', 'false');
-          var tip = t.nextElementSibling;
-          if (tip) tip.classList.remove('visible');
-        });
       });
     })();
   </script>

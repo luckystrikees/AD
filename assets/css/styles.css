@@ -552,9 +552,11 @@ body.dark-mode .pls-box strong {
 }
 .glossary-tooltip {
   display: none;
-  position: fixed;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
   width: 260px;
-  max-width: calc(100vw - 24px);
+  max-width: 80vw;
   padding: 10px 14px;
   background: var(--accent);
   color: #fff;
@@ -562,7 +564,7 @@ body.dark-mode .pls-box strong {
   line-height: 1.45;
   border-radius: 6px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  z-index: 9999;
+  z-index: 100;
   text-align: left;
   font-weight: 400;
   letter-spacing: normal;
@@ -575,11 +577,11 @@ body.dark-mode .pls-box strong {
 .glossary-tooltip::before {
   content: '';
   position: absolute;
-  top: -6px;
+  top: 100%;
   left: 16px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid var(--accent);
+  border-top: 6px solid var(--accent);
 }
 
 body.dark-mode .glossary-term {
@@ -590,13 +592,13 @@ body.dark-mode .glossary-tooltip {
   color: var(--dark-text);
 }
 body.dark-mode .glossary-tooltip::before {
-  border-bottom-color: #2a3a34;
+  border-top-color: #2a3a34;
 }
 
 @media (max-width: 768px) {
   .glossary-tooltip {
-    width: 240px;
-    font-size: 0.8rem;
+    width: 220px;
+    font-size: 0.78rem;
   }
 }
 
