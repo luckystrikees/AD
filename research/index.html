@@ -321,6 +321,17 @@
         header.addEventListener('click', function() {
           var expanded = this.getAttribute('aria-expanded') === 'true';
           var content = document.getElementById(this.getAttribute('aria-controls'));
+
+          // Close all other sections first
+          headers.forEach(function(h) {
+            if (h !== header) {
+              h.setAttribute('aria-expanded', 'false');
+              var c = document.getElementById(h.getAttribute('aria-controls'));
+              if (c) c.classList.remove('expanded');
+            }
+          });
+
+          // Toggle current section
           this.setAttribute('aria-expanded', String(!expanded));
           if (content) content.classList.toggle('expanded');
         });
@@ -364,6 +375,7 @@
         term.addEventListener('click', function(e) {
           e.stopPropagation();
           var expanded = this.getAttribute('aria-expanded') === 'true';
+
           // Close all other tooltips
           terms.forEach(function(t) {
             if (t !== term) {
@@ -372,13 +384,45 @@
               if (tip) tip.classList.remove('visible');
             }
           });
+
           this.setAttribute('aria-expanded', String(!expanded));
           var tooltip = this.nextElementSibling;
           if (tooltip) {
-            tooltip.classList.toggle('visible', !expanded);
+            if (!expanded) {
+              tooltip.classList.add('visible');
+              positionTooltip(this, tooltip);
+            } else {
+              tooltip.classList.remove('visible');
+            }
           }
         });
       });
+
+      function positionTooltip(term, tooltip) {
+        var rect = term.getBoundingClientRect();
+        var tooltipWidth = tooltip.offsetWidth || 260;
+        var tooltipHeight = tooltip.offsetHeight || 50;
+        var padding = 12;
+
+        // Position below the term
+        var top = rect.bottom + 8;
+        var left = rect.left + (rect.width / 2) - 16;
+
+        // Clamp to viewport right edge
+        if (left + tooltipWidth > window.innerWidth - padding) {
+          left = window.innerWidth - tooltipWidth - padding;
+        }
+        // Clamp to viewport left edge
+        if (left < padding) left = padding;
+
+        // Flip above if near bottom of viewport
+        if (top + tooltipHeight > window.innerHeight - padding) {
+          top = rect.top - tooltipHeight - 8;
+        }
+
+        tooltip.style.top = top + 'px';
+        tooltip.style.left = left + 'px';
+      }
 
       // Close on outside click
       document.addEventListener('click', function() {
@@ -388,6 +432,7 @@
           if (tip) tip.classList.remove('visible');
         });
       });
+
       // Close on Escape
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
@@ -397,6 +442,25 @@
             if (tip) tip.classList.remove('visible');
           });
         }
+      });
+
+      // Reposition on scroll
+      window.addEventListener('scroll', function() {
+        terms.forEach(function(t) {
+          if (t.getAttribute('aria-expanded') === 'true') {
+            var tip = t.nextElementSibling;
+            if (tip) positionTooltip(t, tip);
+          }
+        });
+      }, { passive: true });
+
+      // Close on resize
+      window.addEventListener('resize', function() {
+        terms.forEach(function(t) {
+          t.setAttribute('aria-expanded', 'false');
+          var tip = t.nextElementSibling;
+          if (tip) tip.classList.remove('visible');
+        });
       });
     })();
   </script>

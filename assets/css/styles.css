@@ -77,7 +77,28 @@ a:hover { opacity: .75; }
 .nav-rule { border: 0; border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
 
 /* Hero Section */
-.hero { position: relative; text-align: center; padding: 120px 20px 130px; background-image: url("../images/books.png"); background-size: cover; background-position: center; }
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 20px 130px;
+  background-color: #181e1c;
+  background-image: url("../images/books.webp");
+  background-image: image-set(
+    url("../images/books.webp") type("image/webp"),
+    url("../images/books.png") type("image/png")
+  );
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 900px) {
+  .hero {
+    background-image: url("../images/books-mobile.webp");
+    background-image: image-set(
+      url("../images/books-mobile.webp") type("image/webp"),
+      url("../images/books.png") type("image/png")
+    );
+  }
+}
 .hero-inner {
   position: relative; max-width: 820px; margin: 0 auto; padding: 80px 60px;
   display: flex; flex-direction: column; align-items: center;
@@ -555,12 +576,9 @@ body.dark-mode .pls-box strong {
 }
 .glossary-tooltip {
   display: none;
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;
   width: 260px;
-  max-width: 80vw;
+  max-width: calc(100vw - 24px);
   padding: 10px 14px;
   background: var(--accent);
   color: #fff;
@@ -568,7 +586,7 @@ body.dark-mode .pls-box strong {
   line-height: 1.45;
   border-radius: 6px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  z-index: 100;
+  z-index: 10000;
   text-align: left;
   font-weight: 400;
   letter-spacing: normal;
@@ -581,9 +599,8 @@ body.dark-mode .pls-box strong {
 .glossary-tooltip::before {
   content: '';
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -6px;
+  left: 16px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid var(--accent);
@@ -597,7 +614,7 @@ body.dark-mode .glossary-tooltip {
   color: var(--dark-text);
 }
 body.dark-mode .glossary-tooltip::before {
-  border-top-color: #2a3a34;
+  border-bottom-color: #2a3a34;
 }
 
 @media (max-width: 768px) {
