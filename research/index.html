@@ -397,9 +397,10 @@
         activeTooltip = tooltip;
         activeTerm = term;
 
-        // Force reflow for accurate dimensions
-        void tooltip.offsetWidth;
-        positionTooltip(term, tooltip);
+        // Use requestAnimationFrame to ensure tooltip is rendered before measuring
+        requestAnimationFrame(function() {
+          positionTooltip(term, tooltip);
+        });
       }
 
       function closeTooltip() {
