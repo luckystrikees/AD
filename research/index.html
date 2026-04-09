@@ -391,8 +391,8 @@
         var tooltipHeight = tooltip.offsetHeight || 50;
         var padding = 12;
 
-        // Position below the term
-        var top = rect.bottom + window.scrollY + 8;
+        // Position below the term (viewport-relative)
+        var top = rect.bottom + 8;
         var left = rect.left + (rect.width / 2) - 16;
 
         // Clamp to viewport
@@ -401,9 +401,9 @@
         }
         if (left < padding) left = padding;
 
-        // Flip above if near bottom
-        if (top + tooltipHeight > window.scrollY + window.innerHeight - padding) {
-          top = rect.top + window.scrollY - tooltipHeight - 8;
+        // Flip above if near bottom of viewport
+        if (top + tooltipHeight > window.innerHeight - padding) {
+          top = rect.top - tooltipHeight - 8;
         }
 
         tooltip.style.top = top + 'px';

@@ -552,7 +552,7 @@ body.dark-mode .pls-box strong {
 }
 .glossary-tooltip {
   display: none;
-  position: absolute;
+  position: fixed;
   width: 260px;
   max-width: calc(100vw - 24px);
   padding: 10px 14px;
