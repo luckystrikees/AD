@@ -370,33 +370,50 @@
     // Glossary tooltips
     (function() {
       var terms = document.querySelectorAll('.glossary-term');
+      var activeTooltip = null;
+      var activeTerm = null;
 
       terms.forEach(function(term) {
         term.addEventListener('click', function(e) {
           e.stopPropagation();
           var expanded = this.getAttribute('aria-expanded') === 'true';
 
-          // Close all other tooltips
-          terms.forEach(function(t) {
-            if (t !== term) {
-              t.setAttribute('aria-expanded', 'false');
-              var tip = t.nextElementSibling;
-              if (tip) tip.classList.remove('visible');
-            }
-          });
+          // Close any open tooltip
+          closeTooltip();
 
-          this.setAttribute('aria-expanded', String(!expanded));
-          var tooltip = this.nextElementSibling;
-          if (tooltip) {
-            if (!expanded) {
-              tooltip.classList.add('visible');
-              positionTooltip(this, tooltip);
-            } else {
-              tooltip.classList.remove('visible');
-            }
+          if (!expanded) {
+            openTooltip(this);
           }
         });
       });
+
+      function openTooltip(term) {
+        term.setAttribute('aria-expanded', 'true');
+        var tooltip = term.nextElementSibling;
+
+        // Move tooltip to body to avoid any parent clipping/transforms
+        document.body.appendChild(tooltip);
+        tooltip.classList.add('visible');
+        activeTooltip = tooltip;
+        activeTerm = term;
+
+        positionTooltip(term, tooltip);
+      }
+
+      function closeTooltip() {
+        if (activeTooltip) {
+          activeTooltip.classList.remove('visible');
+        }
+        if (activeTerm && activeTooltip) {
+          // Move tooltip back to original position
+          activeTerm.parentNode.insertBefore(activeTooltip, activeTerm.nextSibling);
+        }
+        if (activeTerm) {
+          activeTerm.setAttribute('aria-expanded', 'false');
+        }
+        activeTooltip = null;
+        activeTerm = null;
+      }
 
       function positionTooltip(term, tooltip) {
         var rect = term.getBoundingClientRect();
@@ -431,41 +448,26 @@
 
       // Close on outside click
       document.addEventListener('click', function() {
-        terms.forEach(function(t) {
-          t.setAttribute('aria-expanded', 'false');
-          var tip = t.nextElementSibling;
-          if (tip) tip.classList.remove('visible');
-        });
+        closeTooltip();
       });
 
       // Close on Escape
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-          terms.forEach(function(t) {
-            t.setAttribute('aria-expanded', 'false');
-            var tip = t.nextElementSibling;
-            if (tip) tip.classList.remove('visible');
-          });
+          closeTooltip();
         }
       });
 
       // Reposition on scroll
       window.addEventListener('scroll', function() {
-        terms.forEach(function(t) {
-          if (t.getAttribute('aria-expanded') === 'true') {
-            var tip = t.nextElementSibling;
-            if (tip) positionTooltip(t, tip);
-          }
-        });
+        if (activeTooltip && activeTerm) {
+          positionTooltip(activeTerm, activeTooltip);
+        }
       }, { passive: true });
 
       // Close on resize
       window.addEventListener('resize', function() {
-        terms.forEach(function(t) {
-          t.setAttribute('aria-expanded', 'false');
-          var tip = t.nextElementSibling;
-          if (tip) tip.classList.remove('visible');
-        });
+        closeTooltip();
       });
     })();
   </script>
