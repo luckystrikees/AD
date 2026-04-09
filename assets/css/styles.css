@@ -406,6 +406,12 @@ body.dark-mode .scroll-progress { background: #a8d5ba; }
   max-height: 2000px;
   overflow: visible;
 }
+.paper-section {
+  overflow: visible;
+}
+.vertical-timeline {
+  overflow: visible;
+}
 
 /* Plain Language Summary toggle */
 .pls-toggle {
@@ -546,7 +552,7 @@ body.dark-mode .pls-box strong {
 }
 .glossary-tooltip {
   display: none;
-  position: fixed;
+  position: absolute;
   width: 260px;
   max-width: calc(100vw - 24px);
   padding: 10px 14px;

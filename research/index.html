@@ -359,99 +359,91 @@
     // Glossary tooltips
     (function() {
       var terms = document.querySelectorAll('.glossary-term');
-      var activeTooltip = null;
-      var activeTerm = null;
 
       terms.forEach(function(term) {
         term.addEventListener('click', function(e) {
           e.stopPropagation();
           var expanded = this.getAttribute('aria-expanded') === 'true';
-
-          // Close any open tooltip
-          closeTooltip();
-
-          if (!expanded) {
-            openTooltip(this);
+          // Close all other tooltips
+          terms.forEach(function(t) {
+            if (t !== term) {
+              t.setAttribute('aria-expanded', 'false');
+              var tip = t.nextElementSibling;
+              if (tip) tip.classList.remove('visible');
+            }
+          });
+          this.setAttribute('aria-expanded', String(!expanded));
+          var tooltip = this.nextElementSibling;
+          if (tooltip) {
+            if (!expanded) {
+              tooltip.classList.add('visible');
+              positionTooltip(this, tooltip);
+            } else {
+              tooltip.classList.remove('visible');
+            }
           }
         });
       });
-
-      function openTooltip(term) {
-        term.setAttribute('aria-expanded', 'true');
-        var tooltip = term.nextElementSibling;
-
-        // Move tooltip to body to avoid clipping
-        document.body.appendChild(tooltip);
-        tooltip.classList.add('visible');
-        activeTooltip = tooltip;
-        activeTerm = term;
-
-        positionTooltip(term, tooltip);
-      }
-
-      function closeTooltip() {
-        if (activeTooltip) {
-          activeTooltip.classList.remove('visible');
-        }
-        if (activeTerm) {
-          activeTerm.setAttribute('aria-expanded', 'false');
-        }
-        if (activeTooltip && activeTerm) {
-          // Move tooltip back after the term
-          activeTerm.parentNode.insertBefore(activeTooltip, activeTerm.nextSibling);
-        }
-        activeTooltip = null;
-        activeTerm = null;
-      }
 
       function positionTooltip(term, tooltip) {
         var rect = term.getBoundingClientRect();
         var tooltipWidth = tooltip.offsetWidth || 260;
         var tooltipHeight = tooltip.offsetHeight || 50;
         var padding = 12;
-        var arrowOffset = 16;
 
         // Position below the term
-        var top = rect.bottom + 8;
-        // Center tooltip on the term
-        var left = rect.left + (rect.width / 2) - arrowOffset;
+        var top = rect.bottom + window.scrollY + 8;
+        var left = rect.left + (rect.width / 2) - 16;
 
-        // Clamp to viewport right edge
+        // Clamp to viewport
         if (left + tooltipWidth > window.innerWidth - padding) {
           left = window.innerWidth - tooltipWidth - padding;
         }
-        // Clamp to viewport left edge
-        if (left < padding) {
-          left = padding;
-        }
-        // If tooltip would go off bottom, show above instead
-        if (top + tooltipHeight > window.innerHeight - padding) {
-          top = rect.top - tooltipHeight - 8;
+        if (left < padding) left = padding;
+
+        // Flip above if near bottom
+        if (top + tooltipHeight > window.scrollY + window.innerHeight - padding) {
+          top = rect.top + window.scrollY - tooltipHeight - 8;
         }
 
         tooltip.style.top = top + 'px';
         tooltip.style.left = left + 'px';
       }
 
-      // Close tooltips when clicking elsewhere
+      // Close on outside click
       document.addEventListener('click', function() {
-        closeTooltip();
+        terms.forEach(function(t) {
+          t.setAttribute('aria-expanded', 'false');
+          var tip = t.nextElementSibling;
+          if (tip) tip.classList.remove('visible');
+        });
       });
-      // Close on Escape key
+      // Close on Escape
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-          closeTooltip();
+          terms.forEach(function(t) {
+            t.setAttribute('aria-expanded', 'false');
+            var tip = t.nextElementSibling;
+            if (tip) tip.classList.remove('visible');
+          });
         }
       });
       // Reposition on scroll
       window.addEventListener('scroll', function() {
-        if (activeTooltip && activeTerm) {
-          positionTooltip(activeTerm, activeTooltip);
-        }
+        terms.forEach(function(t) {
+          if (t.getAttribute('aria-expanded') === 'true') {
+            var tip = t.nextElementSibling;
+            if (tip) positionTooltip(t, tip);
+          }
+        });
       }, { passive: true });
       // Close on resize
       window.addEventListener('resize', function() {
-        closeTooltip();
+        terms.forEach(function(t) {
+          t.setAttribute('aria-expanded', 'false');
+          var tip = t.nextElementSibling;
+          if (tip) tip.classList.remove('visible');
+        });
       });
     })();
   </script>
