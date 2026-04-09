@@ -290,7 +290,7 @@ body.dark-mode .login-title { color: var(--dark-text); }
 body.dark-mode .login-form input { background: var(--dark-bg); border-color: var(--border); color: var(--dark-text); }
 body.dark-mode .login-utility a { color: var(--dark-text-muted); }
 body.dark-mode .hero-kicker { color: var(--dark-text-muted); }
-body.dark-mode .scroll-progress { background: #5a9a7a; }
+body.dark-mode .scroll-progress { background: #a8d5ba; }
 
 /* Dark mode toggle button */
 .dark-mode-toggle {
