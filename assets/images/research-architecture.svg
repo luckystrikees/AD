@@ -45,8 +45,8 @@
   <!-- ===== II. COMPUTATIONAL ===== -->
   <rect x="660" y="335" width="240" height="90" fill="#faf9f6" rx="8" stroke="#243833" stroke-width="2"/>
   <text x="780" y="362" text-anchor="middle" font-size="15" font-weight="600" fill="#243833" letter-spacing="0.06em">II. COMPUTATIONAL</text>
-  <text x="780" y="382" text-anchor="middle" font-size="12" fill="#243833">How do energetic constraints</text>
-  <text x="780" y="397" text-anchor="middle" font-size="12" fill="#243833">shape inference?</text>
+  <text x="780" y="382" text-anchor="middle" font-size="12" fill="#243833">How do energetic</text>
+  <text x="780" y="397" text-anchor="middle" font-size="12" fill="#243833">constraints shape inference?</text>
   <text x="780" y="415" text-anchor="middle" font-size="10.5" fill="#6e6e73">Metabolic gating · precision dynamics</text>
 
   <!-- Bidirectional: I ↔ II -->
@@ -74,15 +74,15 @@
   <!-- ===== III. EXPERIENTIAL ===== -->
   <rect x="60" y="485" width="240" height="90" fill="#faf9f6" rx="8" stroke="#243833" stroke-width="2"/>
   <text x="180" y="512" text-anchor="middle" font-size="15" font-weight="600" fill="#243833" letter-spacing="0.06em">III. EXPERIENTIAL</text>
-  <text x="180" y="532" text-anchor="middle" font-size="12" fill="#243833">What does sustained mismatch</text>
-  <text x="180" y="547" text-anchor="middle" font-size="12" fill="#243833">cost the person?</text>
+  <text x="180" y="532" text-anchor="middle" font-size="12" fill="#243833">What does sustained</text>
+  <text x="180" y="547" text-anchor="middle" font-size="12" fill="#243833">mismatch cost the person?</text>
   <text x="180" y="565" text-anchor="middle" font-size="10.5" fill="#6e6e73">Masking · burnout · structural insolvency</text>
 
   <!-- ===== IV. MECHANISTIC ===== -->
   <rect x="660" y="485" width="240" height="90" fill="#faf9f6" rx="8" stroke="#243833" stroke-width="2"/>
   <text x="780" y="512" text-anchor="middle" font-size="15" font-weight="600" fill="#243833" letter-spacing="0.06em">IV. MECHANISTIC</text>
-  <text x="780" y="532" text-anchor="middle" font-size="12" fill="#243833">What is the specific biological</text>
-  <text x="780" y="547" text-anchor="middle" font-size="12" fill="#243833">pathway?</text>
+  <text x="780" y="532" text-anchor="middle" font-size="12" fill="#243833">What is the specific</text>
+  <text x="780" y="547" text-anchor="middle" font-size="12" fill="#243833">biological pathway?</text>
   <text x="780" y="565" text-anchor="middle" font-size="10.5" fill="#6e6e73">Functional Iron Blockade · neuroimmune</text>
 
   <!-- Bidirectional: III ↔ IV -->
