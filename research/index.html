@@ -85,14 +85,22 @@
     .diagram-modal-content {
       position: relative;
       z-index: 1;
+      width: 95vw;
+      height: 90vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+    }
+    .diagram-modal-content img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
     .diagram-modal-close {
       position: absolute;
-      top: -40px;
+      top: -44px;
       right: 0;
       width: 36px;
       height: 36px;
