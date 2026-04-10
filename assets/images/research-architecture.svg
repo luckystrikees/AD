@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 920" font-family="Inter, system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" font-family="Inter, system-ui, -apple-system, sans-serif">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
       <path d="M 0 1 L 9 5 L 0 9 z" fill="#5a7a64"/>
@@ -6,7 +6,7 @@
   </defs>
 
   <!-- Background -->
-  <rect width="960" height="920" fill="#faf9f6" rx="8"/>
+  <rect width="960" height="700" fill="#faf9f6" rx="8"/>
 
   <!-- Title -->
   <text x="480" y="42" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="26" font-weight="600" fill="#243833">Research Program Architecture</text>
