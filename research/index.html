@@ -32,6 +32,91 @@
 
   <link rel="stylesheet" href="../assets/css/styles.css">
 
+  <style>
+    /* Diagram enlarge button */
+    .diagram-enlarge-btn {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      position: relative;
+      border-radius: 8px;
+      transition: box-shadow 0.2s ease;
+    }
+    .diagram-enlarge-btn:hover,
+    .diagram-enlarge-btn:focus-visible {
+      box-shadow: 0 0 0 3px rgba(90, 122, 110, 0.4);
+      outline: none;
+    }
+    .diagram-enlarge-btn img {
+      display: block;
+      border-radius: 8px;
+    }
+    .enlarge-hint {
+      display: block;
+      text-align: center;
+      margin-top: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted, #6e6e73);
+      font-style: italic;
+    }
+
+    /* Diagram lightbox modal */
+    .diagram-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .diagram-modal[hidden] {
+      display: none;
+    }
+    .diagram-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+    }
+    .diagram-modal-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .diagram-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .diagram-modal-close:hover,
+    .diagram-modal-close:focus-visible {
+      background: rgba(255, 255, 255, 0.3);
+      outline: none;
+    }
+    .diagram-modal-close svg {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -276,7 +361,23 @@
 
       <p style="text-align:center; margin-bottom: 20px; color: var(--text-muted, #6e6e73); font-size: 0.95rem;">These lines of enquiry are structurally interdependent.<br>Each level informs and is informed by the others.</p>
       <div style="max-width: 800px; margin: 0 auto;">
-        <img src="../assets/images/research-architecture.svg" alt="Systems architecture diagram showing five research levels: Architectural, Computational, Experiential, Mechanistic, and Ecological, with Cultural/Representational spanning all levels. Solid arrows show forward progression; dashed arrows show feedback loops." style="width: 100%; height: auto;" loading="lazy">
+        <button class="diagram-enlarge-btn" id="diagramEnlargeBtn" aria-label="Enlarge research architecture diagram">
+          <img src="../assets/images/research-architecture.svg" alt="Systems architecture diagram showing five research levels: Architectural, Computational, Experiential, Mechanistic, and Ecological, with Cultural/Representational spanning all levels. Solid arrows show forward progression; dashed arrows show feedback loops." style="width: 100%; height: auto;" loading="lazy">
+          <span class="enlarge-hint">Click to enlarge</span>
+        </button>
+      </div>
+
+      <!-- Diagram lightbox modal -->
+      <div class="diagram-modal" id="diagramModal" role="dialog" aria-modal="true" aria-label="Enlarged research architecture diagram" hidden>
+        <div class="diagram-modal-backdrop" id="diagramModalBackdrop"></div>
+        <div class="diagram-modal-content">
+          <button class="diagram-modal-close" id="diagramModalClose" aria-label="Close enlarged diagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <img src="../assets/images/research-architecture.svg" alt="Systems architecture diagram showing five research levels: Architectural, Computational, Experiential, Mechanistic, and Ecological, with Cultural/Representational spanning all levels. Solid arrows show forward progression; dashed arrows show feedback loops." style="max-width: 95vw; max-height: 90vh; width: auto; height: auto;">
+        </div>
       </div>
 
     </article>
@@ -498,6 +599,37 @@
       // Close on resize
       window.addEventListener('resize', function() {
         closeTooltip();
+      });
+    })();
+
+    // Diagram lightbox
+    (function() {
+      var btn = document.getElementById('diagramEnlargeBtn');
+      var modal = document.getElementById('diagramModal');
+      var closeBtn = document.getElementById('diagramModalClose');
+      var backdrop = document.getElementById('diagramModalBackdrop');
+      if (!btn || !modal) return;
+
+      function openModal() {
+        modal.removeAttribute('hidden');
+        closeBtn.focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.setAttribute('hidden', '');
+        btn.focus();
+        document.body.style.overflow = '';
+      }
+
+      btn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.hasAttribute('hidden')) {
+          closeModal();
+        }
       });
     })();
   </script>
