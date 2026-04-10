@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+      .title { font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 700; fill: #2C3E3A; }
+      .box-title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; fill: #FFFFFF; }
+      .box-subtitle { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; fill: #E8EDE9; }
+      .box-note { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; fill: #B8C5BE; }
+      .white-box-title { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; fill: #2C3E3A; }
+      .white-box-question { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; fill: #3D5A52; text-anchor: start; }
+      .white-box-note { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 400; fill: #6B7F76; }
+      .arrow-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; fill: #5A7A6E; font-style: italic; }
+      .legend-text { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; fill: #5A7A6E; }
+      .dark-box { fill: #2C3E3A; rx: 12; }
+      .white-box { fill: #F8FAF9; stroke: #2C3E3A; stroke-width: 2.5; rx: 12; }
+      .arrow { stroke: #5A7A6E; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .arrow-dashed { stroke: #5A7A6E; stroke-width: 2.5; fill: none; stroke-dasharray: 6,4; marker-end: url(#arrowhead); }
+      .arrow-bidirectional { stroke: #5A7A6E; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); marker-start: url(#arrowhead-reverse); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5A7A6E"/>
+    </marker>
+    <marker id="arrowhead-reverse" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#5A7A6E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#FAFCFB"/>
+
+  <!-- Title -->
+  <text x="600" y="50" class="title" text-anchor="middle">Research Program Architecture</text>
+
+  <!-- CULTURAL / REPRESENTATIONAL Box -->
+  <rect x="350" y="80" width="500" height="80" class="dark-box"/>
+  <text x="600" y="115" class="box-title" text-anchor="middle">CULTURAL / REPRESENTATIONAL</text>
+  <text x="600" y="138" class="box-subtitle" text-anchor="middle">(encodes, enforces, naturalizes)</text>
+  <text x="600" y="155" class="box-note" text-anchor="middle">Spans ALL levels simultaneously</text>
+
+  <!-- Arrow down from Cultural to Ecological -->
+  <line x1="600" y1="160" x2="600" y2="195" class="arrow"/>
+
+  <!-- V. ECOLOGICAL Box -->
+  <rect x="350" y="200" width="500" height="90" class="dark-box"/>
+  <text x="600" y="235" class="box-title" text-anchor="middle">V. ECOLOGICAL</text>
+  <text x="600" y="258" class="box-subtitle" text-anchor="middle">How do all levels interact as a dynamic system?</text>
+  <text x="600" y="278" class="box-note" text-anchor="middle">Integrates environmental input → regulatory load</text>
+
+  <!-- Feedback arrow from Ecological down to the four boxes -->
+  <line x1="600" y1="290" x2="600" y2="340" class="arrow-dashed"/>
+  <text x="615" y="320" class="arrow-label">feedback</text>
+
+  <!-- Horizontal distribution line from feedback -->
+  <line x1="200" y1="340" x2="1000" y2="340" class="arrow" stroke-dasharray="none"/>
+
+  <!-- Vertical drops to the four boxes -->
+  <line x1="200" y1="340" x2="200" y2="370" class="arrow"/>
+  <line x1="1000" y1="340" x2="1000" y2="370" class="arrow"/>
+
+  <!-- I. ARCHITECTURAL Box (top-left) -->
+  <rect x="50" y="375" width="300" height="110" class="white-box"/>
+  <text x="200" y="405" class="white-box-title" text-anchor="middle">I. ARCHITECTURAL</text>
+  <text x="70" y="430" class="white-box-question">What are the two architectures?</text>
+  <text x="200" y="460" class="white-box-note" text-anchor="middle">Socially coupled vs. internally mediated</text>
+
+  <!-- II. COMPUTATIONAL Box (top-right) -->
+  <rect x="850" y="375" width="300" height="110" class="white-box"/>
+  <text x="1000" y="405" class="white-box-title" text-anchor="middle">II. COMPUTATIONAL</text>
+  <text x="870" y="430" class="white-box-question">How do energetic constraints shape inference?</text>
+  <text x="1000" y="460" class="white-box-note" text-anchor="middle">Metabolic gating · precision dynamics</text>
+
+  <!-- Bidirectional arrows between I and II -->
+  <line x1="355" y1="410" x2="845" y2="410" class="arrow"/>
+  <text x="600" y="405" class="arrow-label" text-anchor="middle">formalizes</text>
+  <line x1="845" y1="440" x2="355" y2="440" class="arrow"/>
+  <text x="600" y="455" class="arrow-label" text-anchor="middle">identifies</text>
+
+  <!-- III. EXPERIENTIAL Box (bottom-left) -->
+  <rect x="50" y="560" width="300" height="110" class="white-box"/>
+  <text x="200" y="590" class="white-box-title" text-anchor="middle">III. EXPERIENTIAL</text>
+  <text x="70" y="615" class="white-box-question">What does sustained mismatch cost?</text>
+  <text x="200" y="645" class="white-box-note" text-anchor="middle">Masking · burnout · structural insolvency</text>
+
+  <!-- IV. MECHANISTIC Box (bottom-right) -->
+  <rect x="850" y="560" width="300" height="110" class="white-box"/>
+  <text x="1000" y="590" class="white-box-title" text-anchor="middle">IV. MECHANISTIC</text>
+  <text x="870" y="615" class="white-box-question">What is the specific biological pathway?</text>
+  <text x="1000" y="645" class="white-box-note" text-anchor="middle">Functional Iron Blockade · neuroimmune</text>
+
+  <!-- Arrow from I to III (feeds into) -->
+  <line x1="200" y1="485" x2="200" y2="555" class="arrow"/>
+  <text x="175" y="525" class="arrow-label" text-anchor="end">feeds into</text>
+
+  <!-- Arrow from II to IV (explains) -->
+  <line x1="1000" y1="485" x2="1000" y2="555" class="arrow"/>
+  <text x="1025" y="525" class="arrow-label" text-anchor="start">explains</text>
+
+  <!-- Bidirectional arrows between III and IV -->
+  <line x1="355" y1="595" x2="845" y2="595" class="arrow"/>
+  <text x="600" y="590" class="arrow-label" text-anchor="middle">biological basis</text>
+  <line x1="845" y1="625" x2="355" y2="625" class="arrow"/>
+  <text x="600" y="645" class="arrow-label" text-anchor="middle">validates cost of lived experience</text>
+
+  <!-- Vertical arrow from Ecological center down through the middle -->
+  <line x1="600" y1="340" x2="600" y2="560" class="arrow-dashed"/>
+  <text x="615" y="480" class="arrow-label">grounds in</text>
+
+  <!-- Legend -->
+  <g transform="translate(350, 750)">
+    <line x1="0" y1="15" x2="60" y2="15" class="arrow"/>
+    <text x="75" y="20" class="legend-text">Forward progression</text>
+    <line x1="250" y1="15" x2="310" y2="15" class="arrow-dashed"/>
+    <text x="325" y="20" class="legend-text">Feedback loop</text>
+  </g>
+
+</svg>
