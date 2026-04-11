@@ -141,12 +141,86 @@ a:hover { opacity: .75; }
 ------------------------------------------------- */
 .framework-hero { padding: 85px 0 55px; }
 .article-content { max-width: 800px; margin: 0px auto 110px auto; padding: 30px 70px 80px 70px; background: var(--cream); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.article-content h2 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-top: 1.5em; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .article-content h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-top: 0.75em; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .vertical-timeline { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 40px; margin-top: 40px; }
 .paper-section { position: relative; margin-bottom: 60px; }
 .paper-section::before { content: ''; position: absolute; left: -48px; top: 5px; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; }
 .article-divider { display: block; text-align: center; font-size: 1.8rem; color: var(--accent); opacity: 0.7; margin: 40px auto; letter-spacing: 0.5em; border: none; }
 .paper-meta-box { background: var(--paper); border: 1px solid var(--border); padding: 15px 20px; margin-top: 15px; }
+
+/* Paper page specific styles */
+.hero-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 10px 0 0 0 !important;
+  font-weight: 400;
+}
+.breadcrumb {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6e6e73);
+  margin-bottom: 24px;
+}
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 56, 51, 0.3);
+  text-underline-offset: 2px;
+}
+.breadcrumb a:hover {
+  opacity: 1;
+  text-decoration-color: var(--accent);
+}
+.breadcrumb [aria-current="page"] {
+  color: var(--text-muted, #6e6e73);
+}
+.paper-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text-muted, #6e6e73);
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.paper-meta strong {
+  color: var(--text);
+}
+.paper-meta a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 56, 51, 0.3);
+  text-underline-offset: 2px;
+}
+.paper-meta a:hover {
+  opacity: 1;
+  text-decoration-color: var(--accent);
+}
+.paper-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.paper-nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(36, 56, 51, 0.3);
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+.paper-nav-link:hover {
+  opacity: 1;
+  text-decoration-color: var(--accent);
+}
 
 /* -------------------------------------------------
    3. INLINE LINKS & ARTIFACT BOXES
@@ -299,6 +373,15 @@ body.dark-mode .article-divider { color: var(--dark-text-muted); }
 body.dark-mode .text-link { color: var(--dark-text); }
 body.dark-mode .text-link:hover { color: #ffffff; }
 body.dark-mode .paper-meta-box { border-color: var(--border); }
+body.dark-mode .hero-subtitle { color: rgba(255, 255, 255, 0.7); }
+body.dark-mode .breadcrumb { color: var(--dark-text-muted); }
+body.dark-mode .breadcrumb a { color: #a8d5ba; }
+body.dark-mode .breadcrumb [aria-current="page"] { color: var(--dark-text-muted); }
+body.dark-mode .paper-meta { color: var(--dark-text-muted); }
+body.dark-mode .paper-meta strong { color: var(--dark-text); }
+body.dark-mode .paper-meta a { color: #a8d5ba; }
+body.dark-mode .paper-nav { border-color: var(--border); }
+body.dark-mode .paper-nav-link { color: #a8d5ba; }
 body.dark-mode .scholar-portrait { border-color: var(--border); }
 body.dark-mode .scholar-contact a { color: var(--dark-text); }
 body.dark-mode .site-footer { border-color: var(--border); }
