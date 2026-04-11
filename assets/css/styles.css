@@ -403,7 +403,11 @@ body.dark-mode .footer-seal { filter: grayscale(100%) brightness(1.5); }
 body.dark-mode .login-container { background: var(--dark-surface); border-color: var(--border); }
 body.dark-mode .login-title { color: var(--dark-text); }
 body.dark-mode .login-form input { background: var(--dark-bg); border-color: var(--border); color: var(--dark-text); }
+body.dark-mode .login-form input::placeholder { color: var(--dark-text-muted); }
+body.dark-mode .login-submit { background-color: #5a9a7a; color: #fff; }
+body.dark-mode .login-utility { color: var(--dark-text-muted); }
 body.dark-mode .login-utility a { color: var(--dark-text-muted); }
+body.dark-mode .login-utility a:hover { color: var(--dark-text); }
 body.dark-mode .hero-kicker { color: var(--dark-text-muted); }
 body.dark-mode .scroll-progress { background: #a8d5ba; }
 

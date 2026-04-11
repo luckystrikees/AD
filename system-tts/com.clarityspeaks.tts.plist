@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.clarityspeaks.tts</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/macbookpro16/Desktop/AutisticScholars.org/github/AD/system-tts/venv/bin/python3</string>
+        <string>/Users/macbookpro16/Desktop/AutisticScholars.org/github/AD/system-tts/tts_service.py</string>
+        <string>--daemon</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/macbookpro16/Desktop/AutisticScholars.org/github/AD/system-tts</string>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/macbookpro16/.cache/clarityspeaks-tts/tts-service.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/macbookpro16/.cache/clarityspeaks-tts/tts-service-error.log</string>
+    
+    <key>ProcessType</key>
+    <string>Interactive</string>
+    
+    <key>ThrottleInterval</key>
+    <integer>5</integer>
+</dict>
+</plist>
