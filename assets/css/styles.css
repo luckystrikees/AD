@@ -293,12 +293,18 @@ a:hover { opacity: .75; }
   margin-top: 20px;
 }
 
-.scholar-contact a { 
-  color: var(--accent); 
+.scholar-contact a {
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-color: rgba(36, 56, 51, 0.4);
   text-underline-offset: 3px;
   font-weight: 600;
+}
+
+.scholar-divider {
+  margin: 0 6px;
+  color: var(--border);
+  user-select: none;
 }
 
 /* -------------------------------------------------
@@ -388,6 +394,7 @@ body.dark-mode .paper-nav { border-color: var(--border); }
 body.dark-mode .paper-nav-link { color: #a8d5ba; }
 body.dark-mode .scholar-portrait { border-color: var(--border); }
 body.dark-mode .scholar-contact a { color: var(--dark-text); }
+body.dark-mode .scholar-divider { color: var(--border); }
 body.dark-mode .site-footer { border-color: var(--border); }
 body.dark-mode .footer-name { color: var(--dark-text); }
 body.dark-mode .footer-descriptor { color: var(--dark-text-muted); }
