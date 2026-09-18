@@ -5,6 +5,7 @@
   --paper: #f7f5f2; --text: #1c1c1c; --accent: #243833;
   --parchment: #F2EFE8; --border: #e6e2dc;
   --cream: #faf9f6; --warm-white: #f5f4f0;
+  --text-muted: #6e6e73;
   --dark-bg: #121214; --dark-surface: #1c1c1e;
   --dark-text: #e8e8e8; --dark-text-muted: #9e9ea3;
 }
@@ -1143,6 +1144,7 @@ body.dark-mode .meta-item svg {
   position: -webkit-sticky;
   position: sticky;
   top: 30px;
+  align-self: flex-start;
   width: 270px;
   min-width: 240px;
   max-height: calc(100vh - 60px);

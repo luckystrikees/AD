@@ -982,8 +982,9 @@
           }
         }
 
-        // Default to first section if at very top of page
-        if (!activeSec && sections.length > 0) {
+        // Only highlight first section once user has scrolled past hero into the dossier
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (!activeSec && sections.length > 0 && scrollY > 250) {
           activeSec = sections[0];
         }
 
